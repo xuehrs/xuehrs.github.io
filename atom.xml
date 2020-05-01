@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>学海人生的Blog</title>
+  
+  <subtitle>书山有路勤为径，学海无涯苦作舟。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://xuehrs.github.io/blog/"/>
+  <updated>2020-05-01T14:51:22.000Z</updated>
+  <id>http://xuehrs.github.io/blog/</id>
+  
+  <author>
+    <name>虔诚的信徒</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>昨夜瞎折腾记</title>
+    <link href="http://xuehrs.github.io/blog/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
+    <id>http://xuehrs.github.io/blog/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</id>
+    <published>2020-05-01T14:51:22.000Z</published>
+    <updated>2020-05-01T14:51:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;欢迎转载，请添加来源～&lt;br&gt;这是一个博客模板&lt;/p&gt;
+
+
+
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Windows终端个人使用和评价</title>
+    <link href="http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/"/>
+    <id>http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</id>
+    <published>2020-03-27T01:19:22.000Z</published>
+    <updated>2020-03-27T01:19:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p><p>Cygwin Terminal，不错，有很多不错的命令行工具</p><p>git Terminal</p><p>MINGW</p><p>msys</p><p>msys2</p><p>这几个都是基于Cygwin做出来的特别终端，里面集成了很多常用工具</p><p>WSL_ArchLinux，此终端不错，主要是用来编译各种包仓库的主力机，现在只是个玩具，连自己编译aur有一定的问题。不过可以做到babun那个使用效果，之前玩了Arch好几年，说明oh-my-zsh我都玩过的。类似wsl_ubuntu等等我就不用介绍了，美化了都是差不多。</p><p>cmder，终端gui，就是ConEmu的进阶版，里面可以直接使用wsl，部分汉化，可以透明，支持壁纸</p><p>ConEmu，终端gui，里面需要进行很多设置，部分汉化，可以透明，支持壁纸</p><p>ConsoleZ，终端gui，全英文，功能单一，不可以设置透明</p><p>wsl-terminal，终端gui，部分中文，可以透明，不支持壁纸</p><p><a href="https://link.zhihu.com/?target=https%3A//eugeny.github.io/terminus/">terminus</a>，终端gui，完美中文，里面功能要付费。但是比较坑，特别是玩主机的那个同学</p><p>fluent terminal，终端gui，windows terminal加强版</p><p>windows terminal，终端gui，应用商店里面的，微软官方出品</p><p>欢迎转载，请添加来源～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。&lt;/p&gt;
+&lt;p&gt;Cygwin Ter
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="Windows" scheme="http://xuehrs.github.io/blog/categories/Blog/Windows/"/>
+    
+      <category term="终端" scheme="http://xuehrs.github.io/blog/categories/Blog/Windows/%E7%BB%88%E7%AB%AF/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="Windows" scheme="http://xuehrs.github.io/blog/tags/Windows/"/>
+    
+      <category term="终端" scheme="http://xuehrs.github.io/blog/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于网络喷子概论</title>
+    <link href="http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/"/>
+    <id>http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</id>
+    <published>2020-03-27T00:36:20.000Z</published>
+    <updated>2020-03-27T00:36:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p><p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p><p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p><p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p><p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p><p>​        4.只是喷子心情不好而已。</p><p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p><p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p><p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p><p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p><p>欢迎转载，请添加来源～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。&lt;/p&gt;
+&lt;p&gt;​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="李小龙" scheme="http://xuehrs.github.io/blog/tags/%E6%9D%8E%E5%B0%8F%E9%BE%99/"/>
+    
+      <category term="喷子" scheme="http://xuehrs.github.io/blog/tags/%E5%96%B7%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <link href="http://xuehrs.github.io/blog/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+    <id>http://xuehrs.github.io/blog/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</id>
+    <published>2018-08-12T09:54:42.000Z</published>
+    <updated>2018-08-12T09:54:42.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Openbox" scheme="http://xuehrs.github.io/blog/tags/Openbox/"/>
+    
+      <category term="配置文件" scheme="http://xuehrs.github.io/blog/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    
+      <category term="配置" scheme="http://xuehrs.github.io/blog/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于信息过时问题</title>
+    <link href="http://xuehrs.github.io/blog/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/"/>
+    <id>http://xuehrs.github.io/blog/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</id>
+    <published>2018-08-12T09:46:42.000Z</published>
+    <updated>2018-08-12T09:46:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p><p>参考如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;# 找不到来源</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于清空ArchLinux的Home所有配置文件说明</title>
+    <link href="http://xuehrs.github.io/blog/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/"/>
+    <id>http://xuehrs.github.io/blog/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</id>
+    <published>2018-08-12T09:35:22.000Z</published>
+    <updated>2018-08-12T09:35:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p><p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p><p>需要做的步骤如下：</p><p>步骤一：</p><p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p><p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p><p>步骤二：</p><p>部分桌面合成特效有问题</p><p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！&lt;/p&gt;
+&lt;p&gt;但是如果你备份过重要
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArchLinux本地仓库进价</title>
+    <link href="http://xuehrs.github.io/blog/2018/07/02/ArchLinux%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%BF%9B%E4%BB%B7/"/>
+    <id>http://xuehrs.github.io/blog/2018/07/02/ArchLinux%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%BF%9B%E4%BB%B7/</id>
+    <published>2018-07-02T06:08:37.000Z</published>
+    <updated>2018-07-08T06:08:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>前面教程我做过本地仓库，而且还能支持离线安装Archlinux。</p><p>现在，当你的本地仓库包多了，甚至里面有不少的自制包，还有那些过期的包如果管理。别急，在这里我可以用文章为你介绍如何更好的管理本地仓库，甚至局域网仓库！当然，你也可以把你自己做好的仓库分享到互联网上去。让其添加到Archlinux里的AUR推荐源列表上。但是，要注意了，不要把无版权的东西随意添加的互联网上，不然要吃官司的。</p><h2 id="安装repoctl和查看使用方法"><a href="#安装repoctl和查看使用方法" class="headerlink" title="安装repoctl和查看使用方法"></a>安装repoctl和查看使用方法</h2><p>官方直达连接<a href="https://github.com/cassava/repoctl" target="_blank" rel="noopener">https://github.com/cassava/repoctl</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S repoctl -i</span><br><span class="line">sudo pacman -S repoctl</span><br><span class="line">repoctl --help</span><br></pre></td></tr></table></figure><h2 id="使用前的准备"><a href="#使用前的准备" class="headerlink" title="使用前的准备"></a>使用前的准备</h2><p>在你使用repoctl之前，你需要创建一个配置文件。这告诉repoctl您的本地存储库在哪里，等等。由于没有人真的喜欢这个步骤，repoctl可以为你写一个默认配置。它还会告诉你它在哪里写配置文件，以便以后可以更改它。</p><p>假设你想要你的仓库在<code>～/custompkgs/x86_64/</code>，并且想要命名它<code>custompkgs</code>。然后你会运行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repoctl new config ～&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz</span><br><span class="line">repoctl add ～&#x2F;custompkgs&#x2F;x86_64&#x2F;*.pkg.tar.xz</span><br></pre></td></tr></table></figure><p>但是还差一些东西，你需要编辑这个配置文件以适合使用要求</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano ~&#x2F;.config&#x2F;repoctl&#x2F;config.toml</span><br></pre></td></tr></table></figure><p>##　灵活使用repoctl工具</p><p>如果前面的准备做好了，你可以直接这样做，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf </span><br><span class="line"></span><br><span class="line">#这个东西你可以按照需要确定放到哪个位置！不懂的，可以直接放到最后一行</span><br><span class="line">[custompkgs]</span><br><span class="line">SigLevel &#x3D; Never　＃表示忽略包签名</span><br><span class="line">#SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; file:&#x2F;&#x2F;&#x2F;home&#x2F;[你的用户名]&#x2F;custompkgs&#x2F;$arch</span><br><span class="line">#说明，如果你想添加这个，你必须把[文件名].db.tar.gz放到～&#x2F;custompkgs&#x2F;x86_64&#x2F;里面。不然会说数据库错误！</span><br><span class="line"></span><br><span class="line">#然后直接更新源</span><br><span class="line">sudo pacman -Syu</span><br><span class="line">sudo pacman -S　[仓库里的包名]</span><br></pre></td></tr></table></figure><p>如果你已经添加做好的包到<code>～/custompkgs/x86_64/</code>，你可以运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repoctl update #运行repoctl update之前，一定要确认好是否保留旧包，否则请先跳过这个命令</span><br></pre></td></tr></table></figure><p>如果你想保留旧版本的包，你可以这样做</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano ~&#x2F;.config&#x2F;repoctl&#x2F;config.toml</span><br><span class="line"></span><br><span class="line"># ...</span><br><span class="line">backup &#x3D; true</span><br><span class="line">backup_dir &#x3D; &quot;&quot;</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>如果你想支持本地分享远程仓库，以支持非本地互联网用户使用，不好意思，我对sshfs这个包不太了解，只能使用其它工具挂载远程仓库，如果你有不错的方法，可以告诉我。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S sshfs</span><br><span class="line">sshfs --help</span><br><span class="line">？？？？？？</span><br></pre></td></tr></table></figure><p>如果你想查看有什么需要升级，你可以这样做</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repoctl status -a</span><br></pre></td></tr></table></figure><p>如果你想获取所有可以升级的AUR，你可以这样做</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repoctl down -u -l #注意，一定要在指定的临时目录使用。比如&#x2F;tmp&#x2F;[文件名],可以加快编译速度 </span><br><span class="line"># -u：表示获取所有可升级的aur脚本。-l：表示强制覆盖文件，不会覆盖无关文件</span><br></pre></td></tr></table></figure><p>如果你想makepkg脚本后，把编译好的包自动添加到custompkgs仓库中，你可以这样做</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;makepkg.conf</span><br><span class="line"></span><br><span class="line">#...</span><br><span class="line">PKGDEST&#x3D;～&#x2F;custompkgs&#x2F;x86_64</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>##　我的repoctl配置文件内容如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"># repoctl configuration</span><br><span class="line"></span><br><span class="line"># repo is the full path to the repository that will be managed by repoctl.</span><br><span class="line"># The packages that belong to the repository are assumed to lie in the</span><br><span class="line"># same folder.</span><br><span class="line">repo &#x3D; &quot;&#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz&quot;</span><br><span class="line"></span><br><span class="line"># add_params is the set of parameters that will be passed to repo-add</span><br><span class="line"># when it is called. Specify one time for each parameter.</span><br><span class="line">#原因未知</span><br><span class="line">add_params &#x3D; [</span><br><span class="line">  &quot;-v&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># rm_params is the set of parameters that will be passed to repo-remove</span><br><span class="line"># when it is called. Specify one time for each parameter.</span><br><span class="line">rm_params &#x3D; []</span><br><span class="line"></span><br><span class="line"># ignore_aur is a set of package names that are ignored in conjunction</span><br><span class="line"># with AUR related tasks, such as determining if there is an update or not.</span><br><span class="line">ignore_aur &#x3D; []</span><br><span class="line"></span><br><span class="line"># backup specifies whether package files should be backed up or deleted.</span><br><span class="line"># If it is set to false, then obsolete package files are deleted.</span><br><span class="line">#让旧包留在仓库里，永远不要自动清理</span><br><span class="line">backup &#x3D; true</span><br><span class="line"></span><br><span class="line"># backup_dir specifies which directory backups are stored in.</span><br><span class="line"># - If a relative path is given, then it is interpreted as relative to</span><br><span class="line">#   the repository directory.</span><br><span class="line"># - If the path here resolves to the same as repo, then obsolete packages</span><br><span class="line">#   are effectively ignored by repoctl, if backup is true.</span><br><span class="line">#指定旧包的路径，如果仓库里的旧包和与backup_dir指定路径里的旧包冲突，那么仓库里的旧包会覆盖backup_dir指定路径里的旧包。</span><br><span class="line">backup_dir &#x3D; &quot;&quot;</span><br><span class="line"></span><br><span class="line"># interactive specifies that repoctl should ask before doing anything</span><br><span class="line"># destructive.</span><br><span class="line">interactive &#x3D; false</span><br><span class="line"></span><br><span class="line"># columnate specifies that listings should be in columns rather than</span><br><span class="line"># in lines. This only applies to the list command.</span><br><span class="line">columnate &#x3D; true</span><br><span class="line"></span><br><span class="line"># color specifies when to use color. Can be one of auto, always, and never.</span><br><span class="line">color &#x3D; &quot;auto&quot;</span><br><span class="line"></span><br><span class="line"># quiet specifies whether repoctl should print more information or less.</span><br><span class="line"># I prefer to know what happens, but if you don&#39;t like it, you can change it.</span><br><span class="line">quiet &#x3D; false</span><br><span class="line"></span><br><span class="line"># pre_action is a command that should be executed before doing anything</span><br><span class="line"># with the repository, like reading or modifying it. Useful for mounting</span><br><span class="line"># a remote filesystem.</span><br><span class="line">#无法使用</span><br><span class="line">#pre_action &#x3D; &quot;sshfs host:www.pkgs.me &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;&quot;</span><br><span class="line"></span><br><span class="line"># post_action is a command that should be executed before exiting.</span><br><span class="line">#无法使用</span><br><span class="line">#post_action &#x3D; &quot;fusermount -u &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;&quot;</span><br><span class="line"></span><br><span class="line"># action_on_completion determines whether repols should perform the</span><br><span class="line"># actions or not. By default, this is disallowed.</span><br><span class="line">action_on_completion &#x3D; true</span><br></pre></td></tr></table></figure><h2 id="小提示"><a href="#小提示" class="headerlink" title="小提示"></a>小提示</h2><p>有了本地仓库，但是问题来了，我本地仓库里有包，但是我不想下载，想直接安装，怎么办？</p><p>如果你想把仓库里的包导入到下载的缓存里面，也就是说，如果pacman搜了一个包，只要本地缓存里面有的，直接安装，不必要下载多余的包！</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf</span><br><span class="line"></span><br><span class="line">…</span><br><span class="line">#CacheDir    &#x3D; &#x2F;var&#x2F;cache&#x2F;pacman&#x2F;pkg&#x2F;</span><br><span class="line">CacheDir    &#x3D; &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;</span><br><span class="line">…</span><br></pre></td></tr></table></figure><p>AUR里的包确实比较麻烦！你需要改变，缺点就是必须手动makepkg，它会自动添加到指定仓库里。而我只是做个定时检测/tmp目录是否有包的脚本。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;makepkg.conf</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">#PKGDEST&#x3D;&#x2F;home&#x2F;packages</span><br><span class="line">PKGDEST&#x3D;&#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64</span><br><span class="line">...</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;前面教程我做过本地仓库，而且还能支持离线安装Archlinux。&lt;/p&gt;
+&lt;p&gt;现在，当你的本地仓库包多了，甚至里面有不少的自制包，还有那些
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="本地仓库" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="本地仓库" scheme="http://xuehrs.github.io/blog/tags/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
+    
+      <category term="AUR" scheme="http://xuehrs.github.io/blog/tags/AUR/"/>
+    
+      <category term="repoctl" scheme="http://xuehrs.github.io/blog/tags/repoctl/"/>
+    
+      <category term="repo" scheme="http://xuehrs.github.io/blog/tags/repo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好了歌</title>
+    <link href="http://xuehrs.github.io/blog/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/"/>
+    <id>http://xuehrs.github.io/blog/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</id>
+    <published>2018-06-20T11:37:09.000Z</published>
+    <updated>2018-06-29T11:37:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure><p>今天听了好了歌曲,特意搜索相关资料.</p><p>看了这些资料,我总结:看透不说破,心里明白就好.</p><p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p><p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="好了歌" scheme="http://xuehrs.github.io/blog/categories/Blog/%E5%A5%BD%E4%BA%86%E6%AD%8C/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="好了歌" scheme="http://xuehrs.github.io/blog/tags/%E5%A5%BD%E4%BA%86%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Archlinux添加本地仓库</title>
+    <link href="http://xuehrs.github.io/blog/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
+    <id>http://xuehrs.github.io/blog/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</id>
+    <published>2018-06-08T12:02:42.000Z</published>
+    <updated>2018-06-08T12:02:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p><p>以后再也不用老是下载破东西浪费时间了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf</span><br><span class="line">[custompkgs] #请把它添加到archlinuxcn源前面，因为我这里的包都是特制版的</span><br><span class="line">SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; file:&#x2F;&#x2F;&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch #添加特制好的包路径</span><br><span class="line">#Server &#x3D; ftp:&#x2F;&#x2F;localhost&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch</span><br><span class="line"></span><br><span class="line">repo-add &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;*.pkg.tar.xz</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！&lt;/p&gt;
+&lt;p&gt;以后再也不用老是下载破东西浪费时间了&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="仓库" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/%E4%BB%93%E5%BA%93/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="仓库" scheme="http://xuehrs.github.io/blog/tags/%E4%BB%93%E5%BA%93/"/>
+    
+      <category term="本地仓库" scheme="http://xuehrs.github.io/blog/tags/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
+    
+      <category term="包仓库" scheme="http://xuehrs.github.io/blog/tags/%E5%8C%85%E4%BB%93%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Archlinux启用休眠</title>
+    <link href="http://xuehrs.github.io/blog/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/"/>
+    <id>http://xuehrs.github.io/blog/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</id>
+    <published>2018-06-07T04:40:14.000Z</published>
+    <updated>2018-06-07T04:40:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure><p>备注：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="睡眠" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/%E7%9D%A1%E7%9C%A0/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="休眠" scheme="http://xuehrs.github.io/blog/tags/%E4%BC%91%E7%9C%A0/"/>
+    
+      <category term="睡眠" scheme="http://xuehrs.github.io/blog/tags/%E7%9D%A1%E7%9C%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于ArchLinux安装命令步骤</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</id>
+    <published>2018-05-28T13:07:13.000Z</published>
+    <updated>2018-05-28T13:07:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p><p>说明：这里有三个桌面随便耍，具体请自己查看命令步骤</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start dhcpcd #我用的是Android手机做WiFi无线网卡</span><br><span class="line">ping baidu.com #ctrl+c终止进程</span><br><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br><span class="line">timedatectl</span><br><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl</span><br><span class="line">fdisk -l</span><br><span class="line">lsblk</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">lsblk</span><br><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda1</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home</span><br><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;home</span><br><span class="line">lsblk</span><br><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br><span class="line">pacstrap -i &#x2F;mnt base base-devel</span><br><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br><span class="line">cat &#x2F;mnt&#x2F;etc&#x2F;ifstab #三个分区必须添加进来，否则请查原因</span><br><span class="line">arch-chroot &#x2F;mnt</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_TW.UTF-8 UTF-8</span><br><span class="line">locale-gen</span><br><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">echo archlinux &gt; &#x2F;etc&#x2F;hostname</span><br><span class="line">nano &#x2F;etc&#x2F;hosts</span><br><span class="line">127.0.0.1localhost</span><br><span class="line">::1    localhost</span><br><span class="line">127.0.1.1archlinux.localdomainarchlinux</span><br><span class="line">pacman -S iw wpa_supplicant dialog</span><br><span class="line">mkinitcpio -p linux</span><br><span class="line">passwd</span><br><span class="line">pacman -S grub efibootmgr os-prober</span><br><span class="line">grub-install --target&#x3D;x86_64-efi --efi-directory&#x3D;&#x2F;boot --bootloader-id&#x3D;arch_grub</span><br><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">pacman -S  intel-ucode</span><br><span class="line">grub-mkconig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">useradd -m [你的用户名]</span><br><span class="line">passwd [你的用户名]</span><br><span class="line">nano &#x2F;etc&#x2F;sudoers</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) ALL</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">umount -R &#x2F;mnt</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"># 进入自己的账户</span><br><span class="line"></span><br><span class="line">sudo systemctl start dhcpcd</span><br><span class="line">sudo pacman -S xfce4 xfce4-goodies lxdm lxde lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings networkmanager network-manager-applet dhclient gnome-keyring seahorse libsecret gnome-keyring ntfs-3g gvfs gvfs-mtp dosfstools alsa-utils pavucontrol pulseaudio xorg xorg-xinit xterm xorg-xclock xorg-twm mesa xf86-video-intel ttf-dejavu wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-tw-fonts noto-fonts-cjk chromium firefox-i18n-zh-cn opera notepadqq vim git gradle jre10-openjdk-headless jre10-openjdk jdk10-openjdk openjdk10-doc openjdk10-src zsh fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime fcitx-cloudpinyin fcitx-sunpinyin fcitx-libpinyin pepper-flash flashplugin vlc libreoffice-fresh-zh-cn nodejs npm virtualbox create_ap catfish thunderbird-i18n-zh-cn wget qbittorrent p7zip file-roller unrar unzip zip unace lrzip gimp clang ccache astyle qmc2 rubygems virtualbox-host-modules-arch </span><br><span class="line">startx #需要用下面命令把最左边的窗口kill</span><br><span class="line">exit</span><br><span class="line">sudo systemctl enable lightdm</span><br><span class="line">sudo systemctl enable NetworkManager</span><br><span class="line">sudo reboot</span><br><span class="line"># 这里只是安装了一部分包</span><br><span class="line"># 别的还有aur，预编译源的包需要自己添加，还有各种美化+优化</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了&lt;a href=&quot;https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%9
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="安装" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="安装" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="ArchWiki" scheme="http://xuehrs.github.io/blog/tags/ArchWiki/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Linux下的android手机adb和fastboot调式</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</id>
+    <published>2018-05-27T06:55:18.000Z</published>
+    <updated>2018-05-27T06:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p><p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p><p>步骤如下：</p><p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover&lt;/p&gt;
+&lt;p&gt;鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料&lt;/p&gt;
+&lt;p&gt;步骤如下：&lt;/p&gt;
+&lt;p&gt;先下载好linux版adb工具，由于我电脑
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://xuehrs.github.io/blog/categories/Android/"/>
+    
+      <category term="Adb" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/"/>
+    
+      <category term="Fastboot" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/Fastboot/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Adb" scheme="http://xuehrs.github.io/blog/tags/Adb/"/>
+    
+      <category term="Fastboot" scheme="http://xuehrs.github.io/blog/tags/Fastboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决打开浏览器老是输入密码和卡死问题</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</id>
+    <published>2018-05-18T01:06:00.000Z</published>
+    <updated>2018-05-20T01:06:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p><p>怎么解决呢？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。&lt;/p&gt;
+&lt;p&gt;怎么解决呢？&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="gnome-keyring" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/gnome-keyring/"/>
+    
+      <category term="Google-Chrome" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/gnome-keyring/Google-Chrome/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Cheome" scheme="http://xuehrs.github.io/blog/tags/Cheome/"/>
+    
+      <category term="Google-Chrome" scheme="http://xuehrs.github.io/blog/tags/Google-Chrome/"/>
+    
+      <category term="seahorse" scheme="http://xuehrs.github.io/blog/tags/seahorse/"/>
+    
+      <category term="libsecret" scheme="http://xuehrs.github.io/blog/tags/libsecret/"/>
+    
+      <category term="gnome-keyring" scheme="http://xuehrs.github.io/blog/tags/gnome-keyring/"/>
+    
+      <category term="gnome-keyring-daemon" scheme="http://xuehrs.github.io/blog/tags/gnome-keyring-daemon/"/>
+    
+      <category term="浏览器卡死" scheme="http://xuehrs.github.io/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%A1%E6%AD%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Fstab管理多个硬盘开机自动挂载</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/06/%E4%BD%BF%E7%94%A8Fstab%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E7%A1%AC%E7%9B%98%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/06/%E4%BD%BF%E7%94%A8Fstab%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E7%A1%AC%E7%9B%98%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/</id>
+    <published>2018-05-06T01:21:45.000Z</published>
+    <updated>2018-05-06T01:21:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">参考资料</a></p><h1 id="操作方式"><a href="#操作方式" class="headerlink" title="操作方式"></a>操作方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">先使用mkdir 创建&#x2F;media&#x2F;HD </span><br><span class="line">sudo mkdir &#x2F;media&#x2F;HD #这种方式创建分区随便什么用户都能用，但是只能读，下面会解决只能读的问题（这里的用户是指系统帐号）</span><br><span class="line">cd &#x2F;media&#x2F;HD</span><br><span class="line">sudo chmod 666 HD #把所创建的文件转可读写，而且是所有者可以读写（之前我被坑了，查资料无果，最后自己解决）</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&lt;file system&gt;&lt;dir&gt;&lt;type&gt;&lt;options&gt;&lt;dump&gt;&lt;pass&gt; #写入相关设置</span><br></pre></td></tr></table></figure><h1 id="文件示例"><a href="#文件示例" class="headerlink" title="文件示例"></a>文件示例</h1><p>一个简单的 /etc/fstab，使用内核名称标识磁盘:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;fstab</span><br><span class="line">--</span><br><span class="line"># &lt;file system&gt;        &lt;dir&gt;         &lt;type&gt;    &lt;options&gt;             &lt;dump&gt; &lt;pass&gt;</span><br><span class="line">tmpfs                  &#x2F;tmp          tmpfs     nodev,nosuid          0      0</span><br><span class="line">&#x2F;dev&#x2F;sda1              &#x2F;             ext4      defaults,noatime      0      1</span><br><span class="line">&#x2F;dev&#x2F;sda2              none          swap      defaults              0      0</span><br><span class="line">&#x2F;dev&#x2F;sda3              &#x2F;home         ext4      defaults,noatime      0      2</span><br></pre></td></tr></table></figure><h1 id="字段定义"><a href="#字段定义" class="headerlink" title="字段定义"></a>字段定义</h1><p>/etc/fstab 文件包含了如下字段，通过空格或 Tab 分隔：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;file system&gt;&lt;dir&gt;&lt;type&gt;&lt;options&gt;&lt;dump&gt;&lt;pass&gt;</span><br><span class="line">&lt;file systems&gt; - 要挂载的分区或存储设备.</span><br><span class="line">&lt;dir&gt; - &lt;file systems&gt;的挂载位置。</span><br><span class="line">&lt;type&gt; - 要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap 及 auto。 设置成auto类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。</span><br><span class="line">&lt;options&gt; - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 (mount(8))：</span><br><span class="line">auto - 在启动时或键入了 mount -a 命令时自动挂载。</span><br><span class="line">noauto - 只在你的命令下被挂载。</span><br><span class="line">exec - 允许执行此分区的二进制文件。</span><br><span class="line">noexec - 不允许执行此文件系统上的二进制文件。</span><br><span class="line">ro - 以只读模式挂载文件系统。</span><br><span class="line">rw - 以读写模式挂载文件系统。</span><br><span class="line">user - 允许任意用户挂载此文件系统，若无显示定义，隐含启用 noexec, nosuid, nodev 参数。</span><br><span class="line">users - 允许所有 users 组中的用户挂载文件系统.</span><br><span class="line">nouser - 只能被 root 挂载。</span><br><span class="line">owner - 允许设备所有者挂载.</span><br><span class="line">sync - I&#x2F;O 同步进行。</span><br><span class="line">async - I&#x2F;O 异步进行。</span><br><span class="line">dev - 解析文件系统上的块特殊设备。</span><br><span class="line">nodev - 不解析文件系统上的块特殊设备。</span><br><span class="line">suid - 允许 suid 操作和设定 sgid 位。这一参数通常用于一些特殊任务，使一般用户运行程序时临时提升权限。</span><br><span class="line">nosuid - 禁止 suid 操作和设定 sgid 位。</span><br><span class="line">noatime - 不更新文件系统上 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">nodiratime - 不更新文件系统上的目录 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">relatime - 实时更新 inode access 记录。只有在记录中的访问时间早于当前访问才会被更新。（与 noatime 相似，但不会打断如 mutt 或其它程序探测文件在上次访问后是否被修改的进程。），可以提升性能(参见 atime 参数)。</span><br><span class="line">flush - vfat 的选项，更频繁的刷新数据，复制对话框或进度条在全部数据都写入后才消失。</span><br><span class="line">defaults - 使用文件系统的默认挂载参数，例如 ext4 的默认参数为:rw, suid, dev, exec, auto, nouser, async.</span><br><span class="line">&lt;dump&gt; dump 工具通过它决定何时作备份. dump 会检查其内容，并用数字来决定是否对这个文件系统进行备份。 允许的数字是 0 和 1 。0 表示忽略， 1 则进行备份。大部分的用户是没有安装 dump 的 ，对他们而言 &lt;dump&gt; 应设为 0。</span><br><span class="line">&lt;pass&gt; fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。允许的数字是0, 1, 和2。 根目录应当获得最高的优先权 1, 其它所有需要被检查的设备设置为 2. 0 表示设备不会被 fsck 所检查。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="Fstab" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/Fstab/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Fstab" scheme="http://xuehrs.github.io/blog/tags/Fstab/"/>
+    
+      <category term="硬盘" scheme="http://xuehrs.github.io/blog/tags/%E7%A1%AC%E7%9B%98/"/>
+    
+      <category term="挂载" scheme="http://xuehrs.github.io/blog/tags/%E6%8C%82%E8%BD%BD/"/>
+    
+      <category term="读写硬盘" scheme="http://xuehrs.github.io/blog/tags/%E8%AF%BB%E5%86%99%E7%A1%AC%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>What is Markdown?</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/03/What-is-Markdown/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/03/What-is-Markdown/</id>
+    <published>2018-05-03T02:57:37.000Z</published>
+    <updated>2018-05-03T02:57:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">推荐GitHub的makrdown教程</a><br><br><a href="https://guides.github.com/" target="_blank" rel="noopener">GitHub相关总教程</a><br>如果你能手动把这个教程拷到blog，那就是入门了</p><ul><li><p>Headers</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># This is an &lt;h1&gt; tag</span><br><span class="line">## This is an &lt;h2&gt; tag</span><br><span class="line">###### This is an &lt;h6&gt; tag</span><br></pre></td></tr></table></figure></li><li><p>Emphasis</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*This text will be italic*</span><br><span class="line">_This will also be italic_</span><br><span class="line"></span><br><span class="line">**This text will be bold**</span><br><span class="line">__This will also be bold__</span><br><span class="line"></span><br><span class="line">_You **can** combine them_</span><br></pre></td></tr></table></figure></li><li><p>Lists</p><ul><li>Unordered<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* Item 1</span><br><span class="line">* Item 2</span><br><span class="line">  * Item 2a</span><br><span class="line">  * Item 2b</span><br></pre></td></tr></table></figure></li><li>Ordered<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. Item 1</span><br><span class="line">1. Item 2</span><br><span class="line">1. Item 3</span><br><span class="line">   1. Item 3a</span><br><span class="line">   1. Item 3b</span><br></pre></td></tr></table></figure></li></ul></li><li><p>Images</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![GitHub Logo](&#x2F;images&#x2F;logo.png)</span><br><span class="line">Format: ![Alt Text](url)</span><br></pre></td></tr></table></figure></li><li><p>Links</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;github.com - automatic!</span><br><span class="line">[GitHub](http:&#x2F;&#x2F;github.com)</span><br></pre></td></tr></table></figure></li><li><p>Blockquotes</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">As Kanye West said:</span><br><span class="line"></span><br><span class="line">&gt; We&#39;re living the future so</span><br><span class="line">&gt; the present is our past.</span><br></pre></td></tr></table></figure></li><li><p>Inline code</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I think you should use an&#96;&lt;addr&gt;&#96; element here instead.</span><br></pre></td></tr></table></figure></li><li><p>Syntax highlighting</p><p>Here’s an example of how you can use syntax highlighting with GitHub FlavoreMarkdown:</p>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(arg) &#123;</span><br><span class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>You can also simply indent your code by four spaces:</p><pre><code>function fancyAlert(arg) {  if(arg) {    $.facebox({div:&apos;#foo&apos;})  }}</code></pre><p>Here’s an example of Python code without syntax highlighting:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    if not bar:</span><br><span class="line">        return True</span><br></pre></td></tr></table></figure></li><li><p>Task Lists</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- [x] @mentions, #refs, [links](), **formatting**, and &lt;del&gt;tags&lt;&#x2F;del&gt; supported</span><br><span class="line">- [x] list syntax required (any unordered or ordered list supported)</span><br><span class="line">- [x] this is a complete item</span><br><span class="line">- [ ] this is an incomplete item</span><br></pre></td></tr></table></figure><p> If you include a task list in the first comment of an Issue, you will get a handy progress indicator in your issue list. It also works in Pull Requests!</p></li><li><p>Tables<br>You can create tables by assembling a list of words and dividing them with hyphens - (for the first row), and then separating each column with a pipe |:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">First Header | Second Header</span><br><span class="line">------------ | -------------</span><br><span class="line">Content from cell 1 | Content from cell 2</span><br><span class="line">Content in the first column | Content in the second column</span><br></pre></td></tr></table></figure><p>Would become: (这表格太丑了)</p></li></ul><table><thead><tr><th>First Header</th><th>Second Header</th></tr></thead><tbody><tr><td>Content from cell 1</td><td>Content from cell 2</td></tr><tr><td>Content in the first column</td><td>Content in the second column</td></tr></tbody></table><ul><li><p>SHA references<br>Any reference to a commit’s SHA-1 hash will be automatically converted into a link to that commit on GitHub.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo@16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo&#x2F;github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac</span><br></pre></td></tr></table></figure></li><li><p>Issue references within a repository<br>Any number that refers to an Issue or Pull Request will be automatically converted into a link.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#1</span><br><span class="line">mojombo#1</span><br><span class="line">mojombo&#x2F;github-flavored-markdown#1</span><br></pre></td></tr></table></figure></li><li><p>Username @mentions</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Typing an @ symbol, followed by a username, will notify that person to come and view the comment. This is called an “@mention”, because you’re mentioning the individual. You can also @mention teams within an organization.</span><br></pre></td></tr></table></figure></li><li><p>Automatic linking for URLs</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Any URL (like http:&#x2F;&#x2F;www.github.com&#x2F;) will be automatically converted into a clickable link.</span><br></pre></td></tr></table></figure></li><li><p>Strikethrough</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;推荐GitHub的makrdown教程&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;h
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="MarkDown" scheme="http://xuehrs.github.io/blog/categories/Blog/MarkDown/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="MarkDown" scheme="http://xuehrs.github.io/blog/tags/MarkDown/"/>
+    
+      <category term="笔记" scheme="http://xuehrs.github.io/blog/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客" scheme="http://xuehrs.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArchLinux下的Yaourt神器</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</id>
+    <published>2018-05-02T03:57:05.000Z</published>
+    <updated>2018-05-03T03:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class=""><h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure><p>之后安装 archlinuxcn-keyring 包导入 GPG key</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure><p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p><hr><p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它&lt;br&gt;参考&lt;a href=&quot;https://archlinux.fr/yaourt-en&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方介绍&lt;/a&gt;&lt;br&gt;参考&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="Yaourt" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/Yaourt/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Yaourt" scheme="http://xuehrs.github.io/blog/tags/Yaourt/"/>
+    
+      <category term="神器" scheme="http://xuehrs.github.io/blog/tags/%E7%A5%9E%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grub2美化</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</id>
+    <published>2018-05-01T14:13:55.000Z</published>
+    <updated>2018-05-02T14:13:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片"><h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class=""><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class=""><p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure><p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p><h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p><p>更新时间：20180502</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/xuehrs/Grub-Themes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Introduction-of-documents&lt;/a&gt; &lt;a href=&quot;https://github.com/
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="Grub" scheme="http://xuehrs.github.io/blog/categories/Linux/Grub/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Grub" scheme="http://xuehrs.github.io/blog/tags/Grub/"/>
+    
+      <category term="Grub2" scheme="http://xuehrs.github.io/blog/tags/Grub2/"/>
+    
+      <category term="美化" scheme="http://xuehrs.github.io/blog/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArchBang安装指南</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</id>
+    <published>2018-05-01T13:32:55.000Z</published>
+    <updated>2018-05-01T13:32:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure><p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure><p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>`</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装步骤&quot;&gt;&lt;a href=&quot;#安装步骤&quot; class=&quot;headerlink&quot; title=&quot;安装步骤&quot;&gt;&lt;/a&gt;安装步骤&lt;/h1&gt;&lt;p&gt;1.电脑是efi启动，gpt硬盘（无论有多少硬盘）&lt;br&gt;2.把archbang烧录在U盘里&lt;br&gt;3.调整好相关的bios
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchBang/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/tags/ArchBang/"/>
+    
+      <category term="安装指南" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>您好！我来了！</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</id>
+    <published>2018-05-01T10:49:42.000Z</published>
+    <updated>2018-05-02T04:41:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p><img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。&lt;/p&gt;
+&lt;img src=&quot;/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/tags/Blog/"/>
+    
+      <category term="开心" scheme="http://xuehrs.github.io/blog/tags/%E5%BC%80%E5%BF%83/"/>
+    
+      <category term="好日子" scheme="http://xuehrs.github.io/blog/tags/%E5%A5%BD%E6%97%A5%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArchBang官方送的残本指南</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/01/ArchBang_Guide/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/01/ArchBang_Guide/</id>
+    <published>2018-04-30T16:32:55.000Z</published>
+    <updated>2018-05-01T13:32:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>==这是安装arcbbang完毕送的指南==</p><p>Welcome to ArchBang linux</p><p>Information here is as up to date as possible.</p><p>===Pacman===</p><p>Pacman will not work live correctly until you set up your local mirror. Open a terminal [Super+t] and run:</p><pre><code>sudo mousepad /etc/pacman.d/mirrorlist</code></pre><p>Uncomment your nearest server to your country/region and then run:</p><pre><code>sudo pacman -Syyu</code></pre><p>This will refresh package database and allow you to install any package available.</p><pre><code>sudo pacman -Ss &lt;package_name&gt; # search for a named package    sudo pacman -S &lt;package_name&gt; # install a named package</code></pre><p>====Installation====</p><p>ArchBang comes with a menu driven installer abinstall to install simply open a terminal [Super+t] and run</p><pre><code>sudo abinstall</code></pre><p>Note storage drives must have partitions and filesystems created first.</p><p>====Video drivers====</p><p>This is optional remove xorg video drivers that were shipped with ArchBang by typing:</p><p>Note the following drivers listed may not be up to date</p><p>You can check what drivers you have installed by running</p><p> pacman -Qq | grep xf86-video</p><p> sudo pacman -R xf86-video-apm xf86-video-ark xf86-video-ast<br> xf86-video-ati xf86-video-chips xf86-video-cirrus<br> xf86-video-dummy xf86-video-fbdev xf86-video-glint<br> xf86-video-i128 xf86-video-i740 xf86-video-intel-uxa<br> xf86-video-mach64 xf86-video-mga xf86-video-neomagic<br> xf86-video-nv xf86-video-r128 xf86-video-rendition<br> xf86-video-s3 xf86-video-s3virge xf86-video-savage<br> xf86-video-siliconmotion xf86-video-sis xf86-video-sisusb<br> xf86-video-tdfx xf86-video-trident xf86-video-tseng<br> xf86-video-v4l xf86-video-vesa xf86-video-vmware<br> xf86-video-voodoo xf86-video-xgi xf86-video-xgixp<br> ati-dri intel-dri mach64-dri mga-dri r128-dri<br> savage-dri sis-dri tdfx-dri</p><p>To know your video chipset type in terminal</p><p>  lspci | grep VGA</p><p>Track it down in the list by typing in terminal as root:</p><p> pacman -Ss xf86-video | less</p><p>Install your video driver:</p><p> pacman -S your_video_driver</p><p>====Maximum Brightness====</p><p>If you want maximum brightness at boot, uncomment the following in<br>~/.config/openbox/autostart<br> xbacklight -set 100 &amp;</p><p>====Sound====</p><p>If you don’t get any sound you can right click on volume icon on panel then<br>‘Open Mixer’ or in a terminal run<br> alsamixer<br>To unmute a channel press M to raise levels use up and down keys. To exit and<br>save hit Escape key</p><p>====Disable Blank Screen After 10 Minutes====</p><p>To disable blank screen after 10 minutes of inactivity, create a file in<br>/etc/X11/xorg.conf.d called custom.conf with this code:</p><p> Section “ServerFlags”</p><h1 id="disable-low-level-screensaver-and-screen-DPMS-poweroff"><a href="#disable-low-level-screensaver-and-screen-DPMS-poweroff" class="headerlink" title="disable low-level screensaver and screen DPMS poweroff"></a>disable low-level screensaver and screen DPMS poweroff</h1><pre><code>Option &quot;BlankTime&quot; &quot;0&quot;Option &quot;StandbyTime&quot; &quot;0&quot;Option &quot;SuspendTime&quot; &quot;0&quot;Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p><p>====Update the system====</p><p>Open a terminal [Super+t] and type:<br>  sudo pacman -Syyu</p><p>====Have Fun!====</p><p>Everything about Arch isn’t covered in this guide of course so check the Arch Wiki [<a href="https://wiki.archlinux.org/]" target="_blank" rel="noopener">https://wiki.archlinux.org/]</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ArchBang-Guide&quot;&gt;&lt;a href=&quot;#ArchBang-Guide&quot; class=&quot;headerlink&quot; title=&quot;ArchBang_Guide&quot;&gt;&lt;/a&gt;ArchBang_Guide&lt;/h1&gt;&lt;p&gt;==这是安装arcbbang完毕送的指南==
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchBang/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/tags/ArchBang/"/>
+    
+      <category term="安装指南" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
+    
+  </entry>
+  
+</feed>
