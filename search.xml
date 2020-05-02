@@ -19,61 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ArchBang官方送的残本指南</title>
-    <url>/2018/05/01/ArchBang_Guide/</url>
-    <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>==这是安装arcbbang完毕送的指南==</p>
-<p>Welcome to ArchBang linux</p>
-<p>Information here is as up to date as possible.</p>
-<p>===Pacman===</p>
-<p>Pacman will not work live correctly until you set up your local mirror. Open a terminal [Super+t] and run:</p>
-<pre><code>sudo mousepad /etc/pacman.d/mirrorlist</code></pre><p>Uncomment your nearest server to your country/region and then run:</p>
-<pre><code>sudo pacman -Syyu</code></pre><p>This will refresh package database and allow you to install any package available.</p>
-<pre><code>sudo pacman -Ss &lt;package_name&gt; # search for a named package
-
-    sudo pacman -S &lt;package_name&gt; # install a named package</code></pre><p>====Installation====</p>
-<p>ArchBang comes with a menu driven installer abinstall to install simply open a terminal [Super+t] and run</p>
-<pre><code>sudo abinstall</code></pre><p>Note storage drives must have partitions and filesystems created first.</p>
-<p>====Video drivers====</p>
-<p>This is optional remove xorg video drivers that were shipped with ArchBang by typing:</p>
-<p>Note the following drivers listed may not be up to date</p>
-<p>You can check what drivers you have installed by running</p>
-<p> pacman -Qq | grep xf86-video</p>
-<p> sudo pacman -R xf86-video-apm xf86-video-ark xf86-video-ast<br> xf86-video-ati xf86-video-chips xf86-video-cirrus<br> xf86-video-dummy xf86-video-fbdev xf86-video-glint<br> xf86-video-i128 xf86-video-i740 xf86-video-intel-uxa<br> xf86-video-mach64 xf86-video-mga xf86-video-neomagic<br> xf86-video-nv xf86-video-r128 xf86-video-rendition<br> xf86-video-s3 xf86-video-s3virge xf86-video-savage<br> xf86-video-siliconmotion xf86-video-sis xf86-video-sisusb<br> xf86-video-tdfx xf86-video-trident xf86-video-tseng<br> xf86-video-v4l xf86-video-vesa xf86-video-vmware<br> xf86-video-voodoo xf86-video-xgi xf86-video-xgixp<br> ati-dri intel-dri mach64-dri mga-dri r128-dri<br> savage-dri sis-dri tdfx-dri</p>
-<p>To know your video chipset type in terminal</p>
-<p>  lspci | grep VGA</p>
-<p>Track it down in the list by typing in terminal as root:</p>
-<p> pacman -Ss xf86-video | less</p>
-<p>Install your video driver:</p>
-<p> pacman -S your_video_driver</p>
-<p>====Maximum Brightness====</p>
-<p>If you want maximum brightness at boot, uncomment the following in<br>~/.config/openbox/autostart<br> xbacklight -set 100 &amp;</p>
-<p>====Sound====</p>
-<p>If you don’t get any sound you can right click on volume icon on panel then<br>‘Open Mixer’ or in a terminal run<br> alsamixer<br>To unmute a channel press M to raise levels use up and down keys. To exit and<br>save hit Escape key</p>
-<p>====Disable Blank Screen After 10 Minutes====</p>
-<p>To disable blank screen after 10 minutes of inactivity, create a file in<br>/etc/X11/xorg.conf.d called custom.conf with this code:</p>
-<p> Section “ServerFlags”</p>
-<h1 id="disable-low-level-screensaver-and-screen-DPMS-poweroff"><a href="#disable-low-level-screensaver-and-screen-DPMS-poweroff" class="headerlink" title="disable low-level screensaver and screen DPMS poweroff"></a>disable low-level screensaver and screen DPMS poweroff</h1><pre><code>Option &quot;BlankTime&quot; &quot;0&quot;
-Option &quot;StandbyTime&quot; &quot;0&quot;
-Option &quot;SuspendTime&quot; &quot;0&quot;
-Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
-<p>====Update the system====</p>
-<p>Open a terminal [Super+t] and type:<br>  sudo pacman -Syyu</p>
-<p>====Have Fun!====</p>
-<p>Everything about Arch isn’t covered in this guide of course so check the Arch Wiki [<a href="https://wiki.archlinux.org/]" target="_blank" rel="noopener">https://wiki.archlinux.org/]</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArchBang安装指南</title>
     <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
@@ -143,6 +88,88 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>使用Fstab管理多个硬盘开机自动挂载</title>
+    <url>/2018/05/06/%E4%BD%BF%E7%94%A8Fstab%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E7%A1%AC%E7%9B%98%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/</url>
+    <content><![CDATA[<p><a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">参考资料</a></p>
+<h1 id="操作方式"><a href="#操作方式" class="headerlink" title="操作方式"></a>操作方式</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">先使用mkdir 创建&#x2F;media&#x2F;HD </span><br><span class="line">sudo mkdir &#x2F;media&#x2F;HD #这种方式创建分区随便什么用户都能用，但是只能读，下面会解决只能读的问题（这里的用户是指系统帐号）</span><br><span class="line">cd &#x2F;media&#x2F;HD</span><br><span class="line">sudo chmod 666 HD #把所创建的文件转可读写，而且是所有者可以读写（之前我被坑了，查资料无果，最后自己解决）</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&lt;file system&gt;	&lt;dir&gt;	&lt;type&gt;	&lt;options&gt;	&lt;dump&gt;	&lt;pass&gt; #写入相关设置</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件示例"><a href="#文件示例" class="headerlink" title="文件示例"></a>文件示例</h1><p>一个简单的 /etc/fstab，使用内核名称标识磁盘:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;etc&#x2F;fstab</span><br><span class="line">--</span><br><span class="line"># &lt;file system&gt;        &lt;dir&gt;         &lt;type&gt;    &lt;options&gt;             &lt;dump&gt; &lt;pass&gt;</span><br><span class="line">tmpfs                  &#x2F;tmp          tmpfs     nodev,nosuid          0      0</span><br><span class="line">&#x2F;dev&#x2F;sda1              &#x2F;             ext4      defaults,noatime      0      1</span><br><span class="line">&#x2F;dev&#x2F;sda2              none          swap      defaults              0      0</span><br><span class="line">&#x2F;dev&#x2F;sda3              &#x2F;home         ext4      defaults,noatime      0      2</span><br></pre></td></tr></table></figure>
+
+<h1 id="字段定义"><a href="#字段定义" class="headerlink" title="字段定义"></a>字段定义</h1><p>/etc/fstab 文件包含了如下字段，通过空格或 Tab 分隔：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;file system&gt;	&lt;dir&gt;	&lt;type&gt;	&lt;options&gt;	&lt;dump&gt;	&lt;pass&gt;</span><br><span class="line">&lt;file systems&gt; - 要挂载的分区或存储设备.</span><br><span class="line">&lt;dir&gt; - &lt;file systems&gt;的挂载位置。</span><br><span class="line">&lt;type&gt; - 要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap 及 auto。 设置成auto类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。</span><br><span class="line">&lt;options&gt; - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 (mount(8))：</span><br><span class="line">auto - 在启动时或键入了 mount -a 命令时自动挂载。</span><br><span class="line">noauto - 只在你的命令下被挂载。</span><br><span class="line">exec - 允许执行此分区的二进制文件。</span><br><span class="line">noexec - 不允许执行此文件系统上的二进制文件。</span><br><span class="line">ro - 以只读模式挂载文件系统。</span><br><span class="line">rw - 以读写模式挂载文件系统。</span><br><span class="line">user - 允许任意用户挂载此文件系统，若无显示定义，隐含启用 noexec, nosuid, nodev 参数。</span><br><span class="line">users - 允许所有 users 组中的用户挂载文件系统.</span><br><span class="line">nouser - 只能被 root 挂载。</span><br><span class="line">owner - 允许设备所有者挂载.</span><br><span class="line">sync - I&#x2F;O 同步进行。</span><br><span class="line">async - I&#x2F;O 异步进行。</span><br><span class="line">dev - 解析文件系统上的块特殊设备。</span><br><span class="line">nodev - 不解析文件系统上的块特殊设备。</span><br><span class="line">suid - 允许 suid 操作和设定 sgid 位。这一参数通常用于一些特殊任务，使一般用户运行程序时临时提升权限。</span><br><span class="line">nosuid - 禁止 suid 操作和设定 sgid 位。</span><br><span class="line">noatime - 不更新文件系统上 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">nodiratime - 不更新文件系统上的目录 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">relatime - 实时更新 inode access 记录。只有在记录中的访问时间早于当前访问才会被更新。（与 noatime 相似，但不会打断如 mutt 或其它程序探测文件在上次访问后是否被修改的进程。），可以提升性能(参见 atime 参数)。</span><br><span class="line">flush - vfat 的选项，更频繁的刷新数据，复制对话框或进度条在全部数据都写入后才消失。</span><br><span class="line">defaults - 使用文件系统的默认挂载参数，例如 ext4 的默认参数为:rw, suid, dev, exec, auto, nouser, async.</span><br><span class="line">&lt;dump&gt; dump 工具通过它决定何时作备份. dump 会检查其内容，并用数字来决定是否对这个文件系统进行备份。 允许的数字是 0 和 1 。0 表示忽略， 1 则进行备份。大部分的用户是没有安装 dump 的 ，对他们而言 &lt;dump&gt; 应设为 0。</span><br><span class="line">&lt;pass&gt; fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。允许的数字是0, 1, 和2。 根目录应当获得最高的优先权 1, 其它所有需要被检查的设备设置为 2. 0 表示设备不会被 fsck 所检查。</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>Fstab</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Fstab</tag>
+        <tag>硬盘</tag>
+        <tag>挂载</tag>
+        <tag>读写硬盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArchBang官方送的残本指南</title>
+    <url>/2018/05/01/ArchBang_Guide/</url>
+    <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>==这是安装arcbbang完毕送的指南==</p>
+<p>Welcome to ArchBang linux</p>
+<p>Information here is as up to date as possible.</p>
+<p>===Pacman===</p>
+<p>Pacman will not work live correctly until you set up your local mirror. Open a terminal [Super+t] and run:</p>
+<pre><code>sudo mousepad /etc/pacman.d/mirrorlist</code></pre><p>Uncomment your nearest server to your country/region and then run:</p>
+<pre><code>sudo pacman -Syyu</code></pre><p>This will refresh package database and allow you to install any package available.</p>
+<pre><code>sudo pacman -Ss &lt;package_name&gt; # search for a named package
+
+    sudo pacman -S &lt;package_name&gt; # install a named package</code></pre><p>====Installation====</p>
+<p>ArchBang comes with a menu driven installer abinstall to install simply open a terminal [Super+t] and run</p>
+<pre><code>sudo abinstall</code></pre><p>Note storage drives must have partitions and filesystems created first.</p>
+<p>====Video drivers====</p>
+<p>This is optional remove xorg video drivers that were shipped with ArchBang by typing:</p>
+<p>Note the following drivers listed may not be up to date</p>
+<p>You can check what drivers you have installed by running</p>
+<p> pacman -Qq | grep xf86-video</p>
+<p> sudo pacman -R xf86-video-apm xf86-video-ark xf86-video-ast<br> xf86-video-ati xf86-video-chips xf86-video-cirrus<br> xf86-video-dummy xf86-video-fbdev xf86-video-glint<br> xf86-video-i128 xf86-video-i740 xf86-video-intel-uxa<br> xf86-video-mach64 xf86-video-mga xf86-video-neomagic<br> xf86-video-nv xf86-video-r128 xf86-video-rendition<br> xf86-video-s3 xf86-video-s3virge xf86-video-savage<br> xf86-video-siliconmotion xf86-video-sis xf86-video-sisusb<br> xf86-video-tdfx xf86-video-trident xf86-video-tseng<br> xf86-video-v4l xf86-video-vesa xf86-video-vmware<br> xf86-video-voodoo xf86-video-xgi xf86-video-xgixp<br> ati-dri intel-dri mach64-dri mga-dri r128-dri<br> savage-dri sis-dri tdfx-dri</p>
+<p>To know your video chipset type in terminal</p>
+<p>  lspci | grep VGA</p>
+<p>Track it down in the list by typing in terminal as root:</p>
+<p> pacman -Ss xf86-video | less</p>
+<p>Install your video driver:</p>
+<p> pacman -S your_video_driver</p>
+<p>====Maximum Brightness====</p>
+<p>If you want maximum brightness at boot, uncomment the following in<br>~/.config/openbox/autostart<br> xbacklight -set 100 &amp;</p>
+<p>====Sound====</p>
+<p>If you don’t get any sound you can right click on volume icon on panel then<br>‘Open Mixer’ or in a terminal run<br> alsamixer<br>To unmute a channel press M to raise levels use up and down keys. To exit and<br>save hit Escape key</p>
+<p>====Disable Blank Screen After 10 Minutes====</p>
+<p>To disable blank screen after 10 minutes of inactivity, create a file in<br>/etc/X11/xorg.conf.d called custom.conf with this code:</p>
+<p> Section “ServerFlags”</p>
+<h1 id="disable-low-level-screensaver-and-screen-DPMS-poweroff"><a href="#disable-low-level-screensaver-and-screen-DPMS-poweroff" class="headerlink" title="disable low-level screensaver and screen DPMS poweroff"></a>disable low-level screensaver and screen DPMS poweroff</h1><pre><code>Option &quot;BlankTime&quot; &quot;0&quot;
+Option &quot;StandbyTime&quot; &quot;0&quot;
+Option &quot;SuspendTime&quot; &quot;0&quot;
+Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
+<p>====Update the system====</p>
+<p>Open a terminal [Super+t] and type:<br>  sudo pacman -Syyu</p>
+<p>====Have Fun!====</p>
+<p>Everything about Arch isn’t covered in this guide of course so check the Arch Wiki [<a href="https://wiki.archlinux.org/]" target="_blank" rel="noopener">https://wiki.archlinux.org/]</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchBang</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArchLinux下的Yaourt神器</title>
     <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
     <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
@@ -180,6 +207,152 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>ArchLinux</tag>
         <tag>Yaourt</tag>
         <tag>神器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于ArchLinux安装命令步骤</title>
+    <url>/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p>
+<p>说明：这里有三个桌面随便耍，具体请自己查看命令步骤</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start dhcpcd #我用的是Android手机做WiFi无线网卡</span><br><span class="line">ping baidu.com #ctrl+c终止进程</span><br><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br><span class="line">timedatectl</span><br><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl</span><br><span class="line">fdisk -l</span><br><span class="line">lsblk</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">lsblk</span><br><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda1</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home</span><br><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;home</span><br><span class="line">lsblk</span><br><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br><span class="line">pacstrap -i &#x2F;mnt base base-devel</span><br><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br><span class="line">cat &#x2F;mnt&#x2F;etc&#x2F;ifstab #三个分区必须添加进来，否则请查原因</span><br><span class="line">arch-chroot &#x2F;mnt</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_TW.UTF-8 UTF-8</span><br><span class="line">locale-gen</span><br><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">echo archlinux &gt; &#x2F;etc&#x2F;hostname</span><br><span class="line">nano &#x2F;etc&#x2F;hosts</span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1		    localhost</span><br><span class="line">127.0.1.1	archlinux.localdomain	archlinux</span><br><span class="line">pacman -S iw wpa_supplicant dialog</span><br><span class="line">mkinitcpio -p linux</span><br><span class="line">passwd</span><br><span class="line">pacman -S grub efibootmgr os-prober</span><br><span class="line">grub-install --target&#x3D;x86_64-efi --efi-directory&#x3D;&#x2F;boot --bootloader-id&#x3D;arch_grub</span><br><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">pacman -S  intel-ucode</span><br><span class="line">grub-mkconig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">useradd -m [你的用户名]</span><br><span class="line">passwd [你的用户名]</span><br><span class="line">nano &#x2F;etc&#x2F;sudoers</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) ALL</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">umount -R &#x2F;mnt</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"># 进入自己的账户</span><br><span class="line"></span><br><span class="line">sudo systemctl start dhcpcd</span><br><span class="line">sudo pacman -S xfce4 xfce4-goodies lxdm lxde lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings networkmanager network-manager-applet dhclient gnome-keyring seahorse libsecret gnome-keyring ntfs-3g gvfs gvfs-mtp dosfstools alsa-utils pavucontrol pulseaudio xorg xorg-xinit xterm xorg-xclock xorg-twm mesa xf86-video-intel ttf-dejavu wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-tw-fonts noto-fonts-cjk chromium firefox-i18n-zh-cn opera notepadqq vim git gradle jre10-openjdk-headless jre10-openjdk jdk10-openjdk openjdk10-doc openjdk10-src zsh fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime fcitx-cloudpinyin fcitx-sunpinyin fcitx-libpinyin pepper-flash flashplugin vlc libreoffice-fresh-zh-cn nodejs npm virtualbox create_ap catfish thunderbird-i18n-zh-cn wget qbittorrent p7zip file-roller unrar unzip zip unace lrzip gimp clang ccache astyle qmc2 rubygems virtualbox-host-modules-arch </span><br><span class="line">startx #需要用下面命令把最左边的窗口kill</span><br><span class="line">exit</span><br><span class="line">sudo systemctl enable lightdm</span><br><span class="line">sudo systemctl enable NetworkManager</span><br><span class="line">sudo reboot</span><br><span class="line"># 这里只是安装了一部分包</span><br><span class="line"># 别的还有aur，预编译源的包需要自己添加，还有各种美化+优化</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>安装</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>安装</tag>
+        <tag>ArchWiki</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决打开浏览器老是输入密码和卡死问题</title>
+    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
+<p>怎么解决呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>gnome-keyring</category>
+        <category>Google-Chrome</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Cheome</tag>
+        <tag>Google-Chrome</tag>
+        <tag>seahorse</tag>
+        <tag>libsecret</tag>
+        <tag>gnome-keyring</tag>
+        <tag>gnome-keyring-daemon</tag>
+        <tag>浏览器卡死</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Linux下的android手机adb和fastboot调式</title>
+    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
+    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
+<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
+<p>步骤如下：</p>
+<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Adb</category>
+        <category>Fastboot</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Adb</tag>
+        <tag>Fastboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
+
+<p>备注：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux添加本地仓库</title>
+    <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
+<p>以后再也不用老是下载破东西浪费时间了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf</span><br><span class="line">[custompkgs] #请把它添加到archlinuxcn源前面，因为我这里的包都是特制版的</span><br><span class="line">SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; file:&#x2F;&#x2F;&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch #添加特制好的包路径</span><br><span class="line">#Server &#x3D; ftp:&#x2F;&#x2F;localhost&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch</span><br><span class="line"></span><br><span class="line">repo-add &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;*.pkg.tar.xz</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>仓库</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>仓库</tag>
+        <tag>本地仓库</tag>
+        <tag>包仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Openbox</tag>
+        <tag>配置文件</tag>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于信息过时问题</title>
+    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
+<p>参考如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -278,147 +451,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>使用Fstab管理多个硬盘开机自动挂载</title>
-    <url>/2018/05/06/%E4%BD%BF%E7%94%A8Fstab%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E7%A1%AC%E7%9B%98%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/</url>
-    <content><![CDATA[<p><a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">参考资料</a></p>
-<h1 id="操作方式"><a href="#操作方式" class="headerlink" title="操作方式"></a>操作方式</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">先使用mkdir 创建&#x2F;media&#x2F;HD </span><br><span class="line">sudo mkdir &#x2F;media&#x2F;HD #这种方式创建分区随便什么用户都能用，但是只能读，下面会解决只能读的问题（这里的用户是指系统帐号）</span><br><span class="line">cd &#x2F;media&#x2F;HD</span><br><span class="line">sudo chmod 666 HD #把所创建的文件转可读写，而且是所有者可以读写（之前我被坑了，查资料无果，最后自己解决）</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&lt;file system&gt;	&lt;dir&gt;	&lt;type&gt;	&lt;options&gt;	&lt;dump&gt;	&lt;pass&gt; #写入相关设置</span><br></pre></td></tr></table></figure>
-
-<h1 id="文件示例"><a href="#文件示例" class="headerlink" title="文件示例"></a>文件示例</h1><p>一个简单的 /etc/fstab，使用内核名称标识磁盘:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;etc&#x2F;fstab</span><br><span class="line">--</span><br><span class="line"># &lt;file system&gt;        &lt;dir&gt;         &lt;type&gt;    &lt;options&gt;             &lt;dump&gt; &lt;pass&gt;</span><br><span class="line">tmpfs                  &#x2F;tmp          tmpfs     nodev,nosuid          0      0</span><br><span class="line">&#x2F;dev&#x2F;sda1              &#x2F;             ext4      defaults,noatime      0      1</span><br><span class="line">&#x2F;dev&#x2F;sda2              none          swap      defaults              0      0</span><br><span class="line">&#x2F;dev&#x2F;sda3              &#x2F;home         ext4      defaults,noatime      0      2</span><br></pre></td></tr></table></figure>
-
-<h1 id="字段定义"><a href="#字段定义" class="headerlink" title="字段定义"></a>字段定义</h1><p>/etc/fstab 文件包含了如下字段，通过空格或 Tab 分隔：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;file system&gt;	&lt;dir&gt;	&lt;type&gt;	&lt;options&gt;	&lt;dump&gt;	&lt;pass&gt;</span><br><span class="line">&lt;file systems&gt; - 要挂载的分区或存储设备.</span><br><span class="line">&lt;dir&gt; - &lt;file systems&gt;的挂载位置。</span><br><span class="line">&lt;type&gt; - 要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap 及 auto。 设置成auto类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。</span><br><span class="line">&lt;options&gt; - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 (mount(8))：</span><br><span class="line">auto - 在启动时或键入了 mount -a 命令时自动挂载。</span><br><span class="line">noauto - 只在你的命令下被挂载。</span><br><span class="line">exec - 允许执行此分区的二进制文件。</span><br><span class="line">noexec - 不允许执行此文件系统上的二进制文件。</span><br><span class="line">ro - 以只读模式挂载文件系统。</span><br><span class="line">rw - 以读写模式挂载文件系统。</span><br><span class="line">user - 允许任意用户挂载此文件系统，若无显示定义，隐含启用 noexec, nosuid, nodev 参数。</span><br><span class="line">users - 允许所有 users 组中的用户挂载文件系统.</span><br><span class="line">nouser - 只能被 root 挂载。</span><br><span class="line">owner - 允许设备所有者挂载.</span><br><span class="line">sync - I&#x2F;O 同步进行。</span><br><span class="line">async - I&#x2F;O 异步进行。</span><br><span class="line">dev - 解析文件系统上的块特殊设备。</span><br><span class="line">nodev - 不解析文件系统上的块特殊设备。</span><br><span class="line">suid - 允许 suid 操作和设定 sgid 位。这一参数通常用于一些特殊任务，使一般用户运行程序时临时提升权限。</span><br><span class="line">nosuid - 禁止 suid 操作和设定 sgid 位。</span><br><span class="line">noatime - 不更新文件系统上 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">nodiratime - 不更新文件系统上的目录 inode 访问记录，可以提升性能(参见 atime 参数)。</span><br><span class="line">relatime - 实时更新 inode access 记录。只有在记录中的访问时间早于当前访问才会被更新。（与 noatime 相似，但不会打断如 mutt 或其它程序探测文件在上次访问后是否被修改的进程。），可以提升性能(参见 atime 参数)。</span><br><span class="line">flush - vfat 的选项，更频繁的刷新数据，复制对话框或进度条在全部数据都写入后才消失。</span><br><span class="line">defaults - 使用文件系统的默认挂载参数，例如 ext4 的默认参数为:rw, suid, dev, exec, auto, nouser, async.</span><br><span class="line">&lt;dump&gt; dump 工具通过它决定何时作备份. dump 会检查其内容，并用数字来决定是否对这个文件系统进行备份。 允许的数字是 0 和 1 。0 表示忽略， 1 则进行备份。大部分的用户是没有安装 dump 的 ，对他们而言 &lt;dump&gt; 应设为 0。</span><br><span class="line">&lt;pass&gt; fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。允许的数字是0, 1, 和2。 根目录应当获得最高的优先权 1, 其它所有需要被检查的设备设置为 2. 0 表示设备不会被 fsck 所检查。</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>Fstab</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Fstab</tag>
-        <tag>硬盘</tag>
-        <tag>挂载</tag>
-        <tag>读写硬盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决打开浏览器老是输入密码和卡死问题</title>
-    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
-<p>怎么解决呢？</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>gnome-keyring</category>
-        <category>Google-Chrome</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Cheome</tag>
-        <tag>Google-Chrome</tag>
-        <tag>seahorse</tag>
-        <tag>libsecret</tag>
-        <tag>gnome-keyring</tag>
-        <tag>gnome-keyring-daemon</tag>
-        <tag>浏览器卡死</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Linux下的android手机adb和fastboot调式</title>
-    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
-    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
-<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
-<p>步骤如下：</p>
-<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Adb</category>
-        <category>Fastboot</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Adb</tag>
-        <tag>Fastboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于ArchLinux安装命令步骤</title>
-    <url>/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p>
-<p>说明：这里有三个桌面随便耍，具体请自己查看命令步骤</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start dhcpcd #我用的是Android手机做WiFi无线网卡</span><br><span class="line">ping baidu.com #ctrl+c终止进程</span><br><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br><span class="line">timedatectl</span><br><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl</span><br><span class="line">fdisk -l</span><br><span class="line">lsblk</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">lsblk</span><br><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda1</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home</span><br><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;home</span><br><span class="line">lsblk</span><br><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br><span class="line">pacstrap -i &#x2F;mnt base base-devel</span><br><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br><span class="line">cat &#x2F;mnt&#x2F;etc&#x2F;ifstab #三个分区必须添加进来，否则请查原因</span><br><span class="line">arch-chroot &#x2F;mnt</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_TW.UTF-8 UTF-8</span><br><span class="line">locale-gen</span><br><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">echo archlinux &gt; &#x2F;etc&#x2F;hostname</span><br><span class="line">nano &#x2F;etc&#x2F;hosts</span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1		    localhost</span><br><span class="line">127.0.1.1	archlinux.localdomain	archlinux</span><br><span class="line">pacman -S iw wpa_supplicant dialog</span><br><span class="line">mkinitcpio -p linux</span><br><span class="line">passwd</span><br><span class="line">pacman -S grub efibootmgr os-prober</span><br><span class="line">grub-install --target&#x3D;x86_64-efi --efi-directory&#x3D;&#x2F;boot --bootloader-id&#x3D;arch_grub</span><br><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">pacman -S  intel-ucode</span><br><span class="line">grub-mkconig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">useradd -m [你的用户名]</span><br><span class="line">passwd [你的用户名]</span><br><span class="line">nano &#x2F;etc&#x2F;sudoers</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) ALL</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">umount -R &#x2F;mnt</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"># 进入自己的账户</span><br><span class="line"></span><br><span class="line">sudo systemctl start dhcpcd</span><br><span class="line">sudo pacman -S xfce4 xfce4-goodies lxdm lxde lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings networkmanager network-manager-applet dhclient gnome-keyring seahorse libsecret gnome-keyring ntfs-3g gvfs gvfs-mtp dosfstools alsa-utils pavucontrol pulseaudio xorg xorg-xinit xterm xorg-xclock xorg-twm mesa xf86-video-intel ttf-dejavu wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-tw-fonts noto-fonts-cjk chromium firefox-i18n-zh-cn opera notepadqq vim git gradle jre10-openjdk-headless jre10-openjdk jdk10-openjdk openjdk10-doc openjdk10-src zsh fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime fcitx-cloudpinyin fcitx-sunpinyin fcitx-libpinyin pepper-flash flashplugin vlc libreoffice-fresh-zh-cn nodejs npm virtualbox create_ap catfish thunderbird-i18n-zh-cn wget qbittorrent p7zip file-roller unrar unzip zip unace lrzip gimp clang ccache astyle qmc2 rubygems virtualbox-host-modules-arch </span><br><span class="line">startx #需要用下面命令把最左边的窗口kill</span><br><span class="line">exit</span><br><span class="line">sudo systemctl enable lightdm</span><br><span class="line">sudo systemctl enable NetworkManager</span><br><span class="line">sudo reboot</span><br><span class="line"># 这里只是安装了一部分包</span><br><span class="line"># 别的还有aur，预编译源的包需要自己添加，还有各种美化+优化</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>安装</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>安装</tag>
-        <tag>ArchWiki</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
-
-<p>备注：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux添加本地仓库</title>
-    <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
-    <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
-<p>以后再也不用老是下载破东西浪费时间了</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf</span><br><span class="line">[custompkgs] #请把它添加到archlinuxcn源前面，因为我这里的包都是特制版的</span><br><span class="line">SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; file:&#x2F;&#x2F;&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch #添加特制好的包路径</span><br><span class="line">#Server &#x3D; ftp:&#x2F;&#x2F;localhost&#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;$arch</span><br><span class="line"></span><br><span class="line">repo-add &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz &#x2F;home&#x2F;[路径...]&#x2F;custompkgs&#x2F;x86_64&#x2F;*.pkg.tar.xz</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>仓库</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>仓库</tag>
-        <tag>本地仓库</tag>
-        <tag>包仓库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>好了歌</title>
     <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
     <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
@@ -503,38 +535,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>个人自定义的Openbox桌面配置文件分享</title>
-    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Openbox</tag>
-        <tag>配置文件</tag>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于信息过时问题</title>
-    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
-<p>参考如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于清空ArchLinux的Home所有配置文件说明</title>
     <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
@@ -558,34 +558,32 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>关于Windows终端个人使用和评价</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</url>
-    <content><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p>
-<p>Cygwin Terminal，不错，有很多不错的命令行工具</p>
-<p>git Terminal</p>
-<p>MINGW</p>
-<p>msys</p>
-<p>msys2</p>
-<p>这几个都是基于Cygwin做出来的特别终端，里面集成了很多常用工具</p>
-<p>WSL_ArchLinux，此终端不错，主要是用来编译各种包仓库的主力机，现在只是个玩具，连自己编译aur有一定的问题。不过可以做到babun那个使用效果，之前玩了Arch好几年，说明oh-my-zsh我都玩过的。类似wsl_ubuntu等等我就不用介绍了，美化了都是差不多。</p>
-<p>cmder，终端gui，就是ConEmu的进阶版，里面可以直接使用wsl，部分汉化，可以透明，支持壁纸</p>
-<p>ConEmu，终端gui，里面需要进行很多设置，部分汉化，可以透明，支持壁纸</p>
-<p>ConsoleZ，终端gui，全英文，功能单一，不可以设置透明</p>
-<p>wsl-terminal，终端gui，部分中文，可以透明，不支持壁纸</p>
-<p><a href="https://link.zhihu.com/?target=https%3A//eugeny.github.io/terminus/">terminus</a>，终端gui，完美中文，里面功能要付费。但是比较坑，特别是玩主机的那个同学</p>
-<p>fluent terminal，终端gui，windows terminal加强版</p>
-<p>windows terminal，终端gui，应用商店里面的，微软官方出品</p>
-<p>欢迎转载，请添加来源～</p>
+    <title>心情随笔</title>
+    <url>/2020/05/02/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>心情随笔</p>
+<p>随个锤子，心情不好<del>~</del></p>
+<p>某人说：要求工作稳定，工资高，有房有车什么的。然后人设就崩了。</p>
+<p>我什么都没有，只能一个人过。</p>
+<p>我只是一个没有明天的人。</p>
+<p>不必要多想，不必要多问。只需要照顾好自己就行。</p>
+<p>····································································································</p>
+<p>以上纯属骗眼泪的。</p>
+<p>我在想，如果这一切都符合我的预期，那么我会忙得连自己想要什么都不知道。现在变了，我自己闲了下来，思考了以后该怎么办？一句话，凉拌呗。将就着不讲究，不代表我一直将就着，一直不讲究。</p>
+<p>差不多先生常说：“凡事只要差不多就好了。何必太精明呢？”</p>
+<p>依鄙人之见，此言差矣。人活一口气，树活一张皮。凡是差不多的都是对很多情况无从选择的自我躲避、自我催眠。</p>
+<p>毕竟人有一口气，就是争气，什么都不争，那就是争。什么都争，那就是死得最快。最好的方式就是，你知道你需要什么，愿意用什么等价值的去换取。比如我愿意用一生颠沛流离去带你看一路的风景。比如你在，就是我的全部。你不在了，什么都无所谓了。</p>
+<p>··········································································································</p>
+<p>我记得我在高中上语文课的老师讲过一个<a href="http://www.baidu.com/link?url=6mJIOYpzhj8Mpj91acU3uzIFPh5NRWE-XI6Ihf21mGALaCYqRQXTZgijh5BbeNrDKXLMFEImIcoZKHUzRbfSjK" target="_blank" rel="noopener">题目:你的<em>人生五样</em>是什么?你<em>舍弃</em>的顺序是什么?</a></p>
+<p>从那里我看到了人性的本质，后来老师告诉大家为什么没有人带纸笔。我突然明白了老师的心思。人生有许多获得和失去。也有很多拿不回的东西，我们不是超人，也没有什么特殊能力。如果能够陪伴自己一辈子，到死，唯有自己的笔和纸。</p>
+<p>只要有笔和纸，我可以写下看到那时的一家团圆，开心的欢笑好时光。只要有笔和纸，无论在哪里，世界再怎么大，邮政也会帮忙将我的思念诉说带向远方。只要有笔和纸，我可以仗剑走天涯。</p>
+<p>好了，不扯了，我学习了。</p>
 ]]></content>
       <categories>
         <category>Blog</category>
-        <category>Windows</category>
-        <category>终端</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>Windows</tag>
-        <tag>终端</tag>
+        <tag>心情随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -639,31 +637,34 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>心情随笔</title>
-    <url>/2020/05/02/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>心情随笔</p>
-<p>随个锤子，心情不好<del>~</del></p>
-<p>某人说：要求工作稳定，工资高，有房有车什么的。然后人设就崩了。</p>
-<p>我什么都没有，只能一个人过。</p>
-<p>我只是一个没有明天的人。</p>
-<p>不必要多想，不必要多问。只需要照顾好自己就行。</p>
-<p>····································································································</p>
-<p>以上纯属骗眼泪的。</p>
-<p>我在想，如果这一切都符合我的预期，那么我会忙得连自己想要什么都不知道。现在变了，我自己闲了下来，思考了以后该怎么办？一句话，凉拌呗。将就着不讲究，不代表我一直将就着，一直不讲究。</p>
-<p>差不多先生常说：“凡事只要差不多就好了。何必太精明呢？”</p>
-<p>依鄙人之见，此言差矣。人活一口气，树活一张皮。凡是差不多的都是对很多情况无从选择的自我躲避、自我催眠。</p>
-<p>毕竟人有一口气，就是争气，什么都不争，那就是争。什么都争，那就是死得最快。最好的方式就是，你知道你需要什么，愿意用什么等价值的去换取。比如我愿意用一生颠沛流离去带你看一路的风景。比如你在，就是我的全部。你不在了，什么都无所谓了。</p>
-<p>··········································································································</p>
-<p>我记得我在高中上语文课的老师讲过一个<a href="http://www.baidu.com/link?url=6mJIOYpzhj8Mpj91acU3uzIFPh5NRWE-XI6Ihf21mGALaCYqRQXTZgijh5BbeNrDKXLMFEImIcoZKHUzRbfSjK" target="_blank" rel="noopener">题目:你的<em>人生五样</em>是什么?你<em>舍弃</em>的顺序是什么?</a></p>
-<p>从那里我看到了人性的本质，后来老师告诉大家为什么没有人带纸笔。我突然明白了老师的心思。人生有许多获得和失去。也有很多拿不回的东西，我们不是超人，也没有什么特殊能力。如果能够陪伴自己一辈子，到死，唯有自己的笔和纸。</p>
-<p>只要有笔和纸，我可以看到那时的一家团圆，开心的欢笑。只要有笔和纸，无论在哪里，世界再怎么大，邮政也会帮忙将我的思念诉说带向远方。只要有笔和纸，我可以仗剑走天涯。</p>
+    <title>关于Windows终端个人使用和评价</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</url>
+    <content><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p>
+<p>Cygwin Terminal，不错，有很多不错的命令行工具</p>
+<p>git Terminal</p>
+<p>MINGW</p>
+<p>msys</p>
+<p>msys2</p>
+<p>这几个都是基于Cygwin做出来的特别终端，里面集成了很多常用工具</p>
+<p>WSL_ArchLinux，此终端不错，主要是用来编译各种包仓库的主力机，现在只是个玩具，连自己编译aur有一定的问题。不过可以做到babun那个使用效果，之前玩了Arch好几年，说明oh-my-zsh我都玩过的。类似wsl_ubuntu等等我就不用介绍了，美化了都是差不多。</p>
+<p>cmder，终端gui，就是ConEmu的进阶版，里面可以直接使用wsl，部分汉化，可以透明，支持壁纸</p>
+<p>ConEmu，终端gui，里面需要进行很多设置，部分汉化，可以透明，支持壁纸</p>
+<p>ConsoleZ，终端gui，全英文，功能单一，不可以设置透明</p>
+<p>wsl-terminal，终端gui，部分中文，可以透明，不支持壁纸</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//eugeny.github.io/terminus/">terminus</a>，终端gui，完美中文，里面功能要付费。但是比较坑，特别是玩主机的那个同学</p>
+<p>fluent terminal，终端gui，windows terminal加强版</p>
+<p>windows terminal，终端gui，应用商店里面的，微软官方出品</p>
+<p>欢迎转载，请添加来源～</p>
 ]]></content>
       <categories>
         <category>Blog</category>
+        <category>Windows</category>
+        <category>终端</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>心情随笔</tag>
+        <tag>Windows</tag>
+        <tag>终端</tag>
       </tags>
   </entry>
 </search>
