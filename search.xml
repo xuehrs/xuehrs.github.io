@@ -74,6 +74,30 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
+<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>`</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchBang</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>grub2美化</title>
     <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
@@ -116,30 +140,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>Blog</tag>
         <tag>开心</tag>
         <tag>好日子</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
-<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>`</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
       </tags>
   </entry>
   <entry>
@@ -278,33 +278,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>解决打开浏览器老是输入密码和卡死问题</title>
-    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
-<p>怎么解决呢？</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>gnome-keyring</category>
-        <category>Google-Chrome</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Cheome</tag>
-        <tag>Google-Chrome</tag>
-        <tag>seahorse</tag>
-        <tag>libsecret</tag>
-        <tag>gnome-keyring</tag>
-        <tag>gnome-keyring-daemon</tag>
-        <tag>浏览器卡死</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用Fstab管理多个硬盘开机自动挂载</title>
     <url>/2018/05/06/%E4%BD%BF%E7%94%A8Fstab%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E7%A1%AC%E7%9B%98%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/</url>
     <content><![CDATA[<p><a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">参考资料</a></p>
@@ -332,6 +305,33 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>解决打开浏览器老是输入密码和卡死问题</title>
+    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
+<p>怎么解决呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>gnome-keyring</category>
+        <category>Google-Chrome</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Cheome</tag>
+        <tag>Google-Chrome</tag>
+        <tag>seahorse</tag>
+        <tag>libsecret</tag>
+        <tag>gnome-keyring</tag>
+        <tag>gnome-keyring-daemon</tag>
+        <tag>浏览器卡死</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Linux下的android手机adb和fastboot调式</title>
     <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
     <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
@@ -352,26 +352,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>ArchLinux</tag>
         <tag>Adb</tag>
         <tag>Fastboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
-
-<p>备注：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -396,24 +376,23 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>好了歌</title>
-    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
-
-<p>今天听了好了歌曲,特意搜索相关资料.</p>
-<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
-<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
-<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
-]]></content>
+<p>备注：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Blog</category>
-        <category>好了歌</category>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>好了歌</tag>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -437,6 +416,27 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>仓库</tag>
         <tag>本地仓库</tag>
         <tag>包仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好了歌</title>
+    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
+
+<p>今天听了好了歌曲,特意搜索相关资料.</p>
+<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
+<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
+<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>好了歌</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>好了歌</tag>
       </tags>
   </entry>
   <entry>
@@ -558,33 +558,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>心情随笔</title>
-    <url>/2020/05/02/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>心情随笔</p>
-<p>随个锤子，心情不好<del>~</del></p>
-<p>某人说：要求工作稳定，工资高，有房有车什么的。然后人设就崩了。</p>
-<p>我什么都没有，只能一个人过。</p>
-<p>我只是一个没有明天的人。</p>
-<p>不必要多想，不必要多问。只需要照顾好自己就行。</p>
-<p>····································································································</p>
-<p>以上纯属骗眼泪的。</p>
-<p>我在想，如果这一切都符合我的预期，那么我会忙得连自己想要什么都不知道。现在变了，我自己闲了下来，思考了以后该怎么办？一句话，凉拌呗。将就着不讲究，不代表我一直将就着，一直不讲究。</p>
-<p>差不多先生常说：“凡事只要差不多就好了。何必太精明呢？”</p>
-<p>依鄙人之见，此言差矣。人活一口气，树活一张皮。凡是差不多的都是对很多情况无从选择的自我躲避、自我催眠。</p>
-<p>毕竟人有一口气，就是争气，什么都不争，那就是争。什么都争，那就是死得最快。最好的方式就是，你知道你需要什么，愿意用什么等价值的去换取。比如我愿意用一生颠沛流离去带你看一路的风景。比如你在，就是我的全部。你不在了，什么都无所谓了。</p>
-<p>··········································································································</p>
-<p>我记得我在高中上语文课的老师讲过一个<a href="http://www.baidu.com/link?url=6mJIOYpzhj8Mpj91acU3uzIFPh5NRWE-XI6Ihf21mGALaCYqRQXTZgijh5BbeNrDKXLMFEImIcoZKHUzRbfSjK" target="_blank" rel="noopener">题目:你的<em>人生五样</em>是什么?你<em>舍弃</em>的顺序是什么?</a></p>
-<p>从那里我看到了人性的本质，后来老师告诉大家为什么没有人带纸笔。我突然明白了老师的心思。人生有许多获得和失去。也有很多拿不回的东西，我们不是超人，也没有什么特殊能力。如果能够陪伴自己一辈子，到死，唯有自己的笔和纸。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>心情随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于Windows终端个人使用和评价</title>
     <url>/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</url>
     <content><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p>
@@ -616,6 +589,30 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>关于网络喷子概论</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
+    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
+<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
+<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
+<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
+<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
+<p>​        4.只是喷子心情不好而已。</p>
+<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
+<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
+<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
+<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
+<p>欢迎转载，请添加来源～</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>李小龙</tag>
+        <tag>喷子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>昨夜瞎折腾记</title>
     <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
     <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
@@ -642,27 +639,31 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>关于网络喷子概论</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
-    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
-<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
-<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
-<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
-<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
-<p>​        4.只是喷子心情不好而已。</p>
-<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
-<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
-<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
-<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
-<p>欢迎转载，请添加来源～</p>
+    <title>心情随笔</title>
+    <url>/2020/05/02/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>心情随笔</p>
+<p>随个锤子，心情不好<del>~</del></p>
+<p>某人说：要求工作稳定，工资高，有房有车什么的。然后人设就崩了。</p>
+<p>我什么都没有，只能一个人过。</p>
+<p>我只是一个没有明天的人。</p>
+<p>不必要多想，不必要多问。只需要照顾好自己就行。</p>
+<p>····································································································</p>
+<p>以上纯属骗眼泪的。</p>
+<p>我在想，如果这一切都符合我的预期，那么我会忙得连自己想要什么都不知道。现在变了，我自己闲了下来，思考了以后该怎么办？一句话，凉拌呗。将就着不讲究，不代表我一直将就着，一直不讲究。</p>
+<p>差不多先生常说：“凡事只要差不多就好了。何必太精明呢？”</p>
+<p>依鄙人之见，此言差矣。人活一口气，树活一张皮。凡是差不多的都是对很多情况无从选择的自我躲避、自我催眠。</p>
+<p>毕竟人有一口气，就是争气，什么都不争，那就是争。什么都争，那就是死得最快。最好的方式就是，你知道你需要什么，愿意用什么等价值的去换取。比如我愿意用一生颠沛流离去带你看一路的风景。比如你在，就是我的全部。你不在了，什么都无所谓了。</p>
+<p>··········································································································</p>
+<p>我记得我在高中上语文课的老师讲过一个<a href="http://www.baidu.com/link?url=6mJIOYpzhj8Mpj91acU3uzIFPh5NRWE-XI6Ihf21mGALaCYqRQXTZgijh5BbeNrDKXLMFEImIcoZKHUzRbfSjK" target="_blank" rel="noopener">题目:你的<em>人生五样</em>是什么?你<em>舍弃</em>的顺序是什么?</a></p>
+<p>从那里我看到了人性的本质，后来老师告诉大家为什么没有人带纸笔。我突然明白了老师的心思。人生有许多获得和失去。也有很多拿不回的东西，我们不是超人，也没有什么特殊能力。如果能够陪伴自己一辈子，到死，唯有自己的笔和纸。</p>
+<p>只要有笔和纸，我可以看到那时的一家团圆，开心的欢笑。只要有笔和纸，无论在哪里，世界再怎么大，邮政也会帮忙将我的思念诉说带向远方。只要有笔和纸，我可以仗剑走天涯。</p>
 ]]></content>
       <categories>
         <category>Blog</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>李小龙</tag>
-        <tag>喷子</tag>
+        <tag>心情随笔</tag>
       </tags>
   </entry>
 </search>
