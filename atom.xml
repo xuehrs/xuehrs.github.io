@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuehrs.github.io/blog/"/>
-  <updated>2020-05-03T09:31:08.000Z</updated>
+  <updated>2020-05-13T03:27:48.000Z</updated>
   <id>http://xuehrs.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个性化资料</title>
+    <link href="http://xuehrs.github.io/blog/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/"/>
+    <id>http://xuehrs.github.io/blog/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</id>
+    <published>2020-05-13T03:27:48.000Z</published>
+    <updated>2020-05-13T03:27:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p><p>喜：硬糖、龙虾、辣条、</p><p>忌：硬糖、龙虾、辣条、酒、烟、</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。&lt;/p&gt;
+&lt;p&gt;喜：硬糖、龙虾、辣条、&lt;/p&gt;
+&lt;p&gt;忌：硬糖、龙虾、辣条、酒、烟、&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="个性化" scheme="http://xuehrs.github.io/blog/categories/Blog/%E4%B8%AA%E6%80%A7%E5%8C%96/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="个性化" scheme="http://xuehrs.github.io/blog/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/"/>
+    
+      <category term="口味" scheme="http://xuehrs.github.io/blog/tags/%E5%8F%A3%E5%91%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>心情随笔</title>
@@ -702,42 +737,6 @@
       <category term="Grub2" scheme="http://xuehrs.github.io/blog/tags/Grub2/"/>
     
       <category term="美化" scheme="http://xuehrs.github.io/blog/tags/%E7%BE%8E%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArchBang安装指南</title>
-    <link href="http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
-    <id>http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</id>
-    <published>2018-05-01T13:32:55.000Z</published>
-    <updated>2018-05-01T13:32:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure><p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure><p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>`</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;安装步骤&quot;&gt;&lt;a href=&quot;#安装步骤&quot; class=&quot;headerlink&quot; title=&quot;安装步骤&quot;&gt;&lt;/a&gt;安装步骤&lt;/h1&gt;&lt;p&gt;1.电脑是efi启动，gpt硬盘（无论有多少硬盘）&lt;br&gt;2.把archbang烧录在U盘里&lt;br&gt;3.调整好相关的bios
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
-    
-      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchBang/"/>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
-    
-      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
-    
-      <category term="ArchBang" scheme="http://xuehrs.github.io/blog/tags/ArchBang/"/>
-    
-      <category term="安装指南" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
     
   </entry>
   

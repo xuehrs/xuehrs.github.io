@@ -299,6 +299,219 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="虔诚的信徒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海人生的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" itemprop="url">ArchBang安装指南</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:32:55+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-01T21:32:55+08:00">
+                2018-05-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchBang/" itemprop="url" rel="index">
+                    <span itemprop="name">ArchBang</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/01/ArchBang安装指南/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  729
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
+<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>`</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -968,7 +1181,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -979,7 +1192,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -990,7 +1203,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
