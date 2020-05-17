@@ -299,6 +299,480 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="虔诚的信徒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海人生的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/" itemprop="url">关于清空ArchLinux的Home所有配置文件说明</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T17:35:22+08:00">
+                2018-08-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-12T17:35:22+08:00">
+                2018-08-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchLinux/" itemprop="url" rel="index">
+                    <span itemprop="name">ArchLinux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/12/关于清空ArchLinux的Home所有配置文件说明/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  262
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
+<p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p>
+<p>需要做的步骤如下：</p>
+<p>步骤一：</p>
+<p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p>
+<p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p>
+<p>步骤二：</p>
+<p>部分桌面合成特效有问题</p>
+<p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/07/02/ArchLinux%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%BF%9B%E4%BB%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="虔诚的信徒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海人生的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/02/ArchLinux%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%BF%9B%E4%BB%B7/" itemprop="url">ArchLinux本地仓库进价</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-02T14:08:37+08:00">
+                2018-07-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-08T14:08:37+08:00">
+                2018-07-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchLinux/" itemprop="url" rel="index">
+                    <span itemprop="name">ArchLinux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchLinux/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">本地仓库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/02/ArchLinux%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%BF%9B%E4%BB%B7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/02/ArchLinux本地仓库进价/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>前面教程我做过本地仓库，而且还能支持离线安装Archlinux。</p>
+<p>现在，当你的本地仓库包多了，甚至里面有不少的自制包，还有那些过期的包如果管理。别急，在这里我可以用文章为你介绍如何更好的管理本地仓库，甚至局域网仓库！当然，你也可以把你自己做好的仓库分享到互联网上去。让其添加到Archlinux里的AUR推荐源列表上。但是，要注意了，不要把无版权的东西随意添加的互联网上，不然要吃官司的。</p>
+<h2 id="安装repoctl和查看使用方法"><a href="#安装repoctl和查看使用方法" class="headerlink" title="安装repoctl和查看使用方法"></a>安装repoctl和查看使用方法</h2><p>官方直达连接<a href="https://github.com/cassava/repoctl" target="_blank" rel="noopener">https://github.com/cassava/repoctl</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S repoctl -i</span><br><span class="line">sudo pacman -S repoctl</span><br><span class="line">repoctl --help</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用前的准备"><a href="#使用前的准备" class="headerlink" title="使用前的准备"></a>使用前的准备</h2><p>在你使用repoctl之前，你需要创建一个配置文件。这告诉repoctl您的本地存储库在哪里，等等。由于没有人真的喜欢这个步骤，repoctl可以为你写一个默认配置。它还会告诉你它在哪里写配置文件，以便以后可以更改它。</p>
+<p>假设你想要你的仓库在<code>～/custompkgs/x86_64/</code>，并且想要命名它<code>custompkgs</code>。然后你会运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repoctl new config ～&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz</span><br><span class="line">repoctl add ～&#x2F;custompkgs&#x2F;x86_64&#x2F;*.pkg.tar.xz</span><br></pre></td></tr></table></figure>
+
+<p>但是还差一些东西，你需要编辑这个配置文件以适合使用要求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano ~&#x2F;.config&#x2F;repoctl&#x2F;config.toml</span><br></pre></td></tr></table></figure>
+
+<p>##　灵活使用repoctl工具</p>
+<p>如果前面的准备做好了，你可以直接这样做，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf </span><br><span class="line"></span><br><span class="line">#这个东西你可以按照需要确定放到哪个位置！不懂的，可以直接放到最后一行</span><br><span class="line">[custompkgs]</span><br><span class="line">SigLevel &#x3D; Never　＃表示忽略包签名</span><br><span class="line">#SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; file:&#x2F;&#x2F;&#x2F;home&#x2F;[你的用户名]&#x2F;custompkgs&#x2F;$arch</span><br><span class="line">#说明，如果你想添加这个，你必须把[文件名].db.tar.gz放到～&#x2F;custompkgs&#x2F;x86_64&#x2F;里面。不然会说数据库错误！</span><br><span class="line"></span><br><span class="line">#然后直接更新源</span><br><span class="line">sudo pacman -Syu</span><br><span class="line">sudo pacman -S　[仓库里的包名]</span><br></pre></td></tr></table></figure>
+
+<p>如果你已经添加做好的包到<code>～/custompkgs/x86_64/</code>，你可以运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repoctl update #运行repoctl update之前，一定要确认好是否保留旧包，否则请先跳过这个命令</span><br></pre></td></tr></table></figure>
+
+<p>如果你想保留旧版本的包，你可以这样做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano ~&#x2F;.config&#x2F;repoctl&#x2F;config.toml</span><br><span class="line"></span><br><span class="line"># ...</span><br><span class="line">backup &#x3D; true</span><br><span class="line">backup_dir &#x3D; &quot;&quot;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>如果你想支持本地分享远程仓库，以支持非本地互联网用户使用，不好意思，我对sshfs这个包不太了解，只能使用其它工具挂载远程仓库，如果你有不错的方法，可以告诉我。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S sshfs</span><br><span class="line">sshfs --help</span><br><span class="line">？？？？？？</span><br></pre></td></tr></table></figure>
+
+<p>如果你想查看有什么需要升级，你可以这样做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repoctl status -a</span><br></pre></td></tr></table></figure>
+
+<p>如果你想获取所有可以升级的AUR，你可以这样做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repoctl down -u -l #注意，一定要在指定的临时目录使用。比如&#x2F;tmp&#x2F;[文件名],可以加快编译速度 </span><br><span class="line"># -u：表示获取所有可升级的aur脚本。-l：表示强制覆盖文件，不会覆盖无关文件</span><br></pre></td></tr></table></figure>
+
+<p>如果你想makepkg脚本后，把编译好的包自动添加到custompkgs仓库中，你可以这样做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;makepkg.conf</span><br><span class="line"></span><br><span class="line">#...</span><br><span class="line">PKGDEST&#x3D;～&#x2F;custompkgs&#x2F;x86_64</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>##　我的repoctl配置文件内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"># repoctl configuration</span><br><span class="line"></span><br><span class="line"># repo is the full path to the repository that will be managed by repoctl.</span><br><span class="line"># The packages that belong to the repository are assumed to lie in the</span><br><span class="line"># same folder.</span><br><span class="line">repo &#x3D; &quot;&#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;custompkgs.db.tar.gz&quot;</span><br><span class="line"></span><br><span class="line"># add_params is the set of parameters that will be passed to repo-add</span><br><span class="line"># when it is called. Specify one time for each parameter.</span><br><span class="line">#原因未知</span><br><span class="line">add_params &#x3D; [</span><br><span class="line">  &quot;-v&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># rm_params is the set of parameters that will be passed to repo-remove</span><br><span class="line"># when it is called. Specify one time for each parameter.</span><br><span class="line">rm_params &#x3D; []</span><br><span class="line"></span><br><span class="line"># ignore_aur is a set of package names that are ignored in conjunction</span><br><span class="line"># with AUR related tasks, such as determining if there is an update or not.</span><br><span class="line">ignore_aur &#x3D; []</span><br><span class="line"></span><br><span class="line"># backup specifies whether package files should be backed up or deleted.</span><br><span class="line"># If it is set to false, then obsolete package files are deleted.</span><br><span class="line">#让旧包留在仓库里，永远不要自动清理</span><br><span class="line">backup &#x3D; true</span><br><span class="line"></span><br><span class="line"># backup_dir specifies which directory backups are stored in.</span><br><span class="line"># - If a relative path is given, then it is interpreted as relative to</span><br><span class="line">#   the repository directory.</span><br><span class="line"># - If the path here resolves to the same as repo, then obsolete packages</span><br><span class="line">#   are effectively ignored by repoctl, if backup is true.</span><br><span class="line">#指定旧包的路径，如果仓库里的旧包和与backup_dir指定路径里的旧包冲突，那么仓库里的旧包会覆盖backup_dir指定路径里的旧包。</span><br><span class="line">backup_dir &#x3D; &quot;&quot;</span><br><span class="line"></span><br><span class="line"># interactive specifies that repoctl should ask before doing anything</span><br><span class="line"># destructive.</span><br><span class="line">interactive &#x3D; false</span><br><span class="line"></span><br><span class="line"># columnate specifies that listings should be in columns rather than</span><br><span class="line"># in lines. This only applies to the list command.</span><br><span class="line">columnate &#x3D; true</span><br><span class="line"></span><br><span class="line"># color specifies when to use color. Can be one of auto, always, and never.</span><br><span class="line">color &#x3D; &quot;auto&quot;</span><br><span class="line"></span><br><span class="line"># quiet specifies whether repoctl should print more information or less.</span><br><span class="line"># I prefer to know what happens, but if you don&#39;t like it, you can change it.</span><br><span class="line">quiet &#x3D; false</span><br><span class="line"></span><br><span class="line"># pre_action is a command that should be executed before doing anything</span><br><span class="line"># with the repository, like reading or modifying it. Useful for mounting</span><br><span class="line"># a remote filesystem.</span><br><span class="line">#无法使用</span><br><span class="line">#pre_action &#x3D; &quot;sshfs host:www.pkgs.me &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;&quot;</span><br><span class="line"></span><br><span class="line"># post_action is a command that should be executed before exiting.</span><br><span class="line">#无法使用</span><br><span class="line">#post_action &#x3D; &quot;fusermount -u &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;&quot;</span><br><span class="line"></span><br><span class="line"># action_on_completion determines whether repols should perform the</span><br><span class="line"># actions or not. By default, this is disallowed.</span><br><span class="line">action_on_completion &#x3D; true</span><br></pre></td></tr></table></figure>
+
+<h2 id="小提示"><a href="#小提示" class="headerlink" title="小提示"></a>小提示</h2><p>有了本地仓库，但是问题来了，我本地仓库里有包，但是我不想下载，想直接安装，怎么办？</p>
+<p>如果你想把仓库里的包导入到下载的缓存里面，也就是说，如果pacman搜了一个包，只要本地缓存里面有的，直接安装，不必要下载多余的包！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;pacman.conf</span><br><span class="line"></span><br><span class="line">…</span><br><span class="line">#CacheDir    &#x3D; &#x2F;var&#x2F;cache&#x2F;pacman&#x2F;pkg&#x2F;</span><br><span class="line">CacheDir    &#x3D; &#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64&#x2F;</span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>AUR里的包确实比较麻烦！你需要改变，缺点就是必须手动makepkg，它会自动添加到指定仓库里。而我只是做个定时检测/tmp目录是否有包的脚本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;makepkg.conf</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">#PKGDEST&#x3D;&#x2F;home&#x2F;packages</span><br><span class="line">PKGDEST&#x3D;&#x2F;home&#x2F;[用户名]&#x2F;custompkgs&#x2F;x86_64</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2121,462 +2595,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="虔诚的信徒">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学海人生的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/" itemprop="url">ArchLinux下的Yaourt神器</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T11:57:05+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-03T11:57:05+08:00">
-                2018-05-03
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/ArchLinux/" itemprop="url" rel="index">
-                    <span itemprop="name">ArchLinux</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/ArchLinux/Yaourt/" itemprop="url" rel="index">
-                    <span itemprop="name">Yaourt</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/02/ArchLinux下的Yaourt神器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  337
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
-
-<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
-<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
-<hr>
-<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
-
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="虔诚的信徒">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学海人生的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/" itemprop="url">grub2美化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:13:55+08:00">
-                2018-05-01
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-02T22:13:55+08:00">
-                2018-05-02
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/Grub/" itemprop="url" rel="index">
-                    <span itemprop="name">Grub</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/01/grub2美化/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  194
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
-<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
-
-<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
-<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
-<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
-<p>更新时间：20180502</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2633,7 +2651,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2644,7 +2662,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2655,7 +2673,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2736,7 +2754,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10k</span>
+    <span title="Site words total count">10.1k</span>
   
 </div>
 

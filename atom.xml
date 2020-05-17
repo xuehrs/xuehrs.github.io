@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuehrs.github.io/blog/"/>
-  <updated>2020-05-17T17:59:48.636Z</updated>
+  <updated>2020-03-28T07:26:05.466Z</updated>
   <id>http://xuehrs.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://xuehrs.github.io/blog/2020/05/18/hello-world/"/>
+    <id>http://xuehrs.github.io/blog/2020/05/18/hello-world/</id>
+    <published>2020-05-17T18:02:01.637Z</published>
+    <updated>2020-03-28T07:26:05.466Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>个性化资料</title>
@@ -147,6 +169,38 @@
       <category term="折腾" scheme="http://xuehrs.github.io/blog/tags/%E6%8A%98%E8%85%BE/"/>
     
       <category term="随缘" scheme="http://xuehrs.github.io/blog/tags/%E9%9A%8F%E7%BC%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于催收想法！</title>
+    <link href="http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8E%E5%82%AC%E6%94%B6%E6%83%B3%E6%B3%95%EF%BC%81/"/>
+    <id>http://xuehrs.github.io/blog/2020/03/27/%E5%85%B3%E4%BA%8E%E5%82%AC%E6%94%B6%E6%83%B3%E6%B3%95%EF%BC%81/</id>
+    <published>2020-03-27T09:39:04.000Z</published>
+    <updated>2020-03-27T09:39:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>说句话，家庭没背景不合适。如果催收容易，那也不会有什么上征信的老赖了。若是容易，也早就按法院规定处理了。剩下要么没钱，要么把钱藏起来了。</p><p>欢迎转载，请添加来源～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;说句话，家庭没背景不合适。如果催收容易，那也不会有什么上征信的老赖了。若是容易，也早就按法院规定处理了。剩下要么没钱，要么把钱藏起来了。&lt;/p&gt;
+&lt;p&gt;欢迎转载，请添加来源～&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="催收" scheme="http://xuehrs.github.io/blog/categories/Blog/%E5%82%AC%E6%94%B6/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="催收" scheme="http://xuehrs.github.io/blog/tags/%E5%82%AC%E6%94%B6/"/>
     
   </entry>
   
@@ -664,82 +718,6 @@
       <category term="笔记" scheme="http://xuehrs.github.io/blog/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="博客" scheme="http://xuehrs.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArchLinux下的Yaourt神器</title>
-    <link href="http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/"/>
-    <id>http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</id>
-    <published>2018-05-02T03:57:05.000Z</published>
-    <updated>2018-05-03T03:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class=""><img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class=""><h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure><p>之后安装 archlinuxcn-keyring 包导入 GPG key</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure><p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p><hr><p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它&lt;br&gt;参考&lt;a href=&quot;https://archlinux.fr/yaourt-en&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方介绍&lt;/a&gt;&lt;br&gt;参考&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
-    
-      <category term="Yaourt" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/Yaourt/"/>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
-    
-      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
-    
-      <category term="Yaourt" scheme="http://xuehrs.github.io/blog/tags/Yaourt/"/>
-    
-      <category term="神器" scheme="http://xuehrs.github.io/blog/tags/%E7%A5%9E%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>grub2美化</title>
-    <link href="http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/"/>
-    <id>http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</id>
-    <published>2018-05-01T14:13:55.000Z</published>
-    <updated>2018-05-02T14:13:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片"><h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class=""><img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class=""><p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure><p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p><h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p><p>更新时间：20180502</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://github.com/xuehrs/Grub-Themes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Introduction-of-documents&lt;/a&gt; &lt;a href=&quot;https://github.com/
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
-    
-      <category term="Grub" scheme="http://xuehrs.github.io/blog/categories/Linux/Grub/"/>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
-    
-      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
-    
-      <category term="Grub" scheme="http://xuehrs.github.io/blog/tags/Grub/"/>
-    
-      <category term="Grub2" scheme="http://xuehrs.github.io/blog/tags/Grub2/"/>
-    
-      <category term="美化" scheme="http://xuehrs.github.io/blog/tags/%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   

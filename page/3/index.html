@@ -299,6 +299,462 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="虔诚的信徒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海人生的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/" itemprop="url">ArchLinux下的Yaourt神器</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T11:57:05+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-03T11:57:05+08:00">
+                2018-05-03
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchLinux/" itemprop="url" rel="index">
+                    <span itemprop="name">ArchLinux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/ArchLinux/Yaourt/" itemprop="url" rel="index">
+                    <span itemprop="name">Yaourt</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/02/ArchLinux下的Yaourt神器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  337
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
+
+<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
+<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
+<hr>
+<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/01/grub2%E7%BE%8E%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="虔诚的信徒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海人生的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/" itemprop="url">grub2美化</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:13:55+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-02T22:13:55+08:00">
+                2018-05-02
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/Grub/" itemprop="url" rel="index">
+                    <span itemprop="name">Grub</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/01/grub2美化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  194
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
+<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
+
+<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
+<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
+<p>更新时间：20180502</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuehrs.github.io/blog/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -559,8 +1015,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-02T22:42:44+08:00">
-                2020-05-02
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-02T12:41:48+08:00">
+                2018-05-02
               </time>
             
           </span>
@@ -1181,7 +1637,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1192,7 +1648,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1203,7 +1659,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1284,7 +1740,7 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10k</span>
+    <span title="Site words total count">10.1k</span>
   
 </div>
 
