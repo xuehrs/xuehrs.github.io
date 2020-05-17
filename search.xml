@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>grub2美化</title>
+    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
+    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
+<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
+
+<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
+<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
+<p>更新时间：20180502</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Grub</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Grub</tag>
+        <tag>Grub2</tag>
+        <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
+<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>`</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchBang</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2018/04/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -17,6 +70,22 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>您好！我来了！</title>
+    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
+    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
+<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>开心</tag>
+        <tag>好日子</tag>
+      </tags>
   </entry>
   <entry>
     <title>ArchBang官方送的残本指南</title>
@@ -74,48 +143,98 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>您好！我来了！</title>
-    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
-    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
-<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+    <title>What is Markdown?</title>
+    <url>/2018/05/03/What-is-Markdown/</url>
+    <content><![CDATA[<p><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">推荐GitHub的makrdown教程</a><br><br><a href="https://guides.github.com/" target="_blank" rel="noopener">GitHub相关总教程</a><br>如果你能手动把这个教程拷到blog，那就是入门了</p>
+<ul>
+<li><p>Headers</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># This is an &lt;h1&gt; tag</span><br><span class="line">## This is an &lt;h2&gt; tag</span><br><span class="line">###### This is an &lt;h6&gt; tag</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Emphasis</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*This text will be italic*</span><br><span class="line">_This will also be italic_</span><br><span class="line"></span><br><span class="line">**This text will be bold**</span><br><span class="line">__This will also be bold__</span><br><span class="line"></span><br><span class="line">_You **can** combine them_</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Lists</p>
+<ul>
+<li>Unordered<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* Item 1</span><br><span class="line">* Item 2</span><br><span class="line">  * Item 2a</span><br><span class="line">  * Item 2b</span><br></pre></td></tr></table></figure></li>
+<li>Ordered<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. Item 1</span><br><span class="line">1. Item 2</span><br><span class="line">1. Item 3</span><br><span class="line">   1. Item 3a</span><br><span class="line">   1. Item 3b</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Images</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![GitHub Logo](&#x2F;images&#x2F;logo.png)</span><br><span class="line">Format: ![Alt Text](url)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Links</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;github.com - automatic!</span><br><span class="line">[GitHub](http:&#x2F;&#x2F;github.com)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Blockquotes</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">As Kanye West said:</span><br><span class="line"></span><br><span class="line">&gt; We&#39;re living the future so</span><br><span class="line">&gt; the present is our past.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Inline code</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">I think you should use an&#96;&lt;addr&gt;&#96; element here instead.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Syntax highlighting</p>
+<p>Here’s an example of how you can use syntax highlighting with GitHub FlavoreMarkdown:</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(arg) &#123;</span><br><span class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>You can also simply indent your code by four spaces:</p>
+<pre><code>function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:&apos;#foo&apos;})
+  }
+}</code></pre><p>Here’s an example of Python code without syntax highlighting:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    if not bar:</span><br><span class="line">        return True</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Task Lists</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- [x] @mentions, #refs, [links](), **formatting**, and &lt;del&gt;tags&lt;&#x2F;del&gt; supported</span><br><span class="line">- [x] list syntax required (any unordered or ordered list supported)</span><br><span class="line">- [x] this is a complete item</span><br><span class="line">- [ ] this is an incomplete item</span><br></pre></td></tr></table></figure>
+<p> If you include a task list in the first comment of an Issue, you will get a handy progress indicator in your issue list. It also works in Pull Requests!</p>
+</li>
+<li><p>Tables<br>You can create tables by assembling a list of words and dividing them with hyphens - (for the first row), and then separating each column with a pipe |:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">First Header | Second Header</span><br><span class="line">------------ | -------------</span><br><span class="line">Content from cell 1 | Content from cell 2</span><br><span class="line">Content in the first column | Content in the second column</span><br></pre></td></tr></table></figure>
+
+<p>Would become: (这表格太丑了)</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content from cell 1</td>
+<td>Content from cell 2</td>
+</tr>
+<tr>
+<td>Content in the first column</td>
+<td>Content in the second column</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>SHA references<br>Any reference to a commit’s SHA-1 hash will be automatically converted into a link to that commit on GitHub.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo@16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo&#x2F;github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac</span><br></pre></td></tr></table></figure></li>
+<li><p>Issue references within a repository<br>Any number that refers to an Issue or Pull Request will be automatically converted into a link.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#1</span><br><span class="line">mojombo#1</span><br><span class="line">mojombo&#x2F;github-flavored-markdown#1</span><br></pre></td></tr></table></figure></li>
+<li><p>Username @mentions</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Typing an @ symbol, followed by a username, will notify that person to come and view the comment. This is called an “@mention”, because you’re mentioning the individual. You can also @mention teams within an organization.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Automatic linking for URLs</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Any URL (like http:&#x2F;&#x2F;www.github.com&#x2F;) will be automatically converted into a clickable link.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Strikethrough</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Blog</category>
+        <category>MarkDown</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
-        <tag>开心</tag>
-        <tag>好日子</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>grub2美化</title>
-    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
-    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
-<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
-
-<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
-<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
-<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
-<p>更新时间：20180502</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Grub</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Grub</tag>
-        <tag>Grub2</tag>
-        <tag>美化</tag>
+        <tag>blog</tag>
+        <tag>MarkDown</tag>
+        <tag>笔记</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -159,54 +278,23 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
-<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
 
-<p>`</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决打开浏览器老是输入密码和卡死问题</title>
-    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
-<p>怎么解决呢？</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
-
-]]></content>
+<p>备注：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Linux</category>
         <category>ArchLinux</category>
-        <category>gnome-keyring</category>
-        <category>Google-Chrome</category>
+        <category>睡眠</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-        <tag>Cheome</tag>
-        <tag>Google-Chrome</tag>
-        <tag>seahorse</tag>
-        <tag>libsecret</tag>
-        <tag>gnome-keyring</tag>
-        <tag>gnome-keyring-daemon</tag>
-        <tag>浏览器卡死</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -237,6 +325,33 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>解决打开浏览器老是输入密码和卡死问题</title>
+    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
+<p>怎么解决呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>gnome-keyring</category>
+        <category>Google-Chrome</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Cheome</tag>
+        <tag>Google-Chrome</tag>
+        <tag>seahorse</tag>
+        <tag>libsecret</tag>
+        <tag>gnome-keyring</tag>
+        <tag>gnome-keyring-daemon</tag>
+        <tag>浏览器卡死</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Linux下的android手机adb和fastboot调式</title>
     <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
     <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
@@ -260,40 +375,24 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
+    <title>关于ArchLinux安装命令步骤</title>
+    <url>/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p>
+<p>说明：这里有三个桌面随便耍，具体请自己查看命令步骤</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start dhcpcd #我用的是Android手机做WiFi无线网卡</span><br><span class="line">ping baidu.com #ctrl+c终止进程</span><br><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br><span class="line">timedatectl</span><br><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl</span><br><span class="line">fdisk -l</span><br><span class="line">lsblk</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">lsblk</span><br><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda1</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home</span><br><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;home</span><br><span class="line">lsblk</span><br><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br><span class="line">pacstrap -i &#x2F;mnt base base-devel</span><br><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br><span class="line">cat &#x2F;mnt&#x2F;etc&#x2F;ifstab #三个分区必须添加进来，否则请查原因</span><br><span class="line">arch-chroot &#x2F;mnt</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_TW.UTF-8 UTF-8</span><br><span class="line">locale-gen</span><br><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">echo archlinux &gt; &#x2F;etc&#x2F;hostname</span><br><span class="line">nano &#x2F;etc&#x2F;hosts</span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1		    localhost</span><br><span class="line">127.0.1.1	archlinux.localdomain	archlinux</span><br><span class="line">pacman -S iw wpa_supplicant dialog</span><br><span class="line">mkinitcpio -p linux</span><br><span class="line">passwd</span><br><span class="line">pacman -S grub efibootmgr os-prober</span><br><span class="line">grub-install --target&#x3D;x86_64-efi --efi-directory&#x3D;&#x2F;boot --bootloader-id&#x3D;arch_grub</span><br><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">pacman -S  intel-ucode</span><br><span class="line">grub-mkconig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">useradd -m [你的用户名]</span><br><span class="line">passwd [你的用户名]</span><br><span class="line">nano &#x2F;etc&#x2F;sudoers</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) ALL</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">umount -R &#x2F;mnt</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"># 进入自己的账户</span><br><span class="line"></span><br><span class="line">sudo systemctl start dhcpcd</span><br><span class="line">sudo pacman -S xfce4 xfce4-goodies lxdm lxde lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings networkmanager network-manager-applet dhclient gnome-keyring seahorse libsecret gnome-keyring ntfs-3g gvfs gvfs-mtp dosfstools alsa-utils pavucontrol pulseaudio xorg xorg-xinit xterm xorg-xclock xorg-twm mesa xf86-video-intel ttf-dejavu wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-tw-fonts noto-fonts-cjk chromium firefox-i18n-zh-cn opera notepadqq vim git gradle jre10-openjdk-headless jre10-openjdk jdk10-openjdk openjdk10-doc openjdk10-src zsh fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime fcitx-cloudpinyin fcitx-sunpinyin fcitx-libpinyin pepper-flash flashplugin vlc libreoffice-fresh-zh-cn nodejs npm virtualbox create_ap catfish thunderbird-i18n-zh-cn wget qbittorrent p7zip file-roller unrar unzip zip unace lrzip gimp clang ccache astyle qmc2 rubygems virtualbox-host-modules-arch </span><br><span class="line">startx #需要用下面命令把最左边的窗口kill</span><br><span class="line">exit</span><br><span class="line">sudo systemctl enable lightdm</span><br><span class="line">sudo systemctl enable NetworkManager</span><br><span class="line">sudo reboot</span><br><span class="line"># 这里只是安装了一部分包</span><br><span class="line"># 别的还有aur，预编译源的包需要自己添加，还有各种美化+优化</span><br></pre></td></tr></table></figure>
 
-<p>备注：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <categories>
         <category>Linux</category>
         <category>ArchLinux</category>
-        <category>睡眠</category>
+        <category>安装</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人自定义的Openbox桌面配置文件分享</title>
-    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Openbox</tag>
-        <tag>配置文件</tag>
-        <tag>配置</tag>
+        <tag>安装</tag>
+        <tag>ArchWiki</tag>
       </tags>
   </entry>
   <entry>
@@ -317,6 +416,23 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>仓库</tag>
         <tag>本地仓库</tag>
         <tag>包仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Openbox</tag>
+        <tag>配置文件</tag>
+        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
@@ -419,27 +535,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>关于ArchLinux安装命令步骤</title>
-    <url>/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p>
-<p>说明：这里有三个桌面随便耍，具体请自己查看命令步骤</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start dhcpcd #我用的是Android手机做WiFi无线网卡</span><br><span class="line">ping baidu.com #ctrl+c终止进程</span><br><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br><span class="line">timedatectl</span><br><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl</span><br><span class="line">fdisk -l</span><br><span class="line">lsblk</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br><span class="line">cfdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">lsblk</span><br><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda1</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home</span><br><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;home</span><br><span class="line">lsblk</span><br><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br><span class="line">pacstrap -i &#x2F;mnt base base-devel</span><br><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br><span class="line">cat &#x2F;mnt&#x2F;etc&#x2F;ifstab #三个分区必须添加进来，否则请查原因</span><br><span class="line">arch-chroot &#x2F;mnt</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_TW.UTF-8 UTF-8</span><br><span class="line">locale-gen</span><br><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">echo archlinux &gt; &#x2F;etc&#x2F;hostname</span><br><span class="line">nano &#x2F;etc&#x2F;hosts</span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1		    localhost</span><br><span class="line">127.0.1.1	archlinux.localdomain	archlinux</span><br><span class="line">pacman -S iw wpa_supplicant dialog</span><br><span class="line">mkinitcpio -p linux</span><br><span class="line">passwd</span><br><span class="line">pacman -S grub efibootmgr os-prober</span><br><span class="line">grub-install --target&#x3D;x86_64-efi --efi-directory&#x3D;&#x2F;boot --bootloader-id&#x3D;arch_grub</span><br><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">pacman -S  intel-ucode</span><br><span class="line">grub-mkconig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br><span class="line">useradd -m [你的用户名]</span><br><span class="line">passwd [你的用户名]</span><br><span class="line">nano &#x2F;etc&#x2F;sudoers</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) ALL</span><br><span class="line">[你的用户名] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">exit</span><br><span class="line">umount -R &#x2F;mnt</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"># 进入自己的账户</span><br><span class="line"></span><br><span class="line">sudo systemctl start dhcpcd</span><br><span class="line">sudo pacman -S xfce4 xfce4-goodies lxdm lxde lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings networkmanager network-manager-applet dhclient gnome-keyring seahorse libsecret gnome-keyring ntfs-3g gvfs gvfs-mtp dosfstools alsa-utils pavucontrol pulseaudio xorg xorg-xinit xterm xorg-xclock xorg-twm mesa xf86-video-intel ttf-dejavu wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-tw-fonts noto-fonts-cjk chromium firefox-i18n-zh-cn opera notepadqq vim git gradle jre10-openjdk-headless jre10-openjdk jdk10-openjdk openjdk10-doc openjdk10-src zsh fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime fcitx-cloudpinyin fcitx-sunpinyin fcitx-libpinyin pepper-flash flashplugin vlc libreoffice-fresh-zh-cn nodejs npm virtualbox create_ap catfish thunderbird-i18n-zh-cn wget qbittorrent p7zip file-roller unrar unzip zip unace lrzip gimp clang ccache astyle qmc2 rubygems virtualbox-host-modules-arch </span><br><span class="line">startx #需要用下面命令把最左边的窗口kill</span><br><span class="line">exit</span><br><span class="line">sudo systemctl enable lightdm</span><br><span class="line">sudo systemctl enable NetworkManager</span><br><span class="line">sudo reboot</span><br><span class="line"># 这里只是安装了一部分包</span><br><span class="line"># 别的还有aur，预编译源的包需要自己添加，还有各种美化+优化</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>安装</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>安装</tag>
-        <tag>ArchWiki</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于清空ArchLinux的Home所有配置文件说明</title>
     <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
@@ -460,30 +555,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于网络喷子概论</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
-    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
-<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
-<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
-<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
-<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
-<p>​        4.只是喷子心情不好而已。</p>
-<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
-<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
-<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
-<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
-<p>欢迎转载，请添加来源～</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>李小龙</tag>
-        <tag>喷子</tag>
       </tags>
   </entry>
   <entry>
@@ -518,106 +589,40 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>What is Markdown?</title>
-    <url>/2018/05/03/What-is-Markdown/</url>
-    <content><![CDATA[<p><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">推荐GitHub的makrdown教程</a><br><br><a href="https://guides.github.com/" target="_blank" rel="noopener">GitHub相关总教程</a><br>如果你能手动把这个教程拷到blog，那就是入门了</p>
-<ul>
-<li><p>Headers</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># This is an &lt;h1&gt; tag</span><br><span class="line">## This is an &lt;h2&gt; tag</span><br><span class="line">###### This is an &lt;h6&gt; tag</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Emphasis</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*This text will be italic*</span><br><span class="line">_This will also be italic_</span><br><span class="line"></span><br><span class="line">**This text will be bold**</span><br><span class="line">__This will also be bold__</span><br><span class="line"></span><br><span class="line">_You **can** combine them_</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Lists</p>
-<ul>
-<li>Unordered<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* Item 1</span><br><span class="line">* Item 2</span><br><span class="line">  * Item 2a</span><br><span class="line">  * Item 2b</span><br></pre></td></tr></table></figure></li>
-<li>Ordered<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. Item 1</span><br><span class="line">1. Item 2</span><br><span class="line">1. Item 3</span><br><span class="line">   1. Item 3a</span><br><span class="line">   1. Item 3b</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Images</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![GitHub Logo](&#x2F;images&#x2F;logo.png)</span><br><span class="line">Format: ![Alt Text](url)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Links</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;github.com - automatic!</span><br><span class="line">[GitHub](http:&#x2F;&#x2F;github.com)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Blockquotes</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">As Kanye West said:</span><br><span class="line"></span><br><span class="line">&gt; We&#39;re living the future so</span><br><span class="line">&gt; the present is our past.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Inline code</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">I think you should use an&#96;&lt;addr&gt;&#96; element here instead.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Syntax highlighting</p>
-<p>Here’s an example of how you can use syntax highlighting with GitHub FlavoreMarkdown:</p>
-  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(arg) &#123;</span><br><span class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>You can also simply indent your code by four spaces:</p>
-<pre><code>function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:&apos;#foo&apos;})
-  }
-}</code></pre><p>Here’s an example of Python code without syntax highlighting:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    if not bar:</span><br><span class="line">        return True</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Task Lists</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- [x] @mentions, #refs, [links](), **formatting**, and &lt;del&gt;tags&lt;&#x2F;del&gt; supported</span><br><span class="line">- [x] list syntax required (any unordered or ordered list supported)</span><br><span class="line">- [x] this is a complete item</span><br><span class="line">- [ ] this is an incomplete item</span><br></pre></td></tr></table></figure>
-<p> If you include a task list in the first comment of an Issue, you will get a handy progress indicator in your issue list. It also works in Pull Requests!</p>
-</li>
-<li><p>Tables<br>You can create tables by assembling a list of words and dividing them with hyphens - (for the first row), and then separating each column with a pipe |:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">First Header | Second Header</span><br><span class="line">------------ | -------------</span><br><span class="line">Content from cell 1 | Content from cell 2</span><br><span class="line">Content in the first column | Content in the second column</span><br></pre></td></tr></table></figure>
-
-<p>Would become: (这表格太丑了)</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content from cell 1</td>
-<td>Content from cell 2</td>
-</tr>
-<tr>
-<td>Content in the first column</td>
-<td>Content in the second column</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>SHA references<br>Any reference to a commit’s SHA-1 hash will be automatically converted into a link to that commit on GitHub.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo@16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo&#x2F;github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac</span><br></pre></td></tr></table></figure></li>
-<li><p>Issue references within a repository<br>Any number that refers to an Issue or Pull Request will be automatically converted into a link.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#1</span><br><span class="line">mojombo#1</span><br><span class="line">mojombo&#x2F;github-flavored-markdown#1</span><br></pre></td></tr></table></figure></li>
-<li><p>Username @mentions</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Typing an @ symbol, followed by a username, will notify that person to come and view the comment. This is called an “@mention”, because you’re mentioning the individual. You can also @mention teams within an organization.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Automatic linking for URLs</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Any URL (like http:&#x2F;&#x2F;www.github.com&#x2F;) will be automatically converted into a clickable link.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Strikethrough</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+    <title>关于网络喷子概论</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
+    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
+<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
+<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
+<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
+<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
+<p>​        4.只是喷子心情不好而已。</p>
+<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
+<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
+<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
+<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
+<p>欢迎转载，请添加来源～</p>
 ]]></content>
       <categories>
         <category>Blog</category>
-        <category>MarkDown</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>MarkDown</tag>
-        <tag>笔记</tag>
-        <tag>博客</tag>
+        <tag>李小龙</tag>
+        <tag>喷子</tag>
       </tags>
   </entry>
   <entry>
     <title>个性化资料</title>
     <url>/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</url>
     <content><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p>
-<p>喜：硬糖、龙虾、辣条、</p>
-<p>忌：硬糖、龙虾、辣条、酒、烟、</p>
+<p>食物喜好：</p>
+<p>喜：辣条、硬糖、</p>
+<p>忌：烟、酒、龙虾、辣条、硬糖、生姜</p>
+<p>歌曲喜好：</p>
+<p>喜：慢歌，老歌，人声清晰，好听，正面的</p>
+<p>忌：没法唱的，不可外放的，三观不正的，口水歌，歪歌，恶搞国歌的人，中国风歌曲感觉有点弱智</p>
+<p>不偏民调，原因是民调歌曲，心事多。容易被歌曲主人公潜移默化地影响。从心理学上讲，人是群众动物，为了能够融入他们，就得放大与别人相近的地方，以便获得相近的主观共识（类似精神快感）。尤其夫妻方面比较明显，一起久了，双方行为和生活习惯越来越像了，甚至容貌也有一部分相似的地方。当我写完这些文字，好好总结了个人在上面写的内容，不得陷入沉思。我也是他们中的一员呀。</p>
 ]]></content>
       <categories>
         <category>Blog</category>
@@ -627,6 +632,32 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>blog</tag>
         <tag>个性化</tag>
         <tag>口味</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>昨夜瞎折腾记</title>
+    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
+<p>废话不讲了，直奔主题。</p>
+<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
+<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
+<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml" target="_blank" rel="noopener">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
+<p>我定了几个小目标</p>
+<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
+<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
+<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
+<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
+<p>算了，不扯了，改天在写。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>随缘</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>笔记</tag>
+        <tag>折腾</tag>
+        <tag>随缘</tag>
       </tags>
   </entry>
   <entry>
@@ -670,32 +701,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       <tags>
         <tag>blog</tag>
         <tag>心情随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>昨夜瞎折腾记</title>
-    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
-    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
-<p>废话不讲了，直奔主题。</p>
-<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
-<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
-<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml" target="_blank" rel="noopener">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
-<p>我定了几个小目标</p>
-<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
-<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
-<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
-<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
-<p>算了，不扯了，改天在写。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>随缘</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>笔记</tag>
-        <tag>折腾</tag>
-        <tag>随缘</tag>
       </tags>
   </entry>
 </search>
