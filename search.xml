@@ -19,75 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
-<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>`</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>您好！我来了！</title>
-    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
-    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
-<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
-
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>开心</tag>
-        <tag>好日子</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>grub2美化</title>
-    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
-    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
-<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
-
-<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
-<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
-<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
-<p>更新时间：20180502</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Grub</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Grub</tag>
-        <tag>Grub2</tag>
-        <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArchBang官方送的残本指南</title>
     <url>/2018/05/01/ArchBang_Guide/</url>
     <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>==这是安装arcbbang完毕送的指南==</p>
@@ -143,70 +74,72 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>ArchLinux下的Yaourt神器</title>
-    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
-
-<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
-<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
-<hr>
-<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
-
-
+    <title>您好！我来了！</title>
+    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
+    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
+<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
 
 ]]></content>
       <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>Yaourt</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Yaourt</tag>
-        <tag>神器</tag>
+        <tag>Blog</tag>
+        <tag>开心</tag>
+        <tag>好日子</tag>
       </tags>
   </entry>
   <entry>
-    <title>解决打开浏览器老是输入密码和卡死问题</title>
-    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
-<p>怎么解决呢？</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">export DE&#x3D;openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE&#x3D;fcitx</span><br><span class="line">export QT_IM_MODULE&#x3D;fcitx</span><br><span class="line">export XMODIFIERS&#x3D;@im&#x3D;fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session</span><br></pre></td></tr></table></figure>
+<p>20.将/etc/xdg/autostart/里的输入法图标复制到~/.config/autostart/<br>21.sudo l3afpad ～/.config/openbox/autostart</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~&#x2F;Backgrounds&#x2F;snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#&#x2F;usr&#x2F;bin&#x2F;synclient TouchpadOff&#x3D;1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~/.bash_profile</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
+<p>`</p>
 ]]></content>
       <categories>
         <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>gnome-keyring</category>
-        <category>Google-Chrome</category>
+        <category>ArchBang</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-        <tag>Cheome</tag>
-        <tag>Google-Chrome</tag>
-        <tag>seahorse</tag>
-        <tag>libsecret</tag>
-        <tag>gnome-keyring</tag>
-        <tag>gnome-keyring-daemon</tag>
-        <tag>浏览器卡死</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>grub2美化</title>
+    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
+    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes" target="_blank" rel="noopener">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md" target="_blank" rel="noopener">English document</a></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
+<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
+
+<p>复制文件Griffin-Grub-v2.0到/boot/grub/themes/分区下，里面有个脚本，会自动处理theme主题文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;Griffin-Grub-v2.0&#x2F;</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo .&#x2F;Install-Arch.sh</span><br></pre></td></tr></table></figure>
+<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007/Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub" target="_blank" rel="noopener">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o /boot/grub/grub.cfg<br>并未做其它任何修改</p>
+<p>更新时间：20180502</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Grub</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Grub</tag>
+        <tag>Grub2</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
   <entry>
@@ -305,26 +238,43 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>关于Linux下的android手机adb和fastboot调式</title>
-    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
-    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
-<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
-<p>步骤如下：</p>
-<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
+    <title>ArchLinux下的Yaourt神器</title>
+    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
+
+<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
+<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
+<hr>
+<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
+
+
 
 ]]></content>
       <categories>
-        <category>Android</category>
-        <category>Adb</category>
-        <category>Fastboot</category>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>Yaourt</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-        <tag>Adb</tag>
-        <tag>Fastboot</tag>
+        <tag>Yaourt</tag>
+        <tag>神器</tag>
       </tags>
   </entry>
   <entry>
@@ -355,23 +305,53 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
+    <title>关于Linux下的android手机adb和fastboot调式</title>
+    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
+    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
+<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
+<p>步骤如下：</p>
+<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
 
-<p>备注：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
+        <category>Android</category>
+        <category>Adb</category>
+        <category>Fastboot</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
+        <tag>Adb</tag>
+        <tag>Fastboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决打开浏览器老是输入密码和卡死问题</title>
+    <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
+<p>怎么解决呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>gnome-keyring</category>
+        <category>Google-Chrome</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Cheome</tag>
+        <tag>Google-Chrome</tag>
+        <tag>seahorse</tag>
+        <tag>libsecret</tag>
+        <tag>gnome-keyring</tag>
+        <tag>gnome-keyring-daemon</tag>
+        <tag>浏览器卡死</tag>
       </tags>
   </entry>
   <entry>
@@ -393,6 +373,26 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>ArchLinux</tag>
         <tag>安装</tag>
         <tag>ArchWiki</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
+
+<p>备注：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -419,35 +419,24 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>个人自定义的Openbox桌面配置文件分享</title>
-    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Openbox</tag>
-        <tag>配置文件</tag>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于信息过时问题</title>
-    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
-<p>参考如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
+    <title>好了歌</title>
+    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
+
+<p>今天听了好了歌曲,特意搜索相关资料.</p>
+<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
+<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
+<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
 ]]></content>
       <categories>
         <category>Blog</category>
+        <category>好了歌</category>
       </categories>
       <tags>
         <tag>blog</tag>
+        <tag>好了歌</tag>
       </tags>
   </entry>
   <entry>
@@ -514,18 +503,9 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>关于清空ArchLinux的Home所有配置文件说明</title>
-    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
-<p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p>
-<p>需要做的步骤如下：</p>
-<p>步骤一：</p>
-<p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p>
-<p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p>
-<p>步骤二：</p>
-<p>部分桌面合成特效有问题</p>
-<p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>
-]]></content>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Linux</category>
         <category>ArchLinux</category>
@@ -534,6 +514,24 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
+        <tag>Openbox</tag>
+        <tag>配置文件</tag>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于信息过时问题</title>
+    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
+<p>参考如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -568,48 +566,26 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>好了歌</title>
-    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
-
-<p>今天听了好了歌曲,特意搜索相关资料.</p>
-<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
-<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
-<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
+    <title>关于清空ArchLinux的Home所有配置文件说明</title>
+    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
+<p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p>
+<p>需要做的步骤如下：</p>
+<p>步骤一：</p>
+<p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p>
+<p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p>
+<p>步骤二：</p>
+<p>部分桌面合成特效有问题</p>
+<p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>
 ]]></content>
       <categories>
-        <category>Blog</category>
-        <category>好了歌</category>
+        <category>Linux</category>
+        <category>ArchLinux</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>好了歌</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于网络喷子概论</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
-    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
-<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
-<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
-<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
-<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
-<p>​        4.只是喷子心情不好而已。</p>
-<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
-<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
-<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
-<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
-<p>欢迎转载，请添加来源～</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>李小龙</tag>
-        <tag>喷子</tag>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
       </tags>
   </entry>
   <entry>
@@ -654,25 +630,27 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>个性化资料</title>
-    <url>/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p>
-<p>食物喜好：</p>
-<p>喜：辣条、硬糖、</p>
-<p>忌：烟、酒、龙虾、辣条、硬糖、生姜</p>
-<p>歌曲喜好：</p>
-<p>喜：慢歌，老歌，人声清晰，好听，正面的</p>
-<p>忌：没法唱的，不可外放的，三观不正的，口水歌，歪歌，恶搞国歌的人，中国风歌曲感觉有点弱智</p>
-<p>不偏民调，原因是民调歌曲，心事多。容易被歌曲主人公潜移默化地影响。从心理学上讲，人是群众动物，为了能够融入他们，就得放大与别人相近的地方，以便获得相近的主观共识（类似精神快感）。尤其夫妻方面比较明显，一起久了，双方行为和生活习惯越来越像了，甚至容貌也有一部分相似的地方。当我写完这些文字，好好总结了个人在上面写的内容，不得陷入沉思。我也是他们中的一员呀。我又想了一下，人就是不断的在否决中认识自己，以便获得心中本来的我。人有三个我，自我，本我，非我。自我就是自己，本我就是那个本性的我，也就是善我和恶我的集合体。非我，那就是不是我了，这个非我很复杂，要么是潜意识，要么是失记忆，要么多种人格，要么是情绪极端体，要么是生理性冲动等等。大部分非我列子都是没法证明的。</p>
+    <title>关于网络喷子概论</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
+    <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
+<p>​        喷子特征就是那种，不讲道理的喷，你和他讲道理，他就不和你讲道理。你和他不讲道理，他就和你谈道理。反正节奏就在他手上。她就喜欢你那种受气的表情。好了，这事不扯了，我总结下原因，为什么喷子这么不讲道理。</p>
+<p>​        1.他见到李小龙的坏，所以对李小龙的一切都很讨厌。比如那些家族上世纪长辈原因呗。</p>
+<p>​        2.他是受害者，只是谣言所误而已。再怎么真实的故事，越传越离谱。第一人是真，第二人还是真，到了后面，某人才发现这是谣言，谁能告诉我，这故事什么时候开始不在真实了？没人说得出来。</p>
+<p>​        3.李小龙不是一个完美的人，有些人都是喜欢拿别人的方面跟自己比较，发现自己不如他的地方，那就挑毛病。跟一个死人杠精，也是一个人才。反正死人不会张口。</p>
+<p>​        4.只是喷子心情不好而已。</p>
+<p>​        5.没想好，以后再说吧。说不定我看多了假新闻也会变成他们这样。</p>
+<p>​        <a href="https://www.baidu.com/link?url=xzKHSBjHaD_6nD8qvcWVvT18Fz4lJHCOgadCbtoXNr64sPZ96QGIiMSdsRjyQ8ILCx1vAG0Km6vmm2p0gjkeUlHKq8GkR0TascWG7hZmVTO&wd=&eqid=dc21e5030010fb7f000000055e7d4dd1" target="_blank" rel="noopener"><em>谣言<em>究竟</em>是止于智者</em>,还是<em>止于下一个谣言</em>?</a></p>
+<p>​        对于上面话题，我个人评论：一件事，只要有评论，就有争议，有争议就有不符事实的事据。不符事实的事据传多了，也就变成了大家不怎么相信的谣言了。到了最后，大家都知道那个真相是谣言，后面就没人争议了。因为即使知道真相，也没用了。</p>
+<p>讲个冷笑话，活人嘴皮子上下一合，事情就这么说定了。就算扭曲了真相，死人也不会说话。</p>
+<p>欢迎转载，请添加来源～</p>
 ]]></content>
       <categories>
         <category>Blog</category>
-        <category>个性化</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>个性化</tag>
-        <tag>口味</tag>
+        <tag>李小龙</tag>
+        <tag>喷子</tag>
       </tags>
   </entry>
   <entry>
@@ -719,26 +697,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>aaaaaa</title>
-    <url>/2020/03/29/aaaaaa-1/</url>
-    <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
-
-
-
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&quot;</span><br><span class="line">        repo&#x3D;&quot;[ENTER REPO HERE]&quot;</span><br><span class="line">        issue-term&#x3D;&quot;pathname&quot;</span><br><span class="line">        theme&#x3D;&quot;github-light&quot;</span><br><span class="line">        crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">        async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>定制各种wsl1和wsl2的linux</title>
     <url>/2020/07/26/%E5%AE%9A%E5%88%B6%E5%90%84%E7%A7%8Dwsl1%E5%92%8Cwsl2%E7%9A%84linux/</url>
     <content><![CDATA[<p>​        正好今天休息，今天就在单位宿舍折腾wsl linux。一个个按照Microsoft Windows以及借鉴某git大佬软件思维方式整合了下工具。这个东西只能算是融合，不算创新，虽然网络上没有相关教程。但是硬是被我整出来了。</p>
@@ -763,6 +721,62 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
         <tag>Gentoo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>某人和我的糗事</title>
+    <url>/2020/07/27/%E6%9F%90%E4%BA%BA%E5%92%8C%E6%88%91%E7%9A%84%E7%B3%97%E4%BA%8B/</url>
+    <content><![CDATA[<p>今天不上班，硬是上了班就回来了。懵逼呀，毕竟我确实听到明天上班，下个星期转夜班，我还以为下个星期一夜班呢，有可能是下个月夜班，是不是最近我飘了，走路脚都是飞的。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>糗事</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>糗事</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个性化资料</title>
+    <url>/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p>
+<p>食物喜好：</p>
+<p>喜：辣条、硬糖、</p>
+<p>忌：烟、酒、龙虾、辣条、硬糖、生姜</p>
+<p>歌曲喜好：</p>
+<p>喜：慢歌，老歌，人声清晰，好听，正面的</p>
+<p>忌：没法唱的，不可外放的，三观不正的，口水歌，歪歌，恶搞国歌的人，中国风歌曲感觉有点弱智</p>
+<p>不偏民调，原因是民调歌曲，心事多。容易被歌曲主人公潜移默化地影响。从心理学上讲，人是群众动物，为了能够融入他们，就得放大与别人相近的地方，以便获得相近的主观共识（类似精神快感）。尤其夫妻方面比较明显，一起久了，双方行为和生活习惯越来越像了，甚至容貌也有一部分相似的地方。当我写完这些文字，好好总结了个人在上面写的内容，不得陷入沉思。我也是他们中的一员呀。我又想了一下，人就是不断的在否决中认识自己，以便获得心中本来的我。人有三个我，自我，本我，非我。自我就是自己，本我就是那个本性的我，也就是善我和恶我的集合体。非我，那就是不是我了，这个非我很复杂，要么是潜意识，要么是失记忆，要么多种人格，要么是情绪极端体，要么是生理性冲动等等。大部分非我列子都是没法证明的。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>个性化</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>个性化</tag>
+        <tag>口味</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>aaaaaa</title>
+    <url>/2020/03/29/aaaaaa-1/</url>
+    <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
+
+
+
+
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&quot;</span><br><span class="line">        repo&#x3D;&quot;[ENTER REPO HERE]&quot;</span><br><span class="line">        issue-term&#x3D;&quot;pathname&quot;</span><br><span class="line">        theme&#x3D;&quot;github-light&quot;</span><br><span class="line">        crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">        async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>

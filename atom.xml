@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuehrs.github.io/blog/"/>
-  <updated>2020-07-26T15:49:50.000Z</updated>
+  <updated>2020-07-26T16:14:57.000Z</updated>
   <id>http://xuehrs.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>某人和我的糗事</title>
+    <link href="http://xuehrs.github.io/blog/2020/07/27/%E6%9F%90%E4%BA%BA%E5%92%8C%E6%88%91%E7%9A%84%E7%B3%97%E4%BA%8B/"/>
+    <id>http://xuehrs.github.io/blog/2020/07/27/%E6%9F%90%E4%BA%BA%E5%92%8C%E6%88%91%E7%9A%84%E7%B3%97%E4%BA%8B/</id>
+    <published>2020-07-26T16:14:57.000Z</published>
+    <updated>2020-07-26T16:14:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天不上班，硬是上了班就回来了。懵逼呀，毕竟我确实听到明天上班，下个星期转夜班，我还以为下个星期一夜班呢，有可能是下个月夜班，是不是最近我飘了，走路脚都是飞的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天不上班，硬是上了班就回来了。懵逼呀，毕竟我确实听到明天上班，下个星期转夜班，我还以为下个星期一夜班呢，有可能是下个月夜班，是不是最近我飘了，走路脚都是飞的。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+      <category term="糗事" scheme="http://xuehrs.github.io/blog/categories/Blog/%E7%B3%97%E4%BA%8B/"/>
+    
+    
+      <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+      <category term="糗事" scheme="http://xuehrs.github.io/blog/tags/%E7%B3%97%E4%BA%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>定制各种wsl1和wsl2的linux</title>
@@ -635,47 +666,6 @@
       <category term="安装" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85/"/>
     
       <category term="ArchWiki" scheme="http://xuehrs.github.io/blog/tags/ArchWiki/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于Linux下的android手机adb和fastboot调式</title>
-    <link href="http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/"/>
-    <id>http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</id>
-    <published>2018-05-27T06:55:18.000Z</published>
-    <updated>2018-05-27T06:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p><p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p><p>步骤如下：</p><p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;Android&#x2F;Sdk&#x2F;platform-tools&#x2F;</span><br><span class="line">.&#x2F;adb --help</span><br><span class="line">.&#x2F;adb deveces</span><br><span class="line">.&#x2F;adb reboot bootloader</span><br><span class="line">sudo .&#x2F;fastboot --help</span><br><span class="line">sudo .&#x2F;fastboot devices</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock</span><br><span class="line">sudo .&#x2F;fastboot flashing unlock_critical</span><br><span class="line">sudo .&#x2F;fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover&lt;/p&gt;
-&lt;p&gt;鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料&lt;/p&gt;
-&lt;p&gt;步骤如下：&lt;/p&gt;
-&lt;p&gt;先下载好linux版adb工具，由于我电脑
-      
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="http://xuehrs.github.io/blog/categories/Android/"/>
-    
-      <category term="Adb" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/"/>
-    
-      <category term="Fastboot" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/Fastboot/"/>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
-    
-      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
-    
-      <category term="Adb" scheme="http://xuehrs.github.io/blog/tags/Adb/"/>
-    
-      <category term="Fastboot" scheme="http://xuehrs.github.io/blog/tags/Fastboot/"/>
     
   </entry>
   
