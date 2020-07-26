@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2018/04/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>ArchBang官方送的残本指南</title>
     <url>/2018/05/01/ArchBang_Guide/</url>
     <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>==这是安装arcbbang完毕送的指南==</p>
@@ -74,6 +56,22 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>您好！我来了！</title>
+    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
+    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
+<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>开心</tag>
+        <tag>好日子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArchBang安装指南</title>
     <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是/boot和/）<br>8.如果要安装启动分区位置，建议选择/boot/efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到/boot/efi分区上。<br>9.pacstrap -i /mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad /etc/pacman.d/mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～/.xinitrc</p>
@@ -96,6 +94,24 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>ArchBang</tag>
         <tag>安装指南</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2018/04/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>grub2美化</title>
@@ -124,62 +140,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>Grub</tag>
         <tag>Grub2</tag>
         <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>您好！我来了！</title>
-    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
-    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
-<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
-
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>开心</tag>
-        <tag>好日子</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArchLinux下的Yaourt神器</title>
-    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
-
-<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
-<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
-<hr>
-<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
-
-
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>Yaourt</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Yaourt</tag>
-        <tag>神器</tag>
       </tags>
   </entry>
   <entry>
@@ -275,6 +235,46 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>MarkDown</tag>
         <tag>笔记</tag>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArchLinux下的Yaourt神器</title>
+    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en" target="_blank" rel="noopener">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html" target="_blank" rel="noopener">使用说明文档</a></p>
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
+
+<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html" target="_blank" rel="noopener">网易ArchLinuxcn安装说明</a></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
+<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82" target="_blank" rel="noopener">滚挂</a>问题</p>
+<hr>
+<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server &#x3D; http:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server &#x3D; https:&#x2F;&#x2F;cdn.repo.archlinuxcn.org&#x2F;$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include &#x3D; &#x2F;etc&#x2F;pacman.d&#x2F;archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server &#x3D; http:&#x2F;&#x2F;mirrors.163.com&#x2F;archlinux-cn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org" target="_blank" rel="noopener">http://repo.archlinuxcn.org</a></p>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>Yaourt</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Yaourt</tag>
+        <tag>神器</tag>
       </tags>
   </entry>
   <entry>
@@ -376,26 +376,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
-
-<p>备注：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Archlinux添加本地仓库</title>
     <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
@@ -416,6 +396,87 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>仓库</tag>
         <tag>本地仓库</tag>
         <tag>包仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;sys&#x2F;power&#x2F;image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G &#x2F;swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 &#x2F;swapfile #更改新交换文件的权限</span><br><span class="line">mkswap &#x2F;swapfile #会显示UUID</span><br><span class="line">swapon &#x2F;swapfile #启用交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab</span><br><span class="line">&#x2F;swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v &#x2F;swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset&#x3D;</span><br><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT&#x3D;&quot;quiet intel_pstate&#x3D;enable resume_offset&#x3D;882688 resume&#x3D;&#x2F;dev&#x2F;sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;mkinitcpio.conf</span><br><span class="line">HOOKS&#x3D;(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br></pre></td></tr></table></figure>
+
+<p>备注：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf &#x2F;swapfile #删除交换文件</span><br><span class="line">sudo nano &#x2F;etc&#x2F;fstab #删除相关条目停用交换文件</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好了歌</title>
+    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
+
+<p>今天听了好了歌曲,特意搜索相关资料.</p>
+<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
+<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
+<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>好了歌</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>好了歌</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于清空ArchLinux的Home所有配置文件说明</title>
+    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
+<p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p>
+<p>需要做的步骤如下：</p>
+<p>步骤一：</p>
+<p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p>
+<p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p>
+<p>步骤二：</p>
+<p>部分桌面合成特效有问题</p>
+<p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Openbox</tag>
+        <tag>配置文件</tag>
+        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
@@ -482,44 +543,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>好了歌</title>
-    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
-
-<p>今天听了好了歌曲,特意搜索相关资料.</p>
-<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
-<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
-<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>好了歌</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>好了歌</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人自定义的Openbox桌面配置文件分享</title>
-    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Openbox</tag>
-        <tag>配置文件</tag>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于信息过时问题</title>
     <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
@@ -532,60 +555,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </categories>
       <tags>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于清空ArchLinux的Home所有配置文件说明</title>
-    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
-<p>但是如果你备份过重要的文件，可以直接还原。比如xfce4的相关配置。但是使用过程中发现了不少的问题</p>
-<p>需要做的步骤如下：</p>
-<p>步骤一：</p>
-<p>打开seahorse密码和密钥<br>新建login密码密钥环<br>下面直接确定，不要输入密码<br>将其设置为默认<br>再将其设置为锁定</p>
-<p>然后你看看ssh能不能用（不然git，google-chrome无法使用）</p>
-<p>步骤二：</p>
-<p>部分桌面合成特效有问题</p>
-<p>比如阴影，透明，窗口透明，甚至移动窗口过程中有重影等等。需要重新自定义新的合成器。不过我做好了，以防将来出问题，保留下原始档。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Windows终端个人使用和评价</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</url>
-    <content><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p>
-<p>Cygwin Terminal，不错，有很多不错的命令行工具</p>
-<p>git Terminal</p>
-<p>MINGW</p>
-<p>msys</p>
-<p>msys2</p>
-<p>这几个都是基于Cygwin做出来的特别终端，里面集成了很多常用工具</p>
-<p>WSL_ArchLinux，此终端不错，主要是用来编译各种包仓库的主力机，现在只是个玩具，连自己编译aur有一定的问题。不过可以做到babun那个使用效果，之前玩了Arch好几年，说明oh-my-zsh我都玩过的。类似wsl_ubuntu等等我就不用介绍了，美化了都是差不多。</p>
-<p>cmder，终端gui，就是ConEmu的进阶版，里面可以直接使用wsl，部分汉化，可以透明，支持壁纸</p>
-<p>ConEmu，终端gui，里面需要进行很多设置，部分汉化，可以透明，支持壁纸</p>
-<p>ConsoleZ，终端gui，全英文，功能单一，不可以设置透明</p>
-<p>wsl-terminal，终端gui，部分中文，可以透明，不支持壁纸</p>
-<p><a href="https://link.zhihu.com/?target=https%3A//eugeny.github.io/terminus/">terminus</a>，终端gui，完美中文，里面功能要付费。但是比较坑，特别是玩主机的那个同学</p>
-<p>fluent terminal，终端gui，windows terminal加强版</p>
-<p>windows terminal，终端gui，应用商店里面的，微软官方出品</p>
-<p>欢迎转载，请添加来源～</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>Windows</category>
-        <category>终端</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>Windows</tag>
-        <tag>终端</tag>
       </tags>
   </entry>
   <entry>
@@ -628,6 +597,62 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
+    <title>关于Windows终端个人使用和评价</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8EWindows%E7%BB%88%E7%AB%AF%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AF%84%E4%BB%B7/</url>
+    <content><![CDATA[<p>babun，此终端不错，就是基于Cygwin Terminal整合而来的。里面有各种不错的工具套装，还有zsh，可以做出很多美化。不过作者那边不怎么更新了，但是你可以使用Cygwin更新里面的东西。支持中文。可以使用终端gui套上去使用。</p>
+<p>Cygwin Terminal，不错，有很多不错的命令行工具</p>
+<p>git Terminal</p>
+<p>MINGW</p>
+<p>msys</p>
+<p>msys2</p>
+<p>这几个都是基于Cygwin做出来的特别终端，里面集成了很多常用工具</p>
+<p>WSL_ArchLinux，此终端不错，主要是用来编译各种包仓库的主力机，现在只是个玩具，连自己编译aur有一定的问题。不过可以做到babun那个使用效果，之前玩了Arch好几年，说明oh-my-zsh我都玩过的。类似wsl_ubuntu等等我就不用介绍了，美化了都是差不多。</p>
+<p>cmder，终端gui，就是ConEmu的进阶版，里面可以直接使用wsl，部分汉化，可以透明，支持壁纸</p>
+<p>ConEmu，终端gui，里面需要进行很多设置，部分汉化，可以透明，支持壁纸</p>
+<p>ConsoleZ，终端gui，全英文，功能单一，不可以设置透明</p>
+<p>wsl-terminal，终端gui，部分中文，可以透明，不支持壁纸</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//eugeny.github.io/terminus/">terminus</a>，终端gui，完美中文，里面功能要付费。但是比较坑，特别是玩主机的那个同学</p>
+<p>fluent terminal，终端gui，windows terminal加强版</p>
+<p>windows terminal，终端gui，应用商店里面的，微软官方出品</p>
+<p>欢迎转载，请添加来源～</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>Windows</category>
+        <category>终端</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>Windows</tag>
+        <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>aaaaaa</title>
+    <url>/2020/03/29/aaaaaa/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>aaaaaa</title>
+    <url>/2020/03/29/aaaaaa-1/</url>
+    <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
+
+
+
+
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&quot;</span><br><span class="line">        repo&#x3D;&quot;[ENTER REPO HERE]&quot;</span><br><span class="line">        issue-term&#x3D;&quot;pathname&quot;</span><br><span class="line">        theme&#x3D;&quot;github-light&quot;</span><br><span class="line">        crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">        async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>昨夜瞎折腾记</title>
     <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
     <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
@@ -651,6 +676,28 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
         <tag>笔记</tag>
         <tag>折腾</tag>
         <tag>随缘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个性化资料</title>
+    <url>/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p>
+<p>食物喜好：</p>
+<p>喜：辣条、硬糖、</p>
+<p>忌：烟、酒、龙虾、辣条、硬糖、生姜</p>
+<p>歌曲喜好：</p>
+<p>喜：慢歌，老歌，人声清晰，好听，正面的</p>
+<p>忌：没法唱的，不可外放的，三观不正的，口水歌，歪歌，恶搞国歌的人，中国风歌曲感觉有点弱智</p>
+<p>不偏民调，原因是民调歌曲，心事多。容易被歌曲主人公潜移默化地影响。从心理学上讲，人是群众动物，为了能够融入他们，就得放大与别人相近的地方，以便获得相近的主观共识（类似精神快感）。尤其夫妻方面比较明显，一起久了，双方行为和生活习惯越来越像了，甚至容貌也有一部分相似的地方。当我写完这些文字，好好总结了个人在上面写的内容，不得陷入沉思。我也是他们中的一员呀。我又想了一下，人就是不断的在否决中认识自己，以便获得心中本来的我。人有三个我，自我，本我，非我。自我就是自己，本我就是那个本性的我，也就是善我和恶我的集合体。非我，那就是不是我了，这个非我很复杂，要么是潜意识，要么是失记忆，要么多种人格，要么是情绪极端体，要么是生理性冲动等等。大部分非我列子都是没法证明的。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>个性化</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>个性化</tag>
+        <tag>口味</tag>
       </tags>
   </entry>
   <entry>
@@ -683,67 +730,6 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
       </tags>
   </entry>
   <entry>
-    <title>心情随笔</title>
-    <url>/2020/05/03/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>今天出去浪了，武进区大学城实在没什么好玩的，就滚回来了。走了俩小时路，真累。部分地方里面的特殊商店，比如电脑店什么的进不去，还有的关门了。还有的门面太小，还有的找不到。武进大学城大排档只有晚上开放，今天上午十点没人的。为毛不骑电频车，坐公交车什么的，因为太麻烦了，运动只有一点时间。居然还看到易买得。好像在大学新村附近呢。为毛不去恐龙园什么的，一句话，没兴趣（钱）。实际上我咸蛋习惯了。</p>
-<p>讲个笑话：每个人都是生活大师，多数是靠已知的经验判断。不同大小的石头落地只会同时落地。就是最好的证明。</p>
-<p>某人从高薪区转到低薪区，他的消费观念在一年之后才会得到有效的改善。如果不是本人经历，基本很难想得到这件事。高薪区生活费4000，转到底薪区，生活费还是4000.为什么，因为他看到底薪区的东西好便宜。买买买！不算账单绝对不清楚钱花在哪儿了。反过来，底薪区转高薪区呢。看到东西好贵，只会选择生活必须低标准的东西。比如放弃阳光，转到地下室。放弃客厅，选择9平米的房子。可以这么说，个人有个人的活法。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个性化资料</title>
-    <url>/2020/05/13/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>我只是出个个人个性化资料，做个标记备份，看看个人喜好什么。</p>
-<p>食物喜好：</p>
-<p>喜：辣条、硬糖、</p>
-<p>忌：烟、酒、龙虾、辣条、硬糖、生姜</p>
-<p>歌曲喜好：</p>
-<p>喜：慢歌，老歌，人声清晰，好听，正面的</p>
-<p>忌：没法唱的，不可外放的，三观不正的，口水歌，歪歌，恶搞国歌的人，中国风歌曲感觉有点弱智</p>
-<p>不偏民调，原因是民调歌曲，心事多。容易被歌曲主人公潜移默化地影响。从心理学上讲，人是群众动物，为了能够融入他们，就得放大与别人相近的地方，以便获得相近的主观共识（类似精神快感）。尤其夫妻方面比较明显，一起久了，双方行为和生活习惯越来越像了，甚至容貌也有一部分相似的地方。当我写完这些文字，好好总结了个人在上面写的内容，不得陷入沉思。我也是他们中的一员呀。我又想了一下，人就是不断的在否决中认识自己，以便获得心中本来的我。人有三个我，自我，本我，非我。自我就是自己，本我就是那个本性的我，也就是善我和恶我的集合体。非我，那就是不是我了，这个非我很复杂，要么是潜意识，要么是失记忆，要么多种人格，要么是情绪极端体，要么是生理性冲动等等。大部分非我列子都是没法证明的。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>个性化</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>个性化</tag>
-        <tag>口味</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>aaaaaa</title>
-    <url>/2020/03/29/aaaaaa-1/</url>
-    <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
-
-
-
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&quot;</span><br><span class="line">        repo&#x3D;&quot;[ENTER REPO HERE]&quot;</span><br><span class="line">        issue-term&#x3D;&quot;pathname&quot;</span><br><span class="line">        theme&#x3D;&quot;github-light&quot;</span><br><span class="line">        crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">        async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>aaaaaa</title>
-    <url>/2020/03/29/aaaaaa/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/05/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -760,5 +746,19 @@ Option &quot;OffTime&quot; &quot;0&quot;</code></pre><p> EndSection</p>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>心情随笔</title>
+    <url>/2020/05/03/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>今天出去浪了，武进区大学城实在没什么好玩的，就滚回来了。走了俩小时路，真累。部分地方里面的特殊商店，比如电脑店什么的进不去，还有的关门了。还有的门面太小，还有的找不到。武进大学城大排档只有晚上开放，今天上午十点没人的。为毛不骑电频车，坐公交车什么的，因为太麻烦了，运动只有一点时间。居然还看到易买得。好像在大学新村附近呢。为毛不去恐龙园什么的，一句话，没兴趣（钱）。实际上我咸蛋习惯了。</p>
+<p>讲个笑话：每个人都是生活大师，多数是靠已知的经验判断。不同大小的石头落地只会同时落地。就是最好的证明。</p>
+<p>某人从高薪区转到低薪区，他的消费观念在一年之后才会得到有效的改善。如果不是本人经历，基本很难想得到这件事。高薪区生活费4000，转到底薪区，生活费还是4000.为什么，因为他看到底薪区的东西好便宜。买买买！不算账单绝对不清楚钱花在哪儿了。反过来，底薪区转高薪区呢。看到东西好贵，只会选择生活必须低标准的东西。比如放弃阳光，转到地下室。放弃客厅，选择9平米的房子。可以这么说，个人有个人的活法。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
   </entry>
 </search>
