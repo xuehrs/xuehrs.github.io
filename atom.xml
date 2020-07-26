@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuehrs.github.io/blog/"/>
-  <updated>2020-03-28T07:26:05.466Z</updated>
+  <updated>2020-07-26T15:49:50.000Z</updated>
   <id>http://xuehrs.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>定制各种wsl1和wsl2的linux</title>
+    <link href="http://xuehrs.github.io/blog/2020/07/26/%E5%AE%9A%E5%88%B6%E5%90%84%E7%A7%8Dwsl1%E5%92%8Cwsl2%E7%9A%84linux/"/>
+    <id>http://xuehrs.github.io/blog/2020/07/26/%E5%AE%9A%E5%88%B6%E5%90%84%E7%A7%8Dwsl1%E5%92%8Cwsl2%E7%9A%84linux/</id>
+    <published>2020-07-26T15:49:50.000Z</published>
+    <updated>2020-07-26T15:49:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>​        正好今天休息，今天就在单位宿舍折腾wsl linux。一个个按照Microsoft Windows以及借鉴某git大佬软件思维方式整合了下工具。这个东西只能算是融合，不算创新，虽然网络上没有相关教程。但是硬是被我整出来了。</p><p>首先自己下载这俩个命令行工具</p><p>LxRunOffline</p><p>WSLDL（yuk7），这位大佬整合的archwsl2 滚挂了，我只能从做一个了。（毕竟这玩意是他整合的）</p><p>还有wsl专用的包(bootstrap)。参考文件名类似archlinux-bootstrap-2020.07.01-x86_64.tar.gz和stage3-amd64-20200722T214503Z.tar.xz</p><p>首先我先说明使用方法，以gentoo为例，下载完LxRunOffline WSLDL stage3-amd64-20200722T214503Z.tar.xz这三个文件就可以干了。</p><p>1.使用LxRunOffline用来解包导入到系统中，我分享了我的笔记</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">安装WSL2和安装WSL版archlinux</span><br><span class="line"></span><br><span class="line">1.安装WSL2（必须是18917之后的版本）</span><br><span class="line">Powershell以管理员身份运行 ，输入：Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform</span><br><span class="line">Powershell以管理员身份运行 ，输入：Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br><span class="line">此命令将启用虚拟机平台与WSL可选组件，完成后重启系统。</span><br><span class="line">为使得之后安装的Linux子系统都安装到WSL2之中，重启后输入命令：wsl --set-default-version 2</span><br><span class="line">1.1补充：</span><br><span class="line">假如之前已安装了wsl版linux要转为WSL2可做以下操作：</span><br><span class="line">以管理员身份打开powershell，输入wsl -l查看已经安装的子系统（假如显示是：Ubuntu-18.04），输入命令：wsl --set-version Ubuntu-18.04 2</span><br><span class="line">如查看目前WSL版本可以通过命令：wsl -l -v</span><br><span class="line">2.使用LxRunOffline安装WSL系统</span><br><span class="line">下载LxRunOffline，解压缩的LxRunOffline.exe直接丢入C:&#x2F;Windows&#x2F;System32文件夹中，链接：https:&#x2F;&#x2F;github.com&#x2F;DDoSolitary&#x2F;LxRunOffline&#x2F;releases</span><br><span class="line">下载archlinux系统，放置于D:&#x2F;盘，链接：https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;archlinux&#x2F;iso&#x2F;2020.04.01&#x2F;archlinux-bootstrap-2020.04.01-x86_64.tar.gz</span><br><span class="line">创建安装文件夹，我是放置于D:&#x2F;Linux文件夹中</span><br><span class="line">Powershell以管理员身份运行 ，输入：LxRunOffline i -n archlinux -f d:&#x2F;archlinux-bootstrap-2020.04.01-x86_64.tar.gz -d d:&#x2F;linux -r root.x86_64</span><br><span class="line">走完进度条，完成安装。运行Linux使用输入指令：wsl -d archlinux</span><br><span class="line">3.卸载</span><br><span class="line">输入指令：LxRunOffline ui -n archlinux</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 如果需要创建快捷方式，可以这么干</span><br><span class="line"></span><br><span class="line">.\LxRunOffline.exe s -n &#39;Archlinux&#39; -f &#39;Archlinux.lnk&#39;</span><br><span class="line">rootfs.tar.gz</span><br><span class="line"></span><br><span class="line">.\LxRunOffline.exe i -n ArchLinux  -f .\archlinux-bootstrap-2020.07.01-x86_64.tar.gz -d . -r root.x86_64</span><br><span class="line">.\LxRunOffline.exe i -n Gentoo  -f .\stage3-amd64-20200722T214503Z.tar.xz -d . -r .</span><br><span class="line">LxRunOffline i -n archlinux -f d:&#x2F;archlinux-bootstrap-2020.04.01-x86_64.tar.gz -d d:&#x2F;linux -r root.x86_64</span><br><span class="line">[WARNING] Love this tool? Would you like to make a donation: https:&#x2F;&#x2F;github.com&#x2F;DDoSolitary&#x2F;LxRunOffline&#x2F;blob&#x2F;master&#x2F;README.md#donation</span><br><span class="line">explorer.exe .</span><br></pre></td></tr></table></figure><p>2.WSLDL 里面有Gentoo启动器，也有源码可以自己手动编译。需要和LxRunOffline.exe同一目录，打开就能用了。至于如何切换wsl和wsl2上面笔记有了，我懒得讲解了</p><p>经过测试确实能用，会不会滚挂了，请自己想办法，gentoo我没空用，先archlinux用用吧，毕竟我使用很多年了，非常熟悉，有现成的方案和笔记。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​        正好今天休息，今天就在单位宿舍折腾wsl linux。一个个按照Microsoft Windows以及借鉴某git大佬软件思维方式整合了下工具。这个东西只能算是融合，不算创新，虽然网络上没有相关教程。但是硬是被我整出来了。&lt;/p&gt;
+&lt;p&gt;首先自己下载这俩个
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
+    
+      <category term="Gentoo" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/Gentoo/"/>
+    
+    
+      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+      <category term="Gentoo" scheme="http://xuehrs.github.io/blog/tags/Gentoo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -639,58 +676,6 @@
       <category term="Adb" scheme="http://xuehrs.github.io/blog/tags/Adb/"/>
     
       <category term="Fastboot" scheme="http://xuehrs.github.io/blog/tags/Fastboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决打开浏览器老是输入密码和卡死问题</title>
-    <link href="http://xuehrs.github.io/blog/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/"/>
-    <id>http://xuehrs.github.io/blog/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</id>
-    <published>2018-05-18T01:06:00.000Z</published>
-    <updated>2018-05-20T01:06:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p><p>怎么解决呢？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S seahorse libsecret gnome-keyring</span><br><span class="line">seahorse #gnome-keyring管理工具的GUI </span><br><span class="line">libsecret #用于存储和检索密码和其他秘密的库，与gnome-keyring有关，某些程序可能需要libgnome-keyring</span><br><span class="line">你必须将它(gnome-keyring-daemon)添加到守护进程,具体操作请将参考下面连接。一句话，开机运行这个命令gnome-keyring-daemon就可以了</span><br><span class="line">https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;GNOME&#x2F;Keyring</span><br><span class="line">https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Projects&#x2F;GnomeKeyring</span><br><span class="line">把lonin设置为锁定(这个工具好像有bug,pam模式下改密码会闪退)</span><br><span class="line">至于把lonin密码设置为空，与上面没有任何关系。如果这样做的话，只要能够访问该文件夹的都能看到密码</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。&lt;/p&gt;
-&lt;p&gt;怎么解决呢？&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/categories/Linux/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/"/>
-    
-      <category term="gnome-keyring" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/gnome-keyring/"/>
-    
-      <category term="Google-Chrome" scheme="http://xuehrs.github.io/blog/categories/Linux/ArchLinux/gnome-keyring/Google-Chrome/"/>
-    
-    
-      <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
-    
-      <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
-    
-      <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
-    
-      <category term="Cheome" scheme="http://xuehrs.github.io/blog/tags/Cheome/"/>
-    
-      <category term="Google-Chrome" scheme="http://xuehrs.github.io/blog/tags/Google-Chrome/"/>
-    
-      <category term="seahorse" scheme="http://xuehrs.github.io/blog/tags/seahorse/"/>
-    
-      <category term="libsecret" scheme="http://xuehrs.github.io/blog/tags/libsecret/"/>
-    
-      <category term="gnome-keyring" scheme="http://xuehrs.github.io/blog/tags/gnome-keyring/"/>
-    
-      <category term="gnome-keyring-daemon" scheme="http://xuehrs.github.io/blog/tags/gnome-keyring-daemon/"/>
-    
-      <category term="浏览器卡死" scheme="http://xuehrs.github.io/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%A1%E6%AD%BB/"/>
     
   </entry>
   
