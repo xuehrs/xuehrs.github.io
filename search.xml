@@ -108,35 +108,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>grub2美化</title>
-    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
-    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md">English document</a></p>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
-<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
-<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
-
-<p>复制文件Griffin-Grub-v2.0到&#x2F;boot&#x2F;grub&#x2F;themes&#x2F;分区下，里面有个脚本，会自动处理theme主题文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd /boot/grub/themes/Griffin-Grub-v2.0/</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo ./Install-Arch.sh</span><br></pre></td></tr></table></figure>
-<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
-<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007&#x2F;Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg<br>并未做其它任何修改</p>
-<p>更新时间：20180502</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Grub</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Grub</tag>
-        <tag>Grub2</tag>
-        <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>您好！我来了！</title>
     <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
     <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
@@ -190,6 +161,35 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>ArchLinux</tag>
         <tag>Yaourt</tag>
         <tag>神器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>grub2美化</title>
+    <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
+    <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md">English document</a></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是一个grub2的主题</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/003.png" class="" title="参考图片">
+<h1 id="如何安装grub2主题"><a href="#如何安装grub2主题" class="headerlink" title="如何安装grub2主题"></a>如何安装grub2主题</h1><p>要求环境：efi+gpt、archlinux<br>我的分区：</p>
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/001.png" class="">
+<img src="/2018/05/01/grub2%E7%BE%8E%E5%8C%96/002.png" class="">
+
+<p>复制文件Griffin-Grub-v2.0到&#x2F;boot&#x2F;grub&#x2F;themes&#x2F;分区下，里面有个脚本，会自动处理theme主题文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">cd /boot/grub/themes/Griffin-Grub-v2.0/</span><br><span class="line">chmod +x Install-Arch.sh	#一般可以忽略，能用就行</span><br><span class="line">sudo ./Install-Arch.sh</span><br></pre></td></tr></table></figure>
+<p>没有然后了，直接<strong>reboot</strong>，就可以看到了。<br>备注：如果你是<strong>Ubuntu</strong>,一般情况，请把上面Install-Arch.sh换成Install-Ubuntu.sh</p>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p>本Grub-Themes基于githun里的Shenron007&#x2F;Grub-Themes源文件修改的<br>链接：<a href="https://github.com/Shenron007/Grub-Themes/tree/griffin-grub">https://github.com/Shenron007/Grub-Themes/tree/griffin-grub</a><br>只是将grub-update命令改为grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg<br>并未做其它任何修改</p>
+<p>更新时间：20180502</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Grub</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Grub</tag>
+        <tag>Grub2</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
   <entry>
@@ -641,32 +641,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>昨夜瞎折腾记</title>
-    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
-    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
-<p>废话不讲了，直奔主题。</p>
-<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
-<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
-<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
-<p>我定了几个小目标</p>
-<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
-<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
-<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
-<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
-<p>算了，不扯了，改天在写。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>随缘</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>笔记</tag>
-        <tag>折腾</tag>
-        <tag>随缘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>心情随笔</title>
     <url>/2020/05/02/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>心情随笔</p>
@@ -693,6 +667,32 @@ Option &quot;OffTime&quot; &quot;0&quot;
       <tags>
         <tag>blog</tag>
         <tag>心情随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>昨夜瞎折腾记</title>
+    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
+<p>废话不讲了，直奔主题。</p>
+<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
+<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
+<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
+<p>我定了几个小目标</p>
+<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
+<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
+<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
+<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
+<p>算了，不扯了，改天在写。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>随缘</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>笔记</tag>
+        <tag>折腾</tag>
+        <tag>随缘</tag>
       </tags>
   </entry>
   <entry>
