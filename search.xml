@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
+<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>&#96;</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchBang</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2018/04/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ArchBang官方送的残本指南</title>
     <url>/2018/05/01/ArchBang_Guide/</url>
     <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>&#x3D;&#x3D;这是安装arcbbang完毕送的指南&#x3D;&#x3D;</p>
@@ -66,48 +108,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2018/04/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
-<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>&#96;</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>grub2美化</title>
     <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md">English document</a></p>
@@ -150,6 +150,46 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>Blog</tag>
         <tag>开心</tag>
         <tag>好日子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArchLinux下的Yaourt神器</title>
+    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html">使用说明文档</a></p>
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
+
+<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
+
+<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html">网易ArchLinuxcn安装说明</a></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑&#x2F;etc&#x2F;pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br></pre></td></tr></table></figure>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
+<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82">滚挂</a>问题</p>
+<hr>
+<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server = http://repo.archlinuxcn.org/$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server = https://cdn.repo.archlinuxcn.org/$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include = /etc/pacman.d/archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org/">http://repo.archlinuxcn.org</a></p>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>Yaourt</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Yaourt</tag>
+        <tag>神器</tag>
       </tags>
   </entry>
   <entry>
@@ -250,46 +290,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>MarkDown</tag>
         <tag>笔记</tag>
         <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArchLinux下的Yaourt神器</title>
-    <url>/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<p>Yaourt是一个pacman前端，如果配合中国特色软件仓库，我相信你一定会慢慢喜欢上它<br>参考<a href="https://archlinux.fr/yaourt-en">官方介绍</a><br>参考<a href="https://archlinux.fr/man/yaourt.8.html">使用说明文档</a></p>
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/001.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/002.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/003.png" class="">
-
-<img src="/2018/05/02/ArchLinux%E4%B8%8B%E7%9A%84Yaourt%E7%A5%9E%E5%99%A8/004.png" class="">
-
-<h1 id="安装yaourt（中国）"><a href="#安装yaourt（中国）" class="headerlink" title="安装yaourt（中国）"></a>安装yaourt（中国）</h1><p><a href="http://mirrors.163.com/.help/archlinux-cn.html">网易ArchLinuxcn安装说明</a></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>编辑&#x2F;etc&#x2F;pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br></pre></td></tr></table></figure>
-<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -Syu yaourt archlinuxcn-keyring fakeroot</span><br></pre></td></tr></table></figure>
-<p>archlinuxcn-keyring是软件包签名，没了它，部分中国特有的东西会安装失败<br>fakeroot是临时检测工具，它会调用临时sudo，使用虚拟sudo安装环境来检测该包是否有恶意代码，同时避免因为使用管理员权限sudo导致系统不可恢复的各种<a href="https://cn.bing.com/search?q=linux%E6%BB%9A%E6%8C%82">滚挂</a>问题</p>
-<hr>
-<p>老司机专用源(一但yaourt搜不到的，请使用国外的东西)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">##仓库主地址</span><br><span class="line">#Server = http://repo.archlinuxcn.org/$arch</span><br><span class="line">##或使用CDN（测试版）</span><br><span class="line">#Server = https://cdn.repo.archlinuxcn.org/$arch</span><br><span class="line">##或者安装archlinuxcn-mirrorlist-git并使用镜像列表</span><br><span class="line">#Include = /etc/pacman.d/archlinuxcn-mirrorlist</span><br><span class="line">##163源</span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>中国官方主页:  <a href="https://github.com/archlinuxcn/repo">https://github.com/archlinuxcn/repo</a><br>中国官方仓库地址： <a href="http://repo.archlinuxcn.org/">http://repo.archlinuxcn.org</a></p>
-
-
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>Yaourt</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Yaourt</tag>
-        <tag>神器</tag>
       </tags>
   </entry>
   <entry>
@@ -411,27 +411,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>好了歌</title>
-    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
-
-<p>今天听了好了歌曲,特意搜索相关资料.</p>
-<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
-<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
-<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>好了歌</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>好了歌</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Archlinux添加本地仓库</title>
     <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
@@ -452,6 +431,27 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>仓库</tag>
         <tag>本地仓库</tag>
         <tag>包仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好了歌</title>
+    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
+
+<p>今天听了好了歌曲,特意搜索相关资料.</p>
+<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
+<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
+<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>好了歌</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>好了歌</tag>
       </tags>
   </entry>
   <entry>
@@ -533,6 +533,21 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>关于信息过时问题</title>
+    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
+<p>参考如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于清空ArchLinux的Home所有配置文件说明</title>
     <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
@@ -553,21 +568,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于信息过时问题</title>
-    <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E8%BF%87%E6%97%B6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>对于信息过时问题，我暂时没有太多精力维护，如果将来遇到我无法解决的问题，我只会重新新建一个blog内容。不会对原来的旧资料进行修正问题。毕竟旧资料很有价值。特别是ArchLinux问题。这个东西可是解决窗口合成重影问题。ArchLinux里面可是没有的，中文和英文资料没了，当然你可以查看历史资料，好累，还好我经常备份zsh最近输入记录。</p>
-<p>参考如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># X compositor合成效果，可以解决显示撕裂问题的，让openbox有透明等特效功能，可以自己设置参数，详情看帮助,安装compton或者xcompmgr</span><br><span class="line"></span><br><span class="line">#(sleep 1 &amp;&amp; compton -b) &amp;</span><br><span class="line">(sleep 1 &amp;&amp; xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55) &amp;		# 可能有部分重影，暂时无法解决，请用最下面的东西</span><br><span class="line">#(sleep 1 &amp;&amp; compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88) &amp;</span><br><span class="line">#(sleep 1 &amp;&amp; xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4) &amp;		# 找不到来源</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
