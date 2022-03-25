@@ -95,6 +95,30 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
+<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>&#96;</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchBang</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2018/04/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -111,6 +135,22 @@ Option &quot;OffTime&quot; &quot;0&quot;
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>您好！我来了！</title>
+    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
+    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
+<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>开心</tag>
+        <tag>好日子</tag>
+      </tags>
   </entry>
   <entry>
     <title>ArchLinux下的Yaourt神器</title>
@@ -150,46 +190,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>ArchLinux</tag>
         <tag>Yaourt</tag>
         <tag>神器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>您好！我来了！</title>
-    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
-    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
-<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
-
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>开心</tag>
-        <tag>好日子</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
-<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>&#96;</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
       </tags>
   </entry>
   <entry>
@@ -320,29 +320,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>关于Linux下的android手机adb和fastboot调式</title>
-    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
-    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
-<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
-<p>步骤如下：</p>
-<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/Android/Sdk/platform-tools/</span><br><span class="line">./adb --help</span><br><span class="line">./adb deveces</span><br><span class="line">./adb reboot bootloader</span><br><span class="line">sudo ./fastboot --help</span><br><span class="line">sudo ./fastboot devices</span><br><span class="line">sudo ./fastboot flashing unlock</span><br><span class="line">sudo ./fastboot flashing unlock_critical</span><br><span class="line">sudo ./fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Adb</category>
-        <category>Fastboot</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Adb</tag>
-        <tag>Fastboot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决打开浏览器老是输入密码和卡死问题</title>
     <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
@@ -370,6 +347,29 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>关于Linux下的android手机adb和fastboot调式</title>
+    <url>/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</url>
+    <content><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p>
+<p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p>
+<p>步骤如下：</p>
+<p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/Android/Sdk/platform-tools/</span><br><span class="line">./adb --help</span><br><span class="line">./adb deveces</span><br><span class="line">./adb reboot bootloader</span><br><span class="line">sudo ./fastboot --help</span><br><span class="line">sudo ./fastboot devices</span><br><span class="line">sudo ./fastboot flashing unlock</span><br><span class="line">sudo ./fastboot flashing unlock_critical</span><br><span class="line">sudo ./fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Adb</category>
+        <category>Fastboot</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Adb</tag>
+        <tag>Fastboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于ArchLinux安装命令步骤</title>
     <url>/2018/05/28/%E5%85%B3%E4%BA%8EArchLinux%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<p>Arch面向高级用户，缺乏技术专长或者没有耐心的人是无法顺利安装、如何安装Arch。ArchWiki上列举了<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchLinux的安装步骤</a>，需要用户在黑色的tty界面下输入如下多个命令：</p>
@@ -388,6 +388,26 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>ArchLinux</tag>
         <tag>安装</tag>
         <tag>ArchWiki</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /sys/power/image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G /swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 /swapfile #更改新交换文件的权限</span><br><span class="line">mkswap /swapfile #会显示UUID</span><br><span class="line">swapon /swapfile #启用交换文件</span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line">/swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v /swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset=</span><br><span class="line">sudo nano /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_pstate=enable resume_offset=882688 resume=/dev/sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano /etc/mkinitcpio.conf</span><br><span class="line">HOOKS=(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>备注：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf /swapfile #删除交换文件</span><br><span class="line">sudo nano /etc/fstab #删除相关条目停用交换文件</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -411,26 +431,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>仓库</tag>
         <tag>本地仓库</tag>
         <tag>包仓库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /sys/power/image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G /swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 /swapfile #更改新交换文件的权限</span><br><span class="line">mkswap /swapfile #会显示UUID</span><br><span class="line">swapon /swapfile #启用交换文件</span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line">/swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v /swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset=</span><br><span class="line">sudo nano /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_pstate=enable resume_offset=882688 resume=/dev/sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano /etc/mkinitcpio.conf</span><br><span class="line">HOOKS=(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>备注：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf /swapfile #删除交换文件</span><br><span class="line">sudo nano /etc/fstab #删除相关条目停用交换文件</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
       </tags>
   </entry>
   <entry>
@@ -531,6 +531,23 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>个人自定义的Openbox桌面配置文件分享</title>
+    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>Openbox</tag>
+        <tag>配置文件</tag>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于清空ArchLinux的Home所有配置文件说明</title>
     <url>/2018/08/12/%E5%85%B3%E4%BA%8E%E6%B8%85%E7%A9%BAArchLinux%E7%9A%84Home%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>清空Linux的Home里的所有配置文件确实很爽，相当于Android初始化，也解决网易云音乐（不管是基于Ubuntu还是deppin平台的包）死活打不开问题。没错，与xfce4环境有关。暂时查不出来具体原因，在其它桌面很正常，使用ok！</p>
@@ -551,38 +568,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>Linux</tag>
         <tag>Arch</tag>
         <tag>ArchLinux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人自定义的Openbox桌面配置文件分享</title>
-    <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>Openbox</tag>
-        <tag>配置文件</tag>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于催收想法！</title>
-    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E5%82%AC%E6%94%B6%E6%83%B3%E6%B3%95%EF%BC%81/</url>
-    <content><![CDATA[<p>说句话，家庭没背景不合适。如果催收容易，那也不会有什么上征信的老赖了。若是容易，也早就按法院规定处理了。剩下要么没钱，要么把钱藏起来了。</p>
-<p>欢迎转载，请添加来源～</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>催收</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>催收</tag>
       </tags>
   </entry>
   <entry>
@@ -614,6 +599,21 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>blog</tag>
         <tag>Windows</tag>
         <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于催收想法！</title>
+    <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E5%82%AC%E6%94%B6%E6%83%B3%E6%B3%95%EF%BC%81/</url>
+    <content><![CDATA[<p>说句话，家庭没背景不合适。如果催收容易，那也不会有什么上征信的老赖了。若是容易，也早就按法院规定处理了。剩下要么没钱，要么把钱藏起来了。</p>
+<p>欢迎转载，请添加来源～</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>催收</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>催收</tag>
       </tags>
   </entry>
   <entry>
@@ -774,11 +774,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
   </entry>
   <entry>
     <title>aaaaaa</title>
-    <url>/2020/03/29/aaaaaa/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>aaaaaa</title>
     <url>/2020/03/29/aaaaaa-1/</url>
     <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
 
@@ -796,6 +791,11 @@ Option &quot;OffTime&quot; &quot;0&quot;
       <tags>
         <tag>blog</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>aaaaaa</title>
+    <url>/2020/03/29/aaaaaa/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
