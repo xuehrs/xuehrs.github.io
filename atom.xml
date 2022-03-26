@@ -6,7 +6,7 @@
   <link href="http://xuehrs.github.io/blog/atom.xml" rel="self"/>
   
   <link href="http://xuehrs.github.io/blog/"/>
-  <updated>2022-03-25T04:22:50.547Z</updated>
+  <updated>2022-03-26T01:47:26.000Z</updated>
   <id>http://xuehrs.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>终于恢复我的Blog了</title>
+    <link href="http://xuehrs.github.io/blog/2022/03/26/%E7%BB%88%E4%BA%8E%E6%81%A2%E5%A4%8D%E6%88%91%E7%9A%84Blog%E4%BA%86/"/>
+    <id>http://xuehrs.github.io/blog/2022/03/26/%E7%BB%88%E4%BA%8E%E6%81%A2%E5%A4%8D%E6%88%91%E7%9A%84Blog%E4%BA%86/</id>
+    <published>2022-03-26T01:47:26.000Z</published>
+    <updated>2022-03-26T01:47:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>    时隔很久我终于用上了Blog    准备购买域名和服务器。我发现这个东西不好玩。    因为手机上有更好的Blog代替品。就是别话    但是考虑到服务器不在自己手上，那就先慢慢更新吧。    之后的事情到时再说吧！    </code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;pre&gt;&lt;code&gt;    时隔很久我终于用上了Blog
+    准备购买域名和服务器。我发现这个东西不好玩。
+    因为手机上有更好的Blog代替品。就是别话
+    但是考虑到服务器不在自己手上，那就先慢慢更新吧。
+    之后的事情到时再说吧！
+    
+&lt;/code&gt;</summary>
+      
+    
+    
+    
+    <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
+    
+    
+    <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -223,52 +253,6 @@
     <category term="折腾" scheme="http://xuehrs.github.io/blog/tags/%E6%8A%98%E8%85%BE/"/>
     
     <category term="随缘" scheme="http://xuehrs.github.io/blog/tags/%E9%9A%8F%E7%BC%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>aaaaaa</title>
-    <link href="http://xuehrs.github.io/blog/2020/03/29/aaaaaa-1/"/>
-    <id>http://xuehrs.github.io/blog/2020/03/29/aaaaaa-1/</id>
-    <published>2020-03-28T17:10:34.000Z</published>
-    <updated>2020-03-28T17:10:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://utteranc.es/client.js&quot;</span><br><span class="line">        repo=&quot;[ENTER REPO HERE]&quot;</span><br><span class="line">        issue-term=&quot;pathname&quot;</span><br><span class="line">        theme=&quot;github-light&quot;</span><br><span class="line">        crossorigin=&quot;anonymous&quot;</span><br><span class="line">        async&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;欢迎转载，请添加来源～&lt;br&gt;这是一个博客模板&lt;/p&gt;
-
-
-
-
-
-
-
-
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br</summary>
-      
-    
-    
-    
-    <category term="Blog" scheme="http://xuehrs.github.io/blog/categories/Blog/"/>
-    
-    
-    <category term="blog" scheme="http://xuehrs.github.io/blog/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>aaaaaa</title>
-    <link href="http://xuehrs.github.io/blog/2020/03/29/aaaaaa/"/>
-    <id>http://xuehrs.github.io/blog/2020/03/29/aaaaaa/</id>
-    <published>2020-03-28T17:08:20.000Z</published>
-    <updated>2022-03-25T04:22:50.535Z</updated>
-    
-    
-    
-    
     
   </entry>
   
@@ -549,9 +533,9 @@
     
     <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
     
-    <category term="本地仓库" scheme="http://xuehrs.github.io/blog/tags/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
-    
     <category term="仓库" scheme="http://xuehrs.github.io/blog/tags/%E4%BB%93%E5%BA%93/"/>
+    
+    <category term="本地仓库" scheme="http://xuehrs.github.io/blog/tags/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
     
     <category term="包仓库" scheme="http://xuehrs.github.io/blog/tags/%E5%8C%85%E4%BB%93%E5%BA%93/"/>
     
@@ -626,6 +610,45 @@
     <category term="安装" scheme="http://xuehrs.github.io/blog/tags/%E5%AE%89%E8%A3%85/"/>
     
     <category term="ArchWiki" scheme="http://xuehrs.github.io/blog/tags/ArchWiki/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Linux下的android手机adb和fastboot调式</title>
+    <link href="http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/"/>
+    <id>http://xuehrs.github.io/blog/2018/05/27/%E5%85%B3%E4%BA%8ELinux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BAadb%E5%92%8Cfastboot%E8%B0%83%E5%BC%8F/</id>
+    <published>2018-05-27T06:55:18.000Z</published>
+    <updated>2018-05-27T06:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover</p><p>鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料</p><p>步骤如下：</p><p>先下载好linux版adb工具，由于我电脑有Android Studio工具，我直接cd到</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~/Android/Sdk/platform-tools/</span><br><span class="line">./adb --help</span><br><span class="line">./adb deveces</span><br><span class="line">./adb reboot bootloader</span><br><span class="line">sudo ./fastboot --help</span><br><span class="line">sudo ./fastboot devices</span><br><span class="line">sudo ./fastboot flashing unlock</span><br><span class="line">sudo ./fastboot flashing unlock_critical</span><br><span class="line">sudo ./fastboot flash recovery recovery.img #之前没有做上面俩个步骤，结果没作用，必须解锁才能刷</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天我把我的手机系统换成原版的MIUI.后来系统升级自动把特制的Recover给换成官方的Recover&lt;/p&gt;
+&lt;p&gt;鉴于的电脑只有linux系统（Arch Linux），在网上查了些资料&lt;/p&gt;
+&lt;p&gt;步骤如下：&lt;/p&gt;
+&lt;p&gt;先下载好linux版adb工具，由于我电脑</summary>
+      
+    
+    
+    
+    <category term="Android" scheme="http://xuehrs.github.io/blog/categories/Android/"/>
+    
+    <category term="Adb" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/"/>
+    
+    <category term="Fastboot" scheme="http://xuehrs.github.io/blog/categories/Android/Adb/Fastboot/"/>
+    
+    
+    <category term="Linux" scheme="http://xuehrs.github.io/blog/tags/Linux/"/>
+    
+    <category term="Arch" scheme="http://xuehrs.github.io/blog/tags/Arch/"/>
+    
+    <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
+    
+    <category term="Adb" scheme="http://xuehrs.github.io/blog/tags/Adb/"/>
+    
+    <category term="Fastboot" scheme="http://xuehrs.github.io/blog/tags/Fastboot/"/>
     
   </entry>
   
