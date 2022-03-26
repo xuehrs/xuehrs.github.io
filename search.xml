@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2018/04/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ArchBang官方送的残本指南</title>
     <url>/2018/05/01/ArchBang_Guide/</url>
     <content><![CDATA[<h1 id="ArchBang-Guide"><a href="#ArchBang-Guide" class="headerlink" title="ArchBang_Guide"></a>ArchBang_Guide</h1><p>&#x3D;&#x3D;这是安装arcbbang完毕送的指南&#x3D;&#x3D;</p>
@@ -66,30 +84,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>ArchBang安装指南</title>
-    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
-<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>&#96;</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchBang</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>ArchBang</tag>
-        <tag>安装指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>grub2美化</title>
     <url>/2018/05/01/grub2%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<p><a href="https://github.com/xuehrs/Grub-Themes">Introduction-of-documents</a> <a href="https://github.com/xuehrs/Grub-Themes/blob/Grub-Themes-zh/README-en.md">English document</a></p>
@@ -119,38 +113,28 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>您好！我来了！</title>
-    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
-    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
-<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+    <title>ArchBang安装指南</title>
+    <url>/2018/05/01/ArchBang%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>1.电脑是efi启动，gpt硬盘（无论有多少硬盘）<br>2.把archbang烧录在U盘里<br>3.调整好相关的bios（efi启动方式，不要使用混合启动）<br>4.选择使用带CD的第一选项<br>5.进入桌面，连接WIFI，可以打开火狐浏览器（如果遇到无法连接无线，可以使用本地连接，甚至你可以把手机当成本地网卡）<br>6.右击桌面，里面有个安装程序<br>7.这里一共十个选项，在安装前请考虑好分区方案（最少俩个分区，这俩个分区分别是&#x2F;boot和&#x2F;）<br>8.如果要安装启动分区位置，建议选择&#x2F;boot&#x2F;efi分区。（这个坑坑了我很多次，虽然前面安装archlinux很熟练，wiki里不是所有内容都是正确的。如果是同样的安装Archlinux环境，选择到boot分区很正常！wiki也没说明必须要安装到&#x2F;boot&#x2F;efi分区上。<br>9.pacstrap -i &#x2F;mnt base base-devel gvfs gvfs-mtp wqy-zenhei<br><code>这里添加了中国特殊国情的基础包，有对连接硬盘和安卓的支持，还有中文字体</code><br>10.对于中文化，我个人建议，如果对archlinux安装流程不熟练的话，建议你先使用英文环境，不然会乱码。看不清出问题的原因。老鸟请无视，估计知道原因也会盲打。安装完毕后，重启，进入archbang系统<br>11.sudo l3afpad &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 或者sudo pcmanfm<br><code>l3afpad、pcmanfm分别是archbang自带的文本读取器和文件管理器，原命令是sudo nano /etc/pacman.d/mirrorlist</code>把中国的所有源前面的#去除<br>12.sudo pacman -Syyu<br><code>更新源</code><br>13.pacman -Qq | grep xf86-video<br><code>已经安装的查看显卡</code><br>14.lspci | grep VGA<br><code>查看支持的显卡</code><br>15.pacman -Ss xf86-video | less<br><code>显示网络服务器里的所有最新显卡版本</code><br>16.pacman -S 显卡名称<br><code>安装最新显卡 参考pacman -S xf86-video-intel</code><br>17.sudo pacman -Syu<br><code>进行系统全面更新，-Syu表示进行系统更新，不然玩Ubuntu去</code><br>18.sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin<br><code>安装中文输入法</code><br>19.sudo l3afpad ～&#x2F;.xinitrc</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export DE=openbox</span><br><span class="line"></span><br><span class="line"># Dbus fix</span><br><span class="line">if [ -z &quot;$DBUS_SESSION_BUS_ADDRESS&quot; ]; then</span><br><span class="line">    eval &quot;$(dbus-launch --sh-syntax --exit-with-session)&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">/usr/bin/xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"></span><br><span class="line">exec openbox-session </span><br></pre></td></tr></table></figure>
+<p>20.将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;里的输入法图标复制到~&#x2F;.config&#x2F;autostart&#x2F;<br>21.sudo l3afpad ～&#x2F;.config&#x2F;openbox&#x2F;autostart</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># panel</span><br><span class="line">tint2 &amp;</span><br><span class="line"></span><br><span class="line"># Set wallpaper</span><br><span class="line">(sleep 2 &amp;&amp; feh --bg-scale ~/Backgrounds/snowtree.jpg) &amp;</span><br><span class="line"></span><br><span class="line"># Enable as required</span><br><span class="line">#xbacklight -set 100 &amp;</span><br><span class="line">#/usr/bin/synclient TouchpadOff=1 &amp;</span><br><span class="line">#setxkbmap us &amp;</span><br><span class="line"></span><br><span class="line"># Onscreen system stats</span><br><span class="line">(sleep 2 &amp;&amp; conky) &amp;</span><br><span class="line"></span><br><span class="line"># Network Manager Applet</span><br><span class="line">(sleep 2 &amp;&amp; nm-applet) &amp;</span><br><span class="line"></span><br><span class="line"># File manager dameon mode</span><br><span class="line">(sleep 2 &amp;&amp; pcmanfm -d) &amp;</span><br><span class="line"></span><br><span class="line"># Effects</span><br><span class="line">#(sleep 2 &amp;&amp; compton -b) &amp;</span><br><span class="line"></span><br><span class="line"># Volume</span><br><span class="line">(sleep 2 &amp;&amp; volumeicon) &amp;</span><br><span class="line"></span><br><span class="line"># 这里是输入法</span><br><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
+<p>22.如果因为Zsh原因无法自动登录<br>sudo l3afpad ~&#x2F;.bash_profile</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then</span><br><span class="line">  exec startx</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
+<p>&#96;</p>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>Linux</category>
+        <category>ArchBang</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
-        <tag>开心</tag>
-        <tag>好日子</tag>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>ArchBang</tag>
+        <tag>安装指南</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2018/04/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>ArchLinux下的Yaourt神器</title>
@@ -320,6 +304,22 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>您好！我来了！</title>
+    <url>/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/</url>
+    <content><![CDATA[<p>这是一个很平常的2018年，但是今天是个好日子，我的个人静态博客正式开启了。</p>
+<img src="/2018/05/01/%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%9D%A5%E4%BA%86%EF%BC%81/example.jpg" class="">
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>开心</tag>
+        <tag>好日子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决打开浏览器老是输入密码和卡死问题</title>
     <url>/2018/05/18/%E8%A7%A3%E5%86%B3%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%80%81%E6%98%AF%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>最近打开google-chrome浏览器老是输入密码和卡死问题，经过排查，确定与gnome-keyring有关。</p>
@@ -388,70 +388,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
         <tag>ArchLinux</tag>
         <tag>安装</tag>
         <tag>ArchWiki</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux启用休眠</title>
-    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /sys/power/image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G /swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 /swapfile #更改新交换文件的权限</span><br><span class="line">mkswap /swapfile #会显示UUID</span><br><span class="line">swapon /swapfile #启用交换文件</span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line">/swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v /swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset=</span><br><span class="line">sudo nano /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_pstate=enable resume_offset=882688 resume=/dev/sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano /etc/mkinitcpio.conf</span><br><span class="line">HOOKS=(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>备注：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf /swapfile #删除交换文件</span><br><span class="line">sudo nano /etc/fstab #删除相关条目停用交换文件</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>睡眠</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>休眠</tag>
-        <tag>睡眠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Archlinux添加本地仓库</title>
-    <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
-    <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
-<p>以后再也不用老是下载破东西浪费时间了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/pacman.conf</span><br><span class="line">[custompkgs] #请把它添加到archlinuxcn源前面，因为我这里的包都是特制版的</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = file:///home/[路径...]/custompkgs/$arch #添加特制好的包路径</span><br><span class="line">#Server = ftp://localhost/home/[路径...]/custompkgs/$arch</span><br><span class="line"></span><br><span class="line">repo-add /home/[路径...]/custompkgs/x86_64/custompkgs.db.tar.gz /home/[路径...]/custompkgs/x86_64/*.pkg.tar.xz</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ArchLinux</category>
-        <category>仓库</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
-        <tag>ArchLinux</tag>
-        <tag>仓库</tag>
-        <tag>本地仓库</tag>
-        <tag>包仓库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>好了歌</title>
-    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
-
-<p>今天听了好了歌曲,特意搜索相关资料.</p>
-<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
-<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
-<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>好了歌</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>好了歌</tag>
       </tags>
   </entry>
   <entry>
@@ -531,6 +467,26 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>Archlinux启用休眠</title>
+    <url>/2018/06/07/Archlinux%E5%90%AF%E7%94%A8%E4%BC%91%E7%9C%A0/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /sys/power/image_size #查看休眠最少需要分配多少内存，通常休眠文件的大小与当前运行内存有关，但是交换分区要尽量远远大于此文件大小，否则休眠会失败</span><br><span class="line">su #必须使用root权限，输入root密码</span><br><span class="line">fallocate -l 16G /swapfile #创建交换分区，建立交换文件，这里建立16G</span><br><span class="line">chmod 600 /swapfile #更改新交换文件的权限</span><br><span class="line">mkswap /swapfile #会显示UUID</span><br><span class="line">swapon /swapfile #启用交换文件</span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line">/swapfile none swap defaults 0 0</span><br><span class="line"></span><br><span class="line">exit #返回标准用户权限</span><br><span class="line">sudo filefrag -v /swapfile #交换文件开始的偏移量。记住第一行，第四列的偏移量，参数为resume_offset=</span><br><span class="line">sudo nano /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_pstate=enable resume_offset=882688 resume=/dev/sda2&quot; #resume:交换文件所在的分区，#intel_pstate:处理器优化</span><br><span class="line"></span><br><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg #生成新的grub.cfg配置文件</span><br><span class="line">sudo nano /etc/mkinitcpio.conf</span><br><span class="line">HOOKS=(base udev resume autodetect keyboard modconf block filesystems fsck)</span><br><span class="line"></span><br><span class="line">sudo mkinitcpio -p linux</span><br><span class="line"></span><br><span class="line">#至于合盖子，按电源键之类的响应相关睡眠问题，请根据情况调整，本人电脑桌面xfce4自带默认的电源管理功能都有了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>备注：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除交换文件</span><br><span class="line">swapoff -a #停用交换文件</span><br><span class="line">rm -rf /swapfile #删除交换文件</span><br><span class="line">sudo nano /etc/fstab #删除相关条目停用交换文件</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>睡眠</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>休眠</tag>
+        <tag>睡眠</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>个人自定义的Openbox桌面配置文件分享</title>
     <url>/2018/08/12/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84Openbox%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
     <content><![CDATA[]]></content>
@@ -602,6 +558,53 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
+    <title>好了歌</title>
+    <url>/2018/06/20/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跛足道人《好了歌》</span><br><span class="line"></span><br><span class="line">世人都晓神仙好，只有功名忘不了！</span><br><span class="line">古今将相在何方？荒冢一堆草没了！</span><br><span class="line">世人都晓神仙好，只有金银忘不了！</span><br><span class="line">终朝只恨聚无多，及到多时眼闭了！</span><br><span class="line">世人都晓神仙好，只有姣妻忘不了！</span><br><span class="line">君生日日说恩情，君死又随人去了！</span><br><span class="line">世人都晓神仙好，只有儿孙忘不了！</span><br><span class="line">痴心父母古来多，孝顺儿孙谁见了？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">金陵十二钗《收尾·飞鸟各投林》</span><br><span class="line"></span><br><span class="line">为官的，家业凋零。富贵的，金银散尽。</span><br><span class="line">有恩的，死里逃生。无情的，分明报应。</span><br><span class="line">欠命的，命已还。欠泪的，泪已尽。</span><br><span class="line">冤冤相报实非轻，分离合聚皆前定。</span><br><span class="line">欲知命短问前生，老来富贵也真侥幸。</span><br><span class="line">看破的，遁入空门。痴迷的，枉送了性命。</span><br><span class="line">好一似食尽鸟投林，落了片白茫茫大地真干净！</span><br></pre></td></tr></table></figure>
+
+<p>今天听了好了歌曲,特意搜索相关资料.</p>
+<p>看了这些资料,我总结:看透不说破,心里明白就好.</p>
+<p>如果将来我还活着,看到它,希望不要忘了当初坚持的理由.</p>
+<p>嗯!无论有什么理由,哪怕是有一万个要改变初衷的理由,也要坚持!</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>好了歌</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>好了歌</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>昨夜瞎折腾记</title>
+    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
+<p>废话不讲了，直奔主题。</p>
+<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
+<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
+<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
+<p>我定了几个小目标</p>
+<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
+<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
+<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
+<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
+<p>算了，不扯了，改天在写。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>随缘</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>笔记</tag>
+        <tag>折腾</tag>
+        <tag>随缘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于网络喷子概论</title>
     <url>/2020/03/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E5%96%B7%E5%AD%90%E6%A6%82%E8%AE%BA/</url>
     <content><![CDATA[<p>​        看到网络里面评论某人诋毁李小龙，我觉得某一部分人素质不好。后来我想了了下，就算某人再牛逼，估计见到李小龙本人也不敢随便口嗨。</p>
@@ -638,6 +641,29 @@ Option &quot;OffTime&quot; &quot;0&quot;
       <tags>
         <tag>blog</tag>
         <tag>催收</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Archlinux添加本地仓库</title>
+    <url>/2018/06/08/Archlinux%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<p>关于Arch仓库，我个人一直想做个本地仓库。老是没空，今天狠下心，花了些时间，做了几个测试。测试OK！</p>
+<p>以后再也不用老是下载破东西浪费时间了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/pacman.conf</span><br><span class="line">[custompkgs] #请把它添加到archlinuxcn源前面，因为我这里的包都是特制版的</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = file:///home/[路径...]/custompkgs/$arch #添加特制好的包路径</span><br><span class="line">#Server = ftp://localhost/home/[路径...]/custompkgs/$arch</span><br><span class="line"></span><br><span class="line">repo-add /home/[路径...]/custompkgs/x86_64/custompkgs.db.tar.gz /home/[路径...]/custompkgs/x86_64/*.pkg.tar.xz</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ArchLinux</category>
+        <category>仓库</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+        <tag>ArchLinux</tag>
+        <tag>本地仓库</tag>
+        <tag>仓库</tag>
+        <tag>包仓库</tag>
       </tags>
   </entry>
   <entry>
@@ -706,32 +732,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>昨夜瞎折腾记</title>
-    <url>/2020/05/01/%E6%98%A8%E5%A4%9C%E7%9E%8E%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
-    <content><![CDATA[<p>昨夜不小心把电脑格式化了，卧槽，我的资料…，还好我个人定了很多计划，有定期备份数据规划。</p>
-<p>废话不讲了，直奔主题。</p>
-<p>据说wsl可以升级wsl2，同时使用VcXsrv可以使用某个桌面。</p>
-<p>实际上我懒得用xinit窗口，没办法，命令行流派就是好用的。遇到需要图形的就比较麻烦了。</p>
-<p>台式机<a href="http://detail.zol.com.cn/cpu/index1294471.shtml">i9 10920X</a>确实牛逼上天了。笔记本就坑了，基本整机都在价钱在2w以上，性能只有台式的一半，还有那个低压本，作用不是很大的。我想买个高u，高读写，高内存的，我选了一些参数，cpu十代i7 内存16G 硬盘1T固态x2+2t机械(总之硬盘越大越好，重要的数据保存到机械硬盘里面)。集显就够了。可惜大部分电脑都是带显卡的游戏本，没有别的笔记本符合我的需求。我想到了怎么解决电脑有Windows的问题，很简单，加个硬盘，用来装arch，随便玩玩呗。</p>
-<p>我定了几个小目标</p>
-<p>中等性能笔记本，服务器（高配置pc），群晖rad，电瓶车，街机定制。</p>
-<p>后来我在想，我这么干累不累。干脆只保留了笔记本，别的钱用来投资别的地方吧。人生有诗有远方，为何不带个笔和本子去仗剑天涯呢。</p>
-<p>我注意到某人说的B言B语，说的是专注个人说话，类似txt笔记本，但是不能评论，你想说什么就说什么。我个人认为呢，这货迟早会翻车的。但是我看到了该程序开源了，但是我不看好这软件的前途的，哈哈。</p>
-<p>还有那个某x度盘，把pandownload作者给抓了。而且各种花式限速。我都想脱坑了。每次都要我下载都要下载官方的网盘，因为我经常格式化Windows。而且经常遇到各种资源挂了的问题。我都很生气的。我经常用pandowsload搜索mdx和mdd文件，主要是我不习惯用网络词典工具。还好我做了很多词典工具整合包。目前够用了。里面还有各种离线wiki，百科什么的。真香呢。还有某个词典能够本地发声音的，可以听各种词典的人声。蛮好用的。我会考虑找个不错的网盘工具来下载资源了。</p>
-<p>算了，不扯了，改天在写。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>随缘</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>笔记</tag>
-        <tag>折腾</tag>
-        <tag>随缘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>定制各种wsl1和wsl2的linux</title>
     <url>/2020/07/26/%E5%AE%9A%E5%88%B6%E5%90%84%E7%A7%8Dwsl1%E5%92%8Cwsl2%E7%9A%84linux/</url>
     <content><![CDATA[<p>​        正好今天休息，今天就在单位宿舍折腾wsl linux。一个个按照Microsoft Windows以及借鉴某git大佬软件思维方式整合了下工具。这个东西只能算是融合，不算创新，虽然网络上没有相关教程。但是硬是被我整出来了。</p>
@@ -759,20 +759,6 @@ Option &quot;OffTime&quot; &quot;0&quot;
       </tags>
   </entry>
   <entry>
-    <title>某人和我的糗事</title>
-    <url>/2020/07/27/%E6%9F%90%E4%BA%BA%E5%92%8C%E6%88%91%E7%9A%84%E7%B3%97%E4%BA%8B/</url>
-    <content><![CDATA[<p>今天不上班，硬是上了班就回来了。懵逼呀，毕竟我确实听到明天上班，下个星期转夜班，我还以为下个星期一夜班呢，有可能是下个月夜班，是不是最近我飘了，走路脚都是飞的。</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-        <category>糗事</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>糗事</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>aaaaaa</title>
     <url>/2020/03/29/aaaaaa-1/</url>
     <content><![CDATA[<p>欢迎转载，请添加来源～<br>这是一个博客模板</p>
@@ -796,6 +782,20 @@ Option &quot;OffTime&quot; &quot;0&quot;
     <title>aaaaaa</title>
     <url>/2020/03/29/aaaaaa/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>某人和我的糗事</title>
+    <url>/2020/07/27/%E6%9F%90%E4%BA%BA%E5%92%8C%E6%88%91%E7%9A%84%E7%B3%97%E4%BA%8B/</url>
+    <content><![CDATA[<p>今天不上班，硬是上了班就回来了。懵逼呀，毕竟我确实听到明天上班，下个星期转夜班，我还以为下个星期一夜班呢，有可能是下个月夜班，是不是最近我飘了，走路脚都是飞的。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+        <category>糗事</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>糗事</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>

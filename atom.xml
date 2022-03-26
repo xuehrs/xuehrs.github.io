@@ -549,9 +549,9 @@
     
     <category term="ArchLinux" scheme="http://xuehrs.github.io/blog/tags/ArchLinux/"/>
     
-    <category term="仓库" scheme="http://xuehrs.github.io/blog/tags/%E4%BB%93%E5%BA%93/"/>
-    
     <category term="本地仓库" scheme="http://xuehrs.github.io/blog/tags/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/"/>
+    
+    <category term="仓库" scheme="http://xuehrs.github.io/blog/tags/%E4%BB%93%E5%BA%93/"/>
     
     <category term="包仓库" scheme="http://xuehrs.github.io/blog/tags/%E5%8C%85%E4%BB%93%E5%BA%93/"/>
     
